@@ -17,6 +17,7 @@
 		0A2706722845EAD400168C40 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706712845EAD400168C40 /* ClubModel.swift */; };
 		0A2706762845EDA000168C40 /* Club.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2706752845EDA000168C40 /* Club.json */; };
 		BAAF76332845F5BB0027504A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF76322845F5BB0027504A /* MapView.swift */; };
+		EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58B4862845FCD500744D64 /* DescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		0A2706712845EAD400168C40 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModel.swift; sourceTree = "<group>"; };
 		0A2706752845EDA000168C40 /* Club.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Club.json; sourceTree = "<group>"; };
 		BAAF76322845F5BB0027504A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		EE58B4862845FCD500744D64 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				0A2706482845E96800168C40 /* ContentView.swift */,
 				BAAF76322845F5BB0027504A /* MapView.swift */,
+				EE58B4862845FCD500744D64 /* DescriptionView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				0A2706492845E96800168C40 /* ContentView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
+				EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
