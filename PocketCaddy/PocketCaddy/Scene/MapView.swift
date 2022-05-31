@@ -7,24 +7,36 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct MapView: View {
+    @State private var celsius = 0.0
+    var Enviroment : [String] = ["teeingGround","bunker","hazard","rough"]
+    @State var isCheck : [Bool] = [false,false,false,false]
     var body: some View {
         HStack{
             VStack{
-                
                 ForEach(0..<4){ i in
-                    Button(action: {}){Image("GolfDriver").resizable().frame(width: 100, height: 100, alignment: .trailing).padding().border(.red)
+                    Button(action: {isCheck[i].toggle()}){
+                        Image(Enviroment[i])
+                            .resizable()
+                            .frame(width: 150, height: 150, alignment: .trailing)
+                            .opacity(isCheck[i] ? 1 : 0.5)
                     }
+                    
                 }
+               
             }
-            Image("land").resizable().frame(width: 100, height: 500).padding(20).border(.red)
+            VStack{
+                Text(String(Int(celsius)))
+                Image("land").resizable()
+                    .frame(width: 100, height:  500)
+                    .padding(20)
+                    .overlay(
+                        Slider(value: $celsius, in: 0...200, step: 0.1)
+                            .rotationEffect(.degrees(-90.0), anchor: .topLeading)
+                            .frame(width: 500)
+                            .offset(x:230, y: 260))
+            }
         }
-        
     }
 }
 
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
-    }
-}
