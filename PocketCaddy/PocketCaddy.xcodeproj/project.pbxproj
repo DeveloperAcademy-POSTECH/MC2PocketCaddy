@@ -17,6 +17,11 @@
 		0A2706722845EAD400168C40 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706712845EAD400168C40 /* ClubModel.swift */; };
 		0A2706762845EDA000168C40 /* Club.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2706752845EDA000168C40 /* Club.json */; };
 		BAAF76332845F5BB0027504A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF76322845F5BB0027504A /* MapView.swift */; };
+		BAAF76352845F9C40027504A /* land.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAF76342845F9C40027504A /* land.png */; };
+		BAAF76392845FD1B0027504A /* teeingGround.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAAF76362845FD1B0027504A /* teeingGround.jpeg */; };
+		BAAF763A2845FD1B0027504A /* hazard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAAF76372845FD1B0027504A /* hazard.jpeg */; };
+		BAAF763B2845FD1B0027504A /* bunker.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAAF76382845FD1B0027504A /* bunker.jpeg */; };
+		BAAF763D2845FD830027504A /* rough.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAAF763C2845FD830027504A /* rough.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,11 @@
 		0A2706712845EAD400168C40 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModel.swift; sourceTree = "<group>"; };
 		0A2706752845EDA000168C40 /* Club.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Club.json; sourceTree = "<group>"; };
 		BAAF76322845F5BB0027504A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		BAAF76342845F9C40027504A /* land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = land.png; sourceTree = "<group>"; };
+		BAAF76362845FD1B0027504A /* teeingGround.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = teeingGround.jpeg; sourceTree = "<group>"; };
+		BAAF76372845FD1B0027504A /* hazard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hazard.jpeg; sourceTree = "<group>"; };
+		BAAF76382845FD1B0027504A /* bunker.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bunker.jpeg; sourceTree = "<group>"; };
+		BAAF763C2845FD830027504A /* rough.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rough.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +140,7 @@
 			children = (
 				0A2706612845E96900168C40 /* PocketCaddyUITests.swift */,
 				0A2706632845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift */,
+				BAAF76342845F9C40027504A /* land.png */,
 			);
 			path = PocketCaddyUITests;
 			sourceTree = "<group>";
@@ -154,6 +165,10 @@
 		0A2706742845EC2600168C40 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				BAAF763C2845FD830027504A /* rough.jpeg */,
+				BAAF76372845FD1B0027504A /* hazard.jpeg */,
+				BAAF76382845FD1B0027504A /* bunker.jpeg */,
+				BAAF76362845FD1B0027504A /* teeingGround.jpeg */,
 				0A2706482845E96800168C40 /* ContentView.swift */,
 				BAAF76322845F5BB0027504A /* MapView.swift */,
 			);
@@ -265,8 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2706762845EDA000168C40 /* Club.json in Resources */,
+				BAAF763D2845FD830027504A /* rough.jpeg in Resources */,
 				0A27064E2845E96900168C40 /* Preview Assets.xcassets in Resources */,
+				BAAF763B2845FD1B0027504A /* bunker.jpeg in Resources */,
 				0A27064B2845E96900168C40 /* Assets.xcassets in Resources */,
+				BAAF763A2845FD1B0027504A /* hazard.jpeg in Resources */,
+				BAAF76392845FD1B0027504A /* teeingGround.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAF76352845F9C40027504A /* land.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
