@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct ClubModel {
-    let name: String
+struct ClubModel: Codable {
     let category: ClubCategory
+    let name: String // ID
     let distance: Int
     let loft: Int
+    let description: String
 }
 
-enum ClubCategory {
+enum ClubCategory: Codable {
     case wood
     case iron
     case wedge
