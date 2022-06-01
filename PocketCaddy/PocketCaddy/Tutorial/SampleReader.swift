@@ -24,9 +24,16 @@ struct SampleReader {
             return
         }
 
-        let data = try? Data(contentsOf: url)
-        let results = try? JSONDecoder().decode([SampleModel].self, from: data!)
-
-        self.json = results!
+        if let data = try? Data(contentsOf: url) {
+            
+            if let results = try? JSONDecoder().decode([SampleModel].self, from: data) {
+                self.json = results
+            } else {
+                print("Error in decoder")
+            }
+            
+        } else {
+            print("Error in Data")
+        }
     }
 }
