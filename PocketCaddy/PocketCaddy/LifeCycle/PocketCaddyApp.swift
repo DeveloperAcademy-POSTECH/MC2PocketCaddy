@@ -11,7 +11,8 @@ import SwiftUI
 struct PocketCaddyApp: App {
     var body: some Scene {
         WindowGroup {
-            MapView()
+//            MapView()
+            SampleView()
         }
     }
 }
