@@ -7,17 +7,15 @@
 
 import Foundation
 
-struct ClubData: Codable {
-    //let userLock: [String]
-    let clubData: [String:String]
-}
+class JsonDataManager: ObservableObject {
+    @Published var clubData = []
 
-class JsonDataManager {
-    static let jsonDataManager = JsonDataManager()
-    var clubData = ["":""]
-    
-    func getJsonData() {
-        guard let path = Bundle.main.path(forResource: "SampleData", ofType: "json") else {
+    init() {
+        self.getClubData()
+    }
+
+    func getClubData() {
+        guard let path = Bundle.main.path(forResource: "Club", ofType: "json") else {
             return
         }
         guard let clubJson = try? String(contentsOfFile: path) else {
@@ -28,9 +26,9 @@ class JsonDataManager {
         let data = clubJson.data(using: .utf8)
 
         guard let data = data,
-           let clubs = try? decoder.decode(ClubData.self, from: data) else {
+              let clubs = try? decoder.decode([ClubModel].self, from: data) else {
             return
         }
-        self.clubData = clubs.clubData
+        self.clubData = clubs
     }
 }
