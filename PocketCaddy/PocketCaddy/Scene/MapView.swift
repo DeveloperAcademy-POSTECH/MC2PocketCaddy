@@ -9,9 +9,9 @@ import SwiftUI
 
 struct MapView: View {
     @State private var celsius = 0.0
-    @State var SheetNum : Int = 1
-    var Enviroment : [String] = ["teeingGround","bunker","green","rough"]
-    var SelectedEnviroment : [String] = ["selectedTeeingGround","selectedBunker","selectedGreen","selectedRough"]
+    @State var sheetNum : Int = 1
+    var environment : [String] = ["teeingGround","bunker","green","rough"]
+    var selectedEnvironment : [String] = ["selectedTeeingGround","selectedBunker","selectedGreen","selectedRough"]
     @State var isCheck : [Bool] = [true,false,false,false]
     var body: some View {
         ZStack{
@@ -29,7 +29,7 @@ struct MapView: View {
                             }
                         }
                     }){
-                        Image(isCheck[0] ? SelectedEnviroment[0] : Enviroment[0])
+                        Image(isCheck[0] ? selectedEnvironment[0] : environment[0])
                             .resizable()
                             .frame(width: 80, height: 80, alignment: .trailing)
                             .cornerRadius(15)
@@ -46,7 +46,7 @@ struct MapView: View {
                             }
                         }
                     }){
-                        Image(isCheck[1] ? SelectedEnviroment[1] : Enviroment[1])
+                        Image(isCheck[1] ? selectedEnvironment[1] : environment[1])
                             .resizable()
                             .frame(width: 150, height: 150, alignment: .trailing)
                             .cornerRadius(15)
@@ -63,7 +63,7 @@ struct MapView: View {
                             }
                         }
                     }){
-                        Image(isCheck[2] ? SelectedEnviroment[2] : Enviroment[2])
+                        Image(isCheck[2] ? selectedEnvironment[2] : environment[2])
                             .resizable()
                             .frame(width: 150, height: 100, alignment: .trailing)
                             .cornerRadius(15)
@@ -80,7 +80,7 @@ struct MapView: View {
                             }
                         }
                     }){
-                        Image(isCheck[3] ? SelectedEnviroment[3] : Enviroment[3])
+                        Image(isCheck[3] ? selectedEnvironment[3] : environment[3])
                             .resizable()
                             .frame(width: 180, height: 500, alignment: .trailing)
                             .cornerRadius(15)
@@ -90,11 +90,11 @@ struct MapView: View {
                 }
             }
             
-            Rectangle().opacity(SheetNum == 1 ? 0 : 0.3).frame(height: 742)
+            Rectangle().opacity(sheetNum == 1 ? 0 : 0.3).frame(height: 742)
             VStack{
                 Spacer()
                 Spacer()
-                if SheetNum == 2 {
+                if sheetNum == 2 {
                     HStack{
                         Button(action:{}){
                             RoundedRectangle(cornerRadius: 10)
@@ -130,7 +130,6 @@ struct MapView: View {
                             .foregroundColor(.white)
                             .padding(15)
                         }
-                        
                         Button(action:{}){
                             RoundedRectangle(cornerRadius: 10)
                             .frame(width: 150, height: 100)
@@ -142,14 +141,14 @@ struct MapView: View {
                 Spacer()
                 HStack{
                     Button(action:{
-                        if SheetNum == 2 {
-                        SheetNum -= 1
+                        if sheetNum == 2 {
+                        sheetNum -= 1
                         }
                     }){
                         Image(systemName: "play.fill").rotationEffect(.degrees(180))
                             .foregroundColor(.white)
                     }
-                    Text(String(SheetNum))
+                    Text(String(sheetNum))
                         .foregroundColor(.white).bold()
                     Text("/")
                         .foregroundColor(.white).bold()
@@ -157,8 +156,8 @@ struct MapView: View {
                         .foregroundColor(.white).bold()
                     
                     Button(action:{
-                        if SheetNum == 1 {
-                        SheetNum += 1
+                        if sheetNum == 1 {
+                        sheetNum += 1
                         }
                     }){
                         Image(systemName: "play.fill")
