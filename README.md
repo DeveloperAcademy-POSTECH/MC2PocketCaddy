@@ -8,7 +8,7 @@
 
 ## :people_hugging: Authors
 
-- [@Sanghyun Kim](https://github.com/iDrogba) |
+- [@Sanghyun Kim](https://github.com/iDrogba) | [@Minyoung Kim](https://github.com/pig1606)
 
 ## :framed_picture: Demo
 
