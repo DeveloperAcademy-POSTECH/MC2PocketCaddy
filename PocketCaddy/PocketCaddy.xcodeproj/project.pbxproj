@@ -16,6 +16,10 @@
 		0A2706642845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706632845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift */; };
 		0A2706722845EAD400168C40 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706712845EAD400168C40 /* ClubModel.swift */; };
 		0A2706762845EDA000168C40 /* Club.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2706752845EDA000168C40 /* Club.json */; };
+		89544A3A28473E3100423D0A /* SampleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A3928473E3100423D0A /* SampleReader.swift */; };
+		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
+		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
+		89544A4528474ED100423D0A /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 89544A4028473EF700423D0A /* SampleData.json */; };
 		BAAF76332845F5BB0027504A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF76322845F5BB0027504A /* MapView.swift */; };
 		EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58B4862845FCD500744D64 /* DescriptionView.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +54,10 @@
 		0A2706632845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCaddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A2706712845EAD400168C40 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModel.swift; sourceTree = "<group>"; };
 		0A2706752845EDA000168C40 /* Club.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Club.json; sourceTree = "<group>"; };
+		89544A3928473E3100423D0A /* SampleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleReader.swift; sourceTree = "<group>"; };
+		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
+		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
+		89544A432847436300423D0A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		BAAF76322845F5BB0027504A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		EE58B4862845FCD500744D64 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +110,7 @@
 		0A2706452845E96800168C40 /* PocketCaddy */ = {
 			isa = PBXGroup;
 			children = (
+				89544A3828473E1F00423D0A /* Tutorial */,
 				0A2706742845EC2600168C40 /* Scene */,
 				0A2706732845EC1D00168C40 /* LifeCycle */,
 				0A2706702845EAC100168C40 /* Model */,
@@ -161,6 +170,17 @@
 				EE58B4862845FCD500744D64 /* DescriptionView.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		89544A3828473E1F00423D0A /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				89544A4028473EF700423D0A /* SampleData.json */,
+				89544A4128473F0B00423D0A /* SampleModel.swift */,
+				89544A3928473E3100423D0A /* SampleReader.swift */,
+				89544A432847436300423D0A /* SampleView.swift */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89544A4528474ED100423D0A /* SampleData.json in Resources */,
 				0A2706762845EDA000168C40 /* Club.json in Resources */,
 				0A27064E2845E96900168C40 /* Preview Assets.xcassets in Resources */,
 				0A27064B2845E96900168C40 /* Assets.xcassets in Resources */,
@@ -294,11 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89544A442847436300423D0A /* SampleView.swift in Sources */,
 				0A2706722845EAD400168C40 /* ClubModel.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				0A2706492845E96800168C40 /* ContentView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
+				89544A3A28473E3100423D0A /* SampleReader.swift in Sources */,
 				EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */,
+				89544A4228473F0B00423D0A /* SampleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
