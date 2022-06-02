@@ -13,6 +13,7 @@ struct MapView: View {
     var environment : [String] = ["teeingGround","bunker","green","rough"]
     var selectedEnvironment : [String] = ["selectedTeeingGround","selectedBunker","selectedGreen","selectedRough"]
     @State var isCheck : [Bool] = [true,false,false,false]
+    @State var isDistanceCheck : [Bool] = [true, false, false, false, false, false]
     var body: some View {
         ZStack{
           
@@ -90,51 +91,138 @@ struct MapView: View {
                 }
             }
             
-            Rectangle().opacity(sheetNum == 1 ? 0 : 0.3).frame(height: 742)
-            VStack{
+            Rectangle().opacity(sheetNum == 1 ? 0 : 0.5)
+                .frame(height: 742)
+                .onTapGesture {
+                }
+            
+            VStack(){
                 Spacer()
                 Spacer()
                 if sheetNum == 2 {
+                    Text("How far?")
+                        .font(.system(size: 50))
+                        .foregroundColor(.white).bold()
+                        .padding(20)
+                        .offset(x: -70)
                     HStack{
-                        Button(action:{}){
+                        Button(action:{
+                            for i in 0...5 {
+                                if i == 0 {
+                                    isDistanceCheck[i] = true
+                                }
+                                else {
+                                    isDistanceCheck[i] = false
+                                }
+                            }
+                        }){
                             RoundedRectangle(cornerRadius: 10)
                             .frame(width: 150, height: 100)
-                            .foregroundColor(.white)
+                            .foregroundColor(isDistanceCheck[0] ? .black : .white)
                             .padding(15)
+                            .overlay(
+                                Text("0 ~ 50m")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(isDistanceCheck[0] ? .white : .black).bold())
                         }
-                        Button(action:{}){
+                        Button(action:{
+                            for i in 0...5 {
+                                if i == 1 {
+                                    isDistanceCheck[i] = true
+                                }
+                                else {
+                                    isDistanceCheck[i] = false
+                                }
+                            }
+                        }){
                             RoundedRectangle(cornerRadius: 10)
                             .frame(width: 150, height: 100)
-                            .foregroundColor(.white)
+                            .foregroundColor(isDistanceCheck[1] ? .black : .white)
                             .padding(15)
+                            .overlay(
+                                Text("50 ~ 100m")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(isDistanceCheck[1] ? .white : .black).bold())
                         }
                     }
                     HStack{
-                        Button(action:{}){
+                        Button(action:{
+                            for i in 0...5 {
+                                if i == 2 {
+                                    isDistanceCheck[i] = true
+                                }
+                                else {
+                                    isDistanceCheck[i] = false
+                                }
+                            }
+                        }){
                             RoundedRectangle(cornerRadius: 10)
                             .frame(width: 150, height: 100)
-                            .foregroundColor(.white)
+                            .foregroundColor(isDistanceCheck[2] ? .black : .white)
                             .padding(15)
+                            .overlay(
+                                Text("100 ~ 150m")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(isDistanceCheck[2] ? .white : .black).bold())
                         }
-                        Button(action:{}){
+                        Button(action:{
+                            for i in 0...5 {
+                                if i == 3 {
+                                    isDistanceCheck[i] = true
+                                }
+                                else {
+                                    isDistanceCheck[i] = false
+                                }
+                            }
+                        }){
                             RoundedRectangle(cornerRadius: 10)
                             .frame(width: 150, height: 100)
-                            .foregroundColor(.white)
+                            .foregroundColor(isDistanceCheck[3] ? .black : .white)
                             .padding(15)
+                            .overlay(
+                                Text("150 ~ 200m")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(isDistanceCheck[3] ? .white : .black).bold())
                         }
                     }
                     HStack{
-                        Button(action:{}){
+                        Button(action:{
+                            for i in 0...5 {
+                                if i == 4 {
+                                    isDistanceCheck[i] = true
+                                }
+                                else {
+                                    isDistanceCheck[i] = false
+                                }
+                            }
+                        }){
                             RoundedRectangle(cornerRadius: 10)
                             .frame(width: 150, height: 100)
-                            .foregroundColor(.white)
+                            .foregroundColor(isDistanceCheck[4] ? .black : .white)
                             .padding(15)
+                            .overlay(
+                                Text("200 ~ 300m")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(isDistanceCheck[4] ? .white : .black).bold())
                         }
-                        Button(action:{}){
+                        Button(action:{
+                            for i in 0...5 {
+                                if i == 5 {
+                                    isDistanceCheck[i] = true
+                                }
+                                else {
+                                    isDistanceCheck[i] = false
+                                }
+                            }
+                        }){
                             RoundedRectangle(cornerRadius: 10)
                             .frame(width: 150, height: 100)
-                            .foregroundColor(.white)
+                            .foregroundColor(isDistanceCheck[5] ? .black : .white)
                             .padding(15)
+                            .overlay(
+                                Text("300m ~")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(isDistanceCheck[5] ? .white : .black).bold())
                         }
                     }
                 }
@@ -145,14 +233,20 @@ struct MapView: View {
                         sheetNum -= 1
                         }
                     }){
-                        Image(systemName: "play.fill").rotationEffect(.degrees(180))
+                        Image(systemName: "play.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .rotationEffect(.degrees(180))
                             .foregroundColor(.white)
                     }
                     Text(String(sheetNum))
+                        .font(.system(size: 25))
                         .foregroundColor(.white).bold()
                     Text("/")
+                        .font(.system(size: 25))
                         .foregroundColor(.white).bold()
                     Text("2")
+                        .font(.system(size: 25))
                         .foregroundColor(.white).bold()
                     
                     Button(action:{
@@ -161,11 +255,19 @@ struct MapView: View {
                         }
                     }){
                         Image(systemName: "play.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
                             .foregroundColor(.white)
                     }
                 }.padding(50)
-            }
+            } // VStack
         } // ZStack
     } // body
 } // View
 
+
+struct MapView_Previews: PreviewProvider {
+    static var previews: some View {
+        MapView()
+    }
+}
