@@ -9,13 +9,15 @@ import SwiftUI
 
 struct MapView: View {
     @State private var celsius = 0.0
+    @State var SheetNum : Int = 1
     var Enviroment : [String] = ["teeingGround","bunker","green","rough"]
     var SelectedEnviroment : [String] = ["selectedTeeingGround","selectedBunker","selectedGreen","selectedRough"]
     @State var isCheck : [Bool] = [true,false,false,false]
     var body: some View {
         ZStack{
+          
             Image("field").resizable().aspectRatio(CGSize(width: 1, height: 1.9),contentMode: .fit)
-            HStack{
+            VStack{
                 ZStack{
                     Button(action: {
                         for i in 0...3 {
@@ -87,7 +89,84 @@ struct MapView: View {
 
                 }
             }
-        }
-    }
-}
+            
+            Rectangle().opacity(SheetNum == 1 ? 0 : 0.3).frame(height: 742)
+            VStack{
+                Spacer()
+                Spacer()
+                if SheetNum == 2 {
+                    HStack{
+                        Button(action:{}){
+                            RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 150, height: 100)
+                            .foregroundColor(.white)
+                            .padding(15)
+                        }
+                        Button(action:{}){
+                            RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 150, height: 100)
+                            .foregroundColor(.white)
+                            .padding(15)
+                        }
+                    }
+                    HStack{
+                        Button(action:{}){
+                            RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 150, height: 100)
+                            .foregroundColor(.white)
+                            .padding(15)
+                        }
+                        Button(action:{}){
+                            RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 150, height: 100)
+                            .foregroundColor(.white)
+                            .padding(15)
+                        }
+                    }
+                    HStack{
+                        Button(action:{}){
+                            RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 150, height: 100)
+                            .foregroundColor(.white)
+                            .padding(15)
+                        }
+                        
+                        Button(action:{}){
+                            RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 150, height: 100)
+                            .foregroundColor(.white)
+                            .padding(15)
+                        }
+                    }
+                }
+                Spacer()
+                HStack{
+                    Button(action:{
+                        if SheetNum == 2 {
+                        SheetNum -= 1
+                        }
+                    }){
+                        Image(systemName: "play.fill").rotationEffect(.degrees(180))
+                            .foregroundColor(.white)
+                    }
+                    Text(String(SheetNum))
+                        .foregroundColor(.white).bold()
+                    Text("/")
+                        .foregroundColor(.white).bold()
+                    Text("2")
+                        .foregroundColor(.white).bold()
+                    
+                    Button(action:{
+                        if SheetNum == 1 {
+                        SheetNum += 1
+                        }
+                    }){
+                        Image(systemName: "play.fill")
+                            .foregroundColor(.white)
+                    }
+                }.padding(50)
+            }
+        } // ZStack
+    } // body
+} // View
 
