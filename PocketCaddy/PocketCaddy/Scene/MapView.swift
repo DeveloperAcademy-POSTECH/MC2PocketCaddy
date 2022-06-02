@@ -9,32 +9,83 @@ import SwiftUI
 
 struct MapView: View {
     @State private var celsius = 0.0
-    var Enviroment : [String] = ["teeingGround","bunker","hazard","rough"]
-    @State var isCheck : [Bool] = [false,false,false,false]
+    var Enviroment : [String] = ["teeingGround","bunker","green","rough"]
+    var SelectedEnviroment : [String] = ["selectedTeeingGround","selectedBunker","selectedGreen","selectedRough"]
+    @State var isCheck : [Bool] = [true,false,false,false]
     var body: some View {
-        HStack{
-            VStack{
-                ForEach(0..<4){ i in
-                    Button(action: {isCheck[i].toggle()}){
-                        Image(Enviroment[i])
+        ZStack{
+            Image("field").resizable().aspectRatio(CGSize(width: 1, height: 1.9),contentMode: .fit)
+            HStack{
+                ZStack{
+                    Button(action: {
+                        for i in 0...3 {
+                            if i == 0 {
+                                isCheck[i] = true
+                            }
+                            else {
+                                isCheck[i] = false
+                            }
+                        }
+                    }){
+                        Image(isCheck[0] ? SelectedEnviroment[0] : Enviroment[0])
+                            .resizable()
+                            .frame(width: 80, height: 80, alignment: .trailing)
+                            .cornerRadius(15)
+                            .opacity(isCheck[0] ? 1 :  0.7)
+                    }.offset(x: 100, y: 270)
+                    
+                    Button(action: {
+                        for i in 0...3 {
+                            if i == 1 {
+                                isCheck[i] = true
+                            }
+                            else {
+                                isCheck[i] = false
+                            }
+                        }
+                    }){
+                        Image(isCheck[1] ? SelectedEnviroment[1] : Enviroment[1])
                             .resizable()
                             .frame(width: 150, height: 150, alignment: .trailing)
-                            .opacity(isCheck[i] ? 1 : 0.5)
-                    }
+                            .cornerRadius(15)
+                            .opacity(isCheck[1] ? 1 : 0.7)
+                    }           .offset(x: 130, y: 0)
                     
+                    Button(action: {
+                        for i in 0...3 {
+                            if i == 2 {
+                                isCheck[i] = true
+                            }
+                            else {
+                                isCheck[i] = false
+                            }
+                        }
+                    }){
+                        Image(isCheck[2] ? SelectedEnviroment[2] : Enviroment[2])
+                            .resizable()
+                            .frame(width: 150, height: 100, alignment: .trailing)
+                            .cornerRadius(15)
+                            .opacity(isCheck[2] ? 1 : 0.7)
+                    }           .offset(x: -20, y: -300)
+                    
+                    Button(action: {
+                        for i in 0...3 {
+                            if i == 3 {
+                                isCheck[i] = true
+                            }
+                            else {
+                                isCheck[i] = false
+                            }
+                        }
+                    }){
+                        Image(isCheck[3] ? SelectedEnviroment[3] : Enviroment[3])
+                            .resizable()
+                            .frame(width: 180, height: 500, alignment: .trailing)
+                            .cornerRadius(15)
+                            .opacity(isCheck[3] ? 1 : 0.7)
+                    }           .offset(x: -30, y: 0)
+
                 }
-               
-            }
-            VStack{
-                Text(String(Int(celsius)))
-                Image("land").resizable()
-                    .frame(width: 100, height:  500)
-                    .padding(20)
-                    .overlay(
-                        Slider(value: $celsius, in: 0...200, step: 0.1)
-                            .rotationEffect(.degrees(-90.0), anchor: .topLeading)
-                            .frame(width: 500)
-                            .offset(x:230, y: 260))
             }
         }
     }
