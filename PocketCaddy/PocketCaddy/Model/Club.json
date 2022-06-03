@@ -1,2 +1,143 @@
 
-
+[
+    {
+        "category": "wood",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "1번 우드",
+        "distance": 220,
+        "loft": 10,
+        "description": "'드라이버(Driver)'라고 불림. 드라이버도 우드의 한 종류이지만 티샷 외에는 사용할 수 없다는 점 때문에 우드라고 부르지 않고 '드라이버'라고 부름. 가장 긴 샤프트와 가장 큰 헤드가 특성"
+    },
+    {
+        "category": "wood",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "3번 우드",
+        "distance": 200,
+        "loft": 16,
+        "description": "초창기 모양이 숟가락처럼 생겨 '스푼(Spoon)'이라고 불림. "
+    },
+    {
+        "category": "wood",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "4번 우드",
+        "distance": 190,
+        "loft": 19,
+        "description": "'버피(Baffy)'라고 불림."
+    },
+    {
+        "category": "wood",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "5번 우드",
+        "distance": 170,
+        "loft": 22,
+        "description": "'클리크(Cleek)'라고 불림."
+    },
+    {
+        "category": "iron",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "3번 아이언",
+        "distance": 170,
+        "loft": 24,
+        "description": "롱 아이언 중 하나. '미드 매쉬(Mid Mashy)'라고 불림."
+    },
+    {
+        "category": "iron",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "4번 아이언",
+        "distance": 160,
+        "loft": 28,
+        "description": "미들 아이언에 속하며, '매쉬 아이언(Mashy Iron)'이라고 불림."
+    },
+    {
+        "category": "iron",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "5번 아이언",
+        "distance": 150,
+        "loft": 32,
+        "description": "미들 아이언에 속하며, '매쉬(Mashy)'이라고 불림."
+    },
+    {
+        "category": "iron",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "6번 아이언",
+        "distance": 140,
+        "loft": 36,
+        "description": "미들 아이언에 속하며, '스페이드 매쉬(Spade Mashy)'이라고 불림."
+    },
+    {
+        "category": "iron",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "7번 아이언",
+        "distance": 130,
+        "loft": 40,
+        "description": "숏 아이언에 속하며, '매쉬 니블릭(Mashy Niblick)'이라고 불림."
+    },
+    {
+        "category": "iron",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "8번 아이언",
+        "distance": 120,
+        "loft": 44,
+        "description": "숏 아이언에 속하며, '피칭 니블릭(Pitching Niblick)' 또는 '피처(Pitcher)'라고 불림."
+    },
+    {
+        "category": "iron",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "9번 아이언",
+        "distance": 110,
+        "loft": 48,
+        "description": "숏 아이언에 속하며, '니블릭(Niblick)'이라고 불림"
+    },
+    {
+        "category": "wedge",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "피칭 웨지",
+        "distance": 80,
+        "loft": 50,
+        "description": "피칭(Pitching) 웨지의 어원인 Pitch는 특정 지점을 목표로 한다는 의미. 골프에서는 그린을 목표로 하는 것을 뜻한다. 웨지 중에 로프트 각이 가장 낮기 때문에 웨지 중에 가장 긴 샷을 할 수 있는 클럽. 그린 주변에서 홀컵까지 거리가 있어 굴려야 하는 샷을 할 때 유용하게 사용."
+    },
+    {
+        "category": "wedge",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "샌드 웨지",
+        "distance": 60,
+        "loft": 56,
+        "description": "샌드라는 클럽 이름에서 알 수 있듯이, 벙커에서 주로 사용하는 클럽이며, 공을 띄워서 그림에 보내야 할 때 사용. 로프트각이 크기 때문에 그린 위에서 런이 별로 없음."
+    },
+    {
+        "category": "Putter",
+        "subname": "subname",
+        "length": 43.5,
+        "location": "teeing ground",
+        "name": "퍼터",
+        "distance": "",
+        "loft": 5,
+        "description": "퍼터는 자신의 기호에 맞는 것을 선호하는 편이다. 그린 위에서 홀컵 공략을 위해 사용하며 T자형, L자형, 핑(ping)형, 반원형 등이 있다. "
+    }
+]

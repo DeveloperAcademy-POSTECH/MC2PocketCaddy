@@ -8,8 +8,11 @@
 import Foundation
 
 struct ClubModel: Codable {
-    let category: ClubCategory
+    let category: String
+    let location: String
     let name: String // ID
+    let subName: String
+    let length: Double
     let distance: Int
     let loft: Int
     let description: String
