@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		094B84792849DE22002B0528 /* SearchLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094B84782849DE22002B0528 /* SearchLogic.swift */; };
 		0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706462845E96800168C40 /* PocketCaddyApp.swift */; };
 		0A2706492845E96800168C40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706482845E96800168C40 /* ContentView.swift */; };
 		0A27064B2845E96900168C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A27064A2845E96900168C40 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		094B84782849DE22002B0528 /* SearchLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLogic.swift; sourceTree = "<group>"; };
 		0A2706432845E96800168C40 /* PocketCaddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketCaddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2706462845E96800168C40 /* PocketCaddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCaddyApp.swift; sourceTree = "<group>"; };
 		0A2706482845E96800168C40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				0A2706712845EAD400168C40 /* ClubModel.swift */,
 				0A2706752845EDA000168C40 /* Club.json */,
+				094B84782849DE22002B0528 /* SearchLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				89544A3A28473E3100423D0A /* SampleReader.swift in Sources */,
 				0AC19CFC28489CB600727BE6 /* JsonDataManager.swift in Sources */,
 				EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */,
+				094B84792849DE22002B0528 /* SearchLogic.swift in Sources */,
 				89544A4228473F0B00423D0A /* SampleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

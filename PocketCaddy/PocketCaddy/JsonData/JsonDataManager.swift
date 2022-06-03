@@ -8,7 +8,8 @@
 import Foundation
 
 class JsonDataManager: ObservableObject {
-    @Published var clubData = []
+    static var jsonDataManager = JsonDataManager()
+    @Published var clubData: [ClubModel] = []
 
     init() {
         self.getClubData()
