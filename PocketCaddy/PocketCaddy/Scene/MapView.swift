@@ -10,14 +10,20 @@ import SwiftUI
 struct MapView: View {
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
-    var environment : [String] = ["teeingGround","bunker","green","rough"]
+    var environment : [String] = ["teeing ground","bunker","green","rough"]
     var selectedEnvironment : [String] = ["selectedTeeingGround","selectedBunker","selectedGreen","selectedRough"]
+    var distance : [Int] = [50, 100, 150, 200, 250, 300]
     @State var isCheck : [Bool] = [true,false,false,false]
     @State var isDistanceCheck : [Bool] = [true, false, false, false, false, false]
+    @EnvironmentObject var jsonDataManager: JsonDataManager
+    
     var body: some View {
         NavigationView{
             ZStack{
-                Image("field").resizable().aspectRatio(CGSize(width: 1, height: 1.9),contentMode: .fill).ignoresSafeArea()
+                Image("field")
+                    .resizable()
+                    .aspectRatio(CGSize(width: 1, height: 1.9),contentMode: .fill)
+                    .ignoresSafeArea()
                 Rectangle().opacity(sheetNum == 1 ? 0 : 0.5).ignoresSafeArea()
                     .onTapGesture {
                         sheetNum -= 1
@@ -152,6 +158,14 @@ struct MapView: View {
                         Button(action:{
                             for i in 0...5 {
                                 if i == 0 {
+                                    if isDistanceCheck[i] {
+                                      
+                                        guard let club = JsonDataManager().searchClub(location: "Fairway & Rough", dxMin: 0 , dxMax: distance[i]+300) else {
+                                            return
+                                        }
+                                        jsonDataManager.selectedClub = club
+                                        //디스크립션 뷰 띄우기
+                                    }
                                     isDistanceCheck[i] = true
                                 }
                                 else {
