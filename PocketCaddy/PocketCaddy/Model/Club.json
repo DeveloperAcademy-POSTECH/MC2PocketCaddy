@@ -2,17 +2,17 @@
 [
     {
         "category": "wood",
-        "subname": "subname",
-        "length": 43.5,
         "location": "teeing ground",
         "name": "1번 우드",
+        "subName": "subname",
+        "length": 43.5,
         "distance": 220,
         "loft": 10,
         "description": "'드라이버(Driver)'라고 불림. 드라이버도 우드의 한 종류이지만 티샷 외에는 사용할 수 없다는 점 때문에 우드라고 부르지 않고 '드라이버'라고 부름. 가장 긴 샤프트와 가장 큰 헤드가 특성"
     },
     {
         "category": "wood",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "3번 우드",
@@ -22,7 +22,7 @@
     },
     {
         "category": "wood",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "4번 우드",
@@ -32,7 +32,7 @@
     },
     {
         "category": "wood",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "5번 우드",
@@ -42,7 +42,7 @@
     },
     {
         "category": "iron",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "3번 아이언",
@@ -52,7 +52,7 @@
     },
     {
         "category": "iron",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "4번 아이언",
@@ -62,7 +62,7 @@
     },
     {
         "category": "iron",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "5번 아이언",
@@ -72,7 +72,7 @@
     },
     {
         "category": "iron",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "6번 아이언",
@@ -82,7 +82,7 @@
     },
     {
         "category": "iron",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "7번 아이언",
@@ -92,7 +92,7 @@
     },
     {
         "category": "iron",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "8번 아이언",
@@ -102,7 +102,7 @@
     },
     {
         "category": "iron",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "9번 아이언",
@@ -112,7 +112,7 @@
     },
     {
         "category": "wedge",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "피칭 웨지",
@@ -122,7 +122,7 @@
     },
     {
         "category": "wedge",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "샌드 웨지",
@@ -132,11 +132,11 @@
     },
     {
         "category": "Putter",
-        "subname": "subname",
+        "subName": "subname",
         "length": 43.5,
         "location": "teeing ground",
         "name": "퍼터",
-        "distance": "",
+        "distance": 50,
         "loft": 5,
         "description": "퍼터는 자신의 기호에 맞는 것을 선호하는 편이다. 그린 위에서 홀컵 공략을 위해 사용하며 T자형, L자형, 핑(ping)형, 반원형 등이 있다. "
     }
