@@ -10,7 +10,8 @@ import Foundation
 class JsonDataManager: ObservableObject {
     static var jsonDataManager = JsonDataManager()
     @Published var clubData: [ClubModel] = []
-
+    @Published var selectedClub: ClubModel = ClubModel(category: "", location: "", name: "", subName: "", length: 0, distance: 0, loft: 0, description: "")
+    
     init() {
         self.getClubData()
     }
@@ -31,5 +32,19 @@ class JsonDataManager: ObservableObject {
             return
         }
         self.clubData = clubs
+    }
+    func searchClub(location: String, dxMin: Int?, dxMax: Int?) -> ClubModel? {
+        for index in 0 ..< clubData.count{
+            if location != "Fairway & Rough" && clubData[index].location == location {
+                return clubData[index]
+            } else if location == "Fairway & Rough" && clubData[index].location == location {
+                if let dxMinTemp = dxMin, let dxMaxTemp = dxMax {
+                    if dxMinTemp <= clubData[index].distance && clubData[index].distance < dxMaxTemp {
+                        return clubData[index]
+                    }
+                }
+            }
+        }
+        return nil
     }
 }
