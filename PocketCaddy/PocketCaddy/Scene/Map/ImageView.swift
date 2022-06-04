@@ -14,7 +14,7 @@ struct ImageView: View {
     @Binding var sheetNum : Int
     @Binding var environment : [String]
     var index: Int
-    var frameSize: (x:CGFloat,y:CGFloat)
+    var frameSize: [(x:CGFloat,y:CGFloat)] = [(x:80,y:80),(x:150,y:150),(x:150,y:100),(x:150,y:500)]
     
     var body: some View {
         Button(action: {
@@ -37,7 +37,7 @@ struct ImageView: View {
         }){
             Image(isCheck[index] ? selectedEnvironment[index] : environment[index])
                 .resizable()
-                .frame(width:frameSize.x , height: frameSize.y, alignment: .trailing)
+                .frame(width:frameSize[index].x , height: frameSize[index].y, alignment: .trailing)
                 .cornerRadius(15)
                 .opacity(isCheck[index] || (sheetNum != 2) ? 1 :  0.2)
         }

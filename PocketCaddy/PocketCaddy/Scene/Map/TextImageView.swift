@@ -15,8 +15,8 @@ struct TextImageView: View {
     @Binding var environment : [String]
     @Binding var textEnvironment : [String]
     var index: Int
-    var textFrameSize: (x:CGFloat,y:CGFloat)
-    
+    var textFrameSize: [(x:CGFloat,y:CGFloat)] = [(x:150,y:80),(x:100,y:80),(x:100,y:70),(x:200,y:80)]
+
     var body: some View {
         Button(action: {
             for i in 0...3 {
@@ -38,7 +38,7 @@ struct TextImageView: View {
         }){
             Image(textEnvironment[index])
                 .resizable()
-                .frame(width:textFrameSize.x , height: textFrameSize.y, alignment: .trailing)
+                .frame(width:textFrameSize[index].x , height: textFrameSize[index].y, alignment: .trailing)
                 .cornerRadius(15)
                 .opacity(isCheck[index] || (sheetNum != 2) ? 1 :  0.2)
         }
