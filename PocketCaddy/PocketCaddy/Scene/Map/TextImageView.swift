@@ -25,7 +25,7 @@ struct TextImageView: View {
                         sheetNum = 3
                         return
                     }
-                    if isCheck[i]{
+                    if isCheck[i] {
                         sheetNum = 2
                         return
                     }

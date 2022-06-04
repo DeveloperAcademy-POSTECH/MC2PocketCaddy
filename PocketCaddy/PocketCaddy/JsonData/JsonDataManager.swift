@@ -33,18 +33,42 @@ class JsonDataManager: ObservableObject {
         }
         self.clubData = clubs
     }
-    func searchClub(location: String, dxMin: Int?, dxMax: Int?) -> ClubModel? {
+    
+    func searchClub(location: String, selectedDistance: Distance) {
+        let dxMin: Int?
+        let dxMax: Int?
+        
+        switch selectedDistance {
+        case .zero:
+            dxMin = 0
+            dxMax = 49
+        case .fifty:
+            dxMin = 50
+            dxMax = 99
+        case .hundred:
+            dxMin = 100
+            dxMax = 149
+        case .hundredFifty:
+            dxMin = 150
+            dxMax = 199
+        case .twoHundred:
+            dxMin = 200
+            dxMax = 299
+        case .threeHundred:
+            dxMin = 300
+            dxMax = 500
+        }
+        
         for index in 0 ..< clubData.count{
             if location != "Fairway & Rough" && clubData[index].location == location {
-                return clubData[index]
+                selectedClub = clubData[index]
             } else if location == "Fairway & Rough" && clubData[index].location == location {
                 if let dxMinTemp = dxMin, let dxMaxTemp = dxMax {
                     if dxMinTemp <= clubData[index].distance && clubData[index].distance < dxMaxTemp {
-                        return clubData[index]
+                        selectedClub = clubData[index]
                     }
                 }
             }
         }
-        return nil
     }
 }
