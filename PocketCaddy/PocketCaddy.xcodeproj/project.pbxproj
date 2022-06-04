@@ -24,7 +24,6 @@
 		89544A4528474ED100423D0A /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 89544A4028473EF700423D0A /* SampleData.json */; };
 		BAAF76332845F5BB0027504A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF76322845F5BB0027504A /* MapView.swift */; };
 		EE4BB1AF284A61770087DD48 /* DescriptionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4BB1AE284A61770087DD48 /* DescriptionExtension.swift */; };
-		EE4BB1CF284B45DF0087DD48 /* BeforeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4BB1CE284B45DF0087DD48 /* BeforeView.swift */; };
 		EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58B4862845FCD500744D64 /* DescriptionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +65,6 @@
 		89544A432847436300423D0A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		BAAF76322845F5BB0027504A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		EE4BB1AE284A61770087DD48 /* DescriptionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionExtension.swift; sourceTree = "<group>"; };
-		EE4BB1CE284B45DF0087DD48 /* BeforeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeView.swift; sourceTree = "<group>"; };
 		EE58B4862845FCD500744D64 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,7 +177,6 @@
 				0A2706482845E96800168C40 /* ContentView.swift */,
 				BAAF76322845F5BB0027504A /* MapView.swift */,
 				EE58B4862845FCD500744D64 /* DescriptionView.swift */,
-				EE4BB1CE284B45DF0087DD48 /* BeforeView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				0A2706492845E96800168C40 /* ContentView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
-				EE4BB1CF284B45DF0087DD48 /* BeforeView.swift in Sources */,
 				89544A3A28473E3100423D0A /* SampleReader.swift in Sources */,
 				EE4BB1AF284A61770087DD48 /* DescriptionExtension.swift in Sources */,
 				0AC19CFC28489CB600727BE6 /* JsonDataManager.swift in Sources */,
