@@ -10,105 +10,114 @@ import SwiftUI
 struct DescriptionView: View {
     @EnvironmentObject var jsonDataManager : JsonDataManager
     
-    
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width: 310, height: 430)
-                .foregroundColor(.secondaryGreen)
+            // green rectangle components
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(width: 310, height: 430)
+                    .foregroundColor(.secondaryGreen)
+                
+                // club image and title
+                VStack {
+                    HStack(alignment: .bottom, spacing: -90) {
+                        VStack(alignment: .leading) {
+                            Text(jsonDataManager.selectedClub.name)
+                                .foregroundColor(.white)
+                                .font(.system(size: 40, weight: .bold))
+                            
+                            Capsule()
+                                .foregroundColor(.white)
+                                .frame(width: 90, height: 35)
+                                .overlay(
+                                    Text(jsonDataManager.selectedClub.subName)
+                                        .foregroundColor(.secondaryGreen)
+                                        .fontWeight(.bold)
+                                )
+                        }
+                        Image("DriverClubSample")
+                        
+                    }
+                    .offset(x: 0, y: -50)
+                    
+                    HStack (spacing: 40) {
+                        VStack {
+                            Text("Length")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            HStack(spacing: 5) {
+                                Text("\(jsonDataManager.selectedClub.length.truncateDoubleTail())")
+                                    .font(.system(size: 20, weight: .bold))
+                                    .foregroundColor(.white)
+                                
+                                Text("cm")
+                                    .foregroundColor(.white)
+                                
+                            }
+                        }
+                        .padding(.vertical, 50)
+                        
+                        InfoComponent(title: "Loft", otherValue: "\(jsonDataManager.selectedClub.loft)", unitValue: "°")
+                        InfoComponent(title: "Distance", otherValue: "\(jsonDataManager.selectedClub.distance)", unitValue: "m")
+
+                    }
+                    .offset(x: 0, y: -30)
+                }
+                
+            }
             
             Spacer()
             
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width: 310, height: 120)
-                .foregroundColor(.grayBackground)
+            // gray rectangle components
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(width: 310, height: 120)
+                    .foregroundColor(.grayBackground)
+                
+                VStack(alignment: .leading, spacing: 15) {
+                    Text("💡Tip")
+                        .font(.system(size: 22))
+                    
+                    Text("\(jsonDataManager.selectedClub.description)")
+                        .font(.system(size: 16))
+                    
+                }
+                .padding(.horizontal, 50)
+            }
                 
         }
         .padding(.vertical, 90)
         
-//        VStack {
-//            Text(jsonDataManager.selectedClub.category)
-//                .font(.system(
-//                    size: 25,
-//                    weight: .medium)
-//                )
-//            .padding(.horizontal, 20)
-//            .frame(maxWidth: .infinity, alignment: .leading)
-//
-//            // Sample Image
-//            Image(systemName: "pencil")
-//                .resizable()
-//                .frame(width: 300, height: 300)
-//
-//            //Club details
-//            Title(title: jsonDataManager.selectedClub.name)
-//
-//            // Horizontal Separator
-//            HorizontalSeparator()
-//
-//            // Distance, Loft, Length info
-//            HStack (spacing: 100) {
-//                VStack {
-//                    Text("Length")
-//                        .font(.system(size: 17, weight: .medium))
-//                    Text("\(jsonDataManager.selectedClub.length.truncateDoubleTail())")
-//                }
-//
-//                InfoComponent(title: "Distance", otherValue: jsonDataManager.selectedClub.distance)
-//                InfoComponent(title: "Loft", otherValue: jsonDataManager.selectedClub.loft)
-//            }
-//
-//            HorizontalSeparator()
-//
-//            Group {
-//                Title(title: "Description")
-//
-//                Text(jsonDataManager.selectedClub.description)
-//                    .padding(.horizontal, 15)
-//            }
-//
-//        }// VStack
-    }// body
-}// DescriptionView
-
-struct DescriptionView_Previews: PreviewProvider {
-    static var previews: some View {
-        DescriptionView()
     }
 }
 
-//struct HorizontalSeparator: View {
-//    var body: some View {
-//        Rectangle()
-//            .frame(width: 350, height: 1)
-//            .foregroundColor(.gray)
-//            .padding(.vertical, 5)
-//    }
-//}
-
 struct InfoComponent: View {
-    
     let title: String
-    var otherValue: Int
-    
+    var otherValue: String
+    var unitValue: String
+
     var body: some View {
         VStack {
             Text(title)
-                .font(.system(size: 17, weight: .medium))
-            Text("\(otherValue)")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.white)
+            
+            Spacer()
+            
+            HStack(spacing: 5) {
+                Text(otherValue)
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
+                
+                Text(unitValue)
+                    .foregroundColor(.white)
+            }
+            
         }
-    }
-}
-
-struct Title: View {
-    
-    let title: String
-    
-    var body: some View {
-        Text(title)
-            .padding(.horizontal, 20)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.system(size: 20, weight: .medium))
+        .padding(.vertical, 50)
     }
 }
 
@@ -117,7 +126,13 @@ extension Double {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         guard let resultVal = numberFormatter.string(for: NSNumber(value: self)) else {return ""}
-        
+
         return resultVal
+    }
+}
+
+struct DescriptionView_Previews: PreviewProvider {
+    static var previews: some View {
+        DescriptionView()
     }
 }
