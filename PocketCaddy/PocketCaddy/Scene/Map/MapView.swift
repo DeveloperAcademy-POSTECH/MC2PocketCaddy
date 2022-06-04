@@ -11,9 +11,12 @@ import SwiftUI
 struct MapView: View {
     var offset: [(x:CGFloat,y:CGFloat)] = [(x:100,y:270),(x:160,y:0),(x:-20,y:-300),(x:-10,y:0)]
     var frameSize: [(x:CGFloat,y:CGFloat)] = [(x:80,y:80),(x:150,y:150),(x:150,y:100),(x:150,y:500)]
+    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:210),(x:120,y:-20),(x:60,y:-300),(x:40,y:-180)]
+    var textFrameSize: [(x:CGFloat,y:CGFloat)] = [(x:150,y:80),(x:100,y:80),(x:100,y:70),(x:200,y:80)]
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
     @State var environment : [String] = ["teeingGround","bunker","green","rough"]
+    @State var textEnvironment : [String] = ["teeingGroundText","bunkerText","greenText","roughText"]
     @State var selectedEnvironment : [String] = ["selectedTeeingGround","selectedBunker","selectedGreen","selectedRough"]
     @State var distance : [[Int]] = [[50,99], [100,149], [150,199], [200,249], [250,299], [300,500]]
     @State var isCheck : [Bool] = [true,false,false,false]
@@ -47,181 +50,9 @@ struct MapView: View {
                     ForEach(0..<4) {i in
                         ImageView(isCheck: $isCheck, selectedEnvironment: $selectedEnvironment, sheetNum: $sheetNum, environment: $environment,index: i, frameSize: frameSize[i]).offset(x: offset[i].x, y: offset[i].y)
                     }
-                    
-//                    Button(action: {
-//                        for i in 0...3 {
-//                            if i == 1 {
-//                                if isCheck[i] && sheetNum == 2 {
-//                                    sheetNum = 3
-//                                    return
-//                                }
-//                                if isCheck[i]{
-//                                    sheetNum = 2
-//                                    return
-//                                }
-//                                isCheck[i] = true
-//                            }
-//                            else {
-//                                isCheck[i] = false
-//                            }
-//                        }
-//                    }){
-//                        Image(isCheck[1] ? selectedEnvironment[1] : environment[1])
-//                            .resizable()
-//                            .frame(width: 150, height: 150, alignment: .trailing)
-//                            .cornerRadius(15)
-//                            .opacity(isCheck[1] || (sheetNum != 2) ? 1 :  0.2)
-//                    }           .offset(x: 160, y: 0)
-//
-//                    Button(action: {
-//                        for i in 0...3 {
-//                            if i == 2 {
-//                                if isCheck[i] && sheetNum == 2 {
-//                                    sheetNum = 3
-//                                    return
-//                                }
-//                                if isCheck[i]{
-//                                    sheetNum = 2
-//                                    return
-//                                }
-//                                isCheck[i] = true
-//                            }
-//                            else {
-//                                isCheck[i] = false
-//                            }
-//                       }
-//                    }){
-//                        Image(isCheck[2] ? selectedEnvironment[2] : environment[2])
-//                            .resizable()
-//                            .frame(width: 150, height: 100, alignment: .trailing)
-//                            .cornerRadius(15)
-//                            .opacity(isCheck[2] || (sheetNum != 2) ? 1 :  0.2)
-//                    }.offset(x: -20, y: -300)
-//
-//                    Button(action: {
-//                        for i in 0...3 {
-//                            if i == 3 {
-//                                if isCheck[i] && sheetNum == 2 {
-//                                    sheetNum = 3
-//                                    return
-//                                }
-//                                if isCheck[i]{
-//                                    sheetNum = 2
-//                                    return
-//                                }
-//                                isCheck[i] = true
-//                            }
-//                            else {
-//                                isCheck[i] = false
-//                            }
-//                        }
-//                    }){
-//                        Image(isCheck[3] ? selectedEnvironment[3] : environment[3])
-//                            .resizable()
-//                            .frame(width: 150, height: 500, alignment: .trailing)
-//                            .cornerRadius(15)
-//                            .opacity(isCheck[3] || (sheetNum != 2) ? 1 :  0.2)
-//                    }           .offset(x: -10, y: 0)
-//
-                    Button(action: {
-                            for i in 0...3 {
-                                if i == 0 {
-                                    if isCheck[i] && sheetNum == 2 {
-                                        sheetNum = 3
-                                        return
-                                    }
-                                    if isCheck[i]{
-                                        sheetNum = 2
-                                        return
-                                    }
-                                    isCheck[i] = true
-                                }
-                                else {
-                                    isCheck[i] = false
-                                }
-                            }
-                    }){
-                        Image("teeingGroundText")
-                            .resizable()
-                            .frame(width: 150, height: 80, alignment: .trailing)
-                            .cornerRadius(15)
-                            .opacity(isCheck[0] || (sheetNum != 2) ? 1 :  0.2)
-                    }.offset(x: 80, y: 210)
-                    
-                    Button(action: {
-                        for i in 0...3 {
-                            if i == 1 {
-                                if isCheck[i] && sheetNum == 2 {
-                                    sheetNum = 3
-                                    return
-                                }
-                                if isCheck[i]{
-                                    sheetNum = 2
-                                    return
-                                }
-                                isCheck[i] = true
-                            }
-                            else {
-                                isCheck[i] = false
-                            }
-                        }
-                    }){
-                        Image("bunkerText")
-                            .resizable()
-                            .frame(width: 100, height: 80, alignment: .trailing)
-                            .cornerRadius(15)
-                            .opacity(isCheck[1] || (sheetNum != 2) ? 1 :  0.2)
-                    }           .offset(x: 120, y: -20)
-                    
-                    Button(action: {
-                        for i in 0...3 {
-                            if i == 2 {
-                                if isCheck[i] && sheetNum == 2 {
-                                    sheetNum = 3
-                                    return
-                                }
-                                if isCheck[i]{
-                                    sheetNum = 2
-                                    return
-                                }
-                                isCheck[i] = true
-                            }
-                            else {
-                                isCheck[i] = false
-                            }
-                       }
-                    }){
-                        Image("greenText")
-                            .resizable()
-                            .frame(width: 100, height: 70, alignment: .trailing)
-                            .cornerRadius(15)
-                            .opacity(isCheck[2] || (sheetNum != 2) ? 1 :  0.2)
-                    }           .offset(x: 60, y: -300)
-                    
-                    Button(action: {
-                        for i in 0...3 {
-                            if i == 3 {
-                                if isCheck[i] && sheetNum == 2 {
-                                    sheetNum = 3
-                                    return
-                                }
-                                if isCheck[i]{
-                                    sheetNum = 2
-                                    return
-                                }
-                                isCheck[i] = true
-                            }
-                            else {
-                                isCheck[i] = false
-                            }
-                        }
-                    }){
-                        Image("roughText")
-                            .resizable()
-                            .frame(width: 200, height: 80, alignment: .trailing)
-                            .cornerRadius(15)
-                            .opacity(isCheck[3] || (sheetNum != 2) ? 1 :  0.2)
-                    }           .offset(x: 40, y: -180)
+                    ForEach(0..<4) {i in
+                        TextImageView(isCheck: $isCheck, selectedEnvironment: $selectedEnvironment, sheetNum: $sheetNum, environment: $environment,textEnvironment: $textEnvironment, index: i, textFrameSize: textFrameSize[i]).offset(x: textImageOffset[i].x, y: textImageOffset[i].y)
+                    }
                 }
             }
 
@@ -389,10 +220,3 @@ struct MapView: View {
   
     } // body
 } // View
-
-//
-//struct MapView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MapView(, index: <#Int#>)
-//    }
-//}
