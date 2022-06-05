@@ -36,7 +36,6 @@ struct DescriptionView: View {
                                 )
                         }
                         Image("DriverClubSample")
-                        
                     }
                     .offset(x: 0, y: -50)
                     
@@ -61,14 +60,11 @@ struct DescriptionView: View {
                         .padding(.vertical, 50)
                         
                         InfoComponent(title: "Loft", otherValue: "\(clubDataManager.selectedClub.loft)", unitValue: "°")
-                        InfoComponent(title: "Distance", otherValue: "\(clubDataManager.selectedClub.distance)", unitValue: "m")
-
+                        InfoComponent(title: "Distance", otherValue: clubDataManager.selectedClub.distance!.description, unitValue: "m")
                     }
                     .offset(x: 0, y: -30)
                 }
-                
             }
-            
             Spacer()
             
             // gray rectangle components
@@ -83,14 +79,12 @@ struct DescriptionView: View {
                     
                     Text("\(clubDataManager.selectedClub.description)")
                         .font(.system(size: 16))
-                    
                 }
                 .padding(.horizontal, 50)
             }
                 
         }
         .padding(.vertical, 90)
-        
     }
 }
 
