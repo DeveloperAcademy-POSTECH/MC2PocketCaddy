@@ -3,141 +3,191 @@
     {
         "category": "wood",
         "location": "teeing ground",
-        "name": "1번 우드",
-        "subName": "subname",
+        "name": "Wood 1",
+        "subName": "Driver",
         "length": 43.5,
         "distance": 220,
         "loft": 10,
-        "description": "'드라이버(Driver)'라고 불림. 드라이버도 우드의 한 종류이지만 티샷 외에는 사용할 수 없다는 점 때문에 우드라고 부르지 않고 '드라이버'라고 부름. 가장 긴 샤프트와 가장 큰 헤드가 특성"
+        "description": "드라이버는 클럽의 헤드가 머리보다 앞에서 친다는 느낌으로 스윙하기"
     },
     {
         "category": "wood",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "3번 우드",
+        "location": "fairway & rough",
+        "name": "Wood 2",
+        "subName": "Brassie",
+        "length": 42,
+        "distance": 210,
+        "loft": 13,
+        "description": "드라이버보다 로프트가 3도정도 높아서 좌우로 휘는 정도가 적고 길이가 3인치 정도 짧아서 빗맞을 확률이 낮음"
+    },
+    {
+        "category": "wood",
+        "location": "fairway & rough",
+        "name": "Wood 3",
+        "subName": "Spoon",
+        "length": 41.5,
         "distance": 200,
         "loft": 16,
-        "description": "초창기 모양이 숟가락처럼 생겨 '스푼(Spoon)'이라고 불림. "
+        "description": "다운블로우 (클럽 헤드가 공보다 아래로 들어가게 치는 것)로 찍어 쳐야 정확한 임팩트가 나옴"
     },
     {
         "category": "wood",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "4번 우드",
+        "location": "fairway & rough",
+        "name": "Wood 4",
+        "subName": "Buffy",
+        "length": 41,
         "distance": 190,
         "loft": 19,
-        "description": "'버피(Baffy)'라고 불림."
+        "description": "볼을 견실하게 치기 쉽고 백스핀도 더 많이 걸려 볼이 오랫동안 공중에 머물러있게 해줌"
     },
     {
         "category": "wood",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "5번 우드",
+        "location": "fairway & rough",
+        "name": "Wood 5",
+        "subName": "Cleek",
+        "length": 40.5,
         "distance": 170,
         "loft": 22,
-        "description": "'클리크(Cleek)'라고 불림."
+        "description": "공이 들려맞지 않도록 찍어치고 피니시까지 스윙을 연결하기"
     },
     {
         "category": "iron",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "3번 아이언",
+        "location": "fairway & rough",
+        "name": "Iron 1",
+        "subName": "Driving Iron",
+        "length": 39,
+        "distance": 190,
+        "loft": 18,
+        "description": "페어웨이가 좁고 빠른 코스에서 매우 효과적, 그린을 공략해야 하는 상황에서 사용"
+    },
+    {
+        "category": "iron",
+        "location": "fairway & rough",
+        "name": "Iron 2",
+        "subName": "Mid Iron",
+        "length": 38.5,
+        "distance": 180,
+        "loft": 20,
+        "description": "좁거나 바람이 많이 불어서 낮은 탄도를 쳐야하는 상황에서 애용"
+    },
+    {
+        "category": "iron",
+        "location": "fairway & rough",
+        "name": "Iron 3",
+        "subName": "Mid Mashy",
+        "length": 38,
         "distance": 170,
         "loft": 24,
-        "description": "롱 아이언 중 하나. '미드 매쉬(Mid Mashy)'라고 불림."
+        "description": "왼쪽에 중심을 두고 내리는 동작에서 헤드가 뚝 떨어지는 느낌으로 치기"
     },
     {
         "category": "iron",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "4번 아이언",
+        "location": "fairway & rough",
+        "name": "Iron 4",
+        "subName": "Mashy Iron",
+        "length": 37.5,
         "distance": 160,
         "loft": 28,
-        "description": "미들 아이언에 속하며, '매쉬 아이언(Mashy Iron)'이라고 불림."
+        "description": "왼손 엄지가 왼쪽 허벅지쪽에 올 때까진 끌어당기는 것처럼 치다가 후에 속도 올리기"
     },
     {
         "category": "iron",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "5번 아이언",
+        "location": "fairway & rough",
+        "name": "Iron 5",
+        "subName": "Mashy",
+        "length": 37,
         "distance": 150,
         "loft": 32,
-        "description": "미들 아이언에 속하며, '매쉬(Mashy)'이라고 불림."
+        "description": "가파르게 내려오는 게 아니라 몸통을 이용해서 공을 쓸어쳐준다는 느낌으로 치기"
     },
     {
         "category": "iron",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "6번 아이언",
+        "location": "fairway & rough",
+        "name": "Iron 6",
+        "subName": "Spade Mashy",
+        "length": 36.5,
         "distance": 140,
         "loft": 36,
-        "description": "미들 아이언에 속하며, '스페이드 매쉬(Spade Mashy)'이라고 불림."
+        "description": "정확성을 위해 폴로스루 (임팩트 후 양팔이 피니시 자세까지 도달하는 것)때 클럽 헤드가 타깃을 향하게 하기"
     },
     {
         "category": "iron",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "7번 아이언",
+        "location": "fairway & rough",
+        "name": "Iron 7",
+        "subName": "Mashy Niblick",
+        "length": 36,
         "distance": 130,
         "loft": 40,
-        "description": "숏 아이언에 속하며, '매쉬 니블릭(Mashy Niblick)'이라고 불림."
+        "description": "볼이 내 몸통 정중앙에 위치하도록 어드레스 (스윙 전 두 발 사이의 폭을 정하고 공을 겨누는 자세)하기"
     },
     {
         "category": "iron",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "8번 아이언",
+        "location": "fairway & rough",
+        "name": "Iron 8",
+        "subName": "Pitcher",
+        "length": 35.5,
         "distance": 120,
         "loft": 44,
-        "description": "숏 아이언에 속하며, '피칭 니블릭(Pitching Niblick)' 또는 '피처(Pitcher)'라고 불림."
+        "description": "스윙 크기에 대한 감각 훈련을 할 때 좋음. 1/2 크기 스윙과 3/4 크기의 스윙을 함"
     },
     {
         "category": "iron",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "9번 아이언",
+        "location": "fairway & rough",
+        "name": "Iron 9",
+        "subName": "Niblick",
+        "length": 35,
         "distance": 110,
         "loft": 48,
-        "description": "숏 아이언에 속하며, '니블릭(Niblick)'이라고 불림"
+        "description": "셋업을 할 때 왼발을 살짝 열고 스탠스 (스윙을 위한 두 발의 자리)의 방향대로 클럽을 이동시키기"
     },
     {
         "category": "wedge",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "피칭 웨지",
+        "location": "fairway & rough",
+        "name": "Pitching Wedge",
+        "subName": "P",
+        "length": 35,
         "distance": 80,
         "loft": 50,
-        "description": "피칭(Pitching) 웨지의 어원인 Pitch는 특정 지점을 목표로 한다는 의미. 골프에서는 그린을 목표로 하는 것을 뜻한다. 웨지 중에 로프트 각이 가장 낮기 때문에 웨지 중에 가장 긴 샷을 할 수 있는 클럽. 그린 주변에서 홀컵까지 거리가 있어 굴려야 하는 샷을 할 때 유용하게 사용."
+        "description": "그린을 목표로할 때 사용, 그린 주변에서 홀컵까지 거리가 있어 굴려야 하는 샷을 할 때 유용"
     },
     {
         "category": "wedge",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "샌드 웨지",
-        "distance": 60,
-        "loft": 56,
-        "description": "샌드라는 클럽 이름에서 알 수 있듯이, 벙커에서 주로 사용하는 클럽이며, 공을 띄워서 그림에 보내야 할 때 사용. 로프트각이 크기 때문에 그린 위에서 런이 별로 없음."
+        "location": "fairway & rough",
+        "name": "Approach Wedge",
+        "subName": "G",
+        "length": 35,
+        "distance": 80,
+        "loft": 53,
+        "description": "갭웨지로도 불리며 그린과 가까운 페어웨이 또는 러프에서 사용, 힘 조절을 통해 홀컵에 가깝게 붙이기"
     },
     {
-        "category": "Putter",
-        "subName": "subname",
-        "length": 43.5,
-        "location": "teeing ground",
-        "name": "퍼터",
-        "distance": 50,
+        "category": "wedge",
+        "location": "bunker",
+        "name": "Sand Wedge",
+        "subName": "S",
+        "length": 35,
+        "distance": 60,
+        "loft": 56,
+        "description": "벙커에서 볼을 잘 꺼낼 수 있도록 넓은 '플랜지(날개)'를 두어 디자인됨. 모래를 살짝 떠내며 치기"
+    },
+    {
+        "category": "wedge",
+        "location": "fairway & rough",
+        "name": "Lob Wedge",
+        "subName": "L",
+        "length": 34.5,
+        "distance": 70,
+        "loft": 60,
+        "description": "공의 탄도를 높게 하여 그린 위에 바로 멈추게 하기 위한 용도의 웨지. 맨땅에서는 플레이하지 않음"
+    },
+    {
+        "category": "putter",
+        "location": "green",
+        "name": "Putter",
+        "subName": "Putter",
+        "length": 34,
+        "distance": "",
         "loft": 5,
-        "description": "퍼터는 자신의 기호에 맞는 것을 선호하는 편이다. 그린 위에서 홀컵 공략을 위해 사용하며 T자형, L자형, 핑(ping)형, 반원형 등이 있다. "
+        "description": "그립을 짧게 잡고 하체 및 겨드랑이, 팔 하박, 소지에 힘을 주어 퍼팅하기"
     }
 ]
