@@ -18,7 +18,7 @@ struct MapView: View {
     @State var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     @State var isCheck : [Bool] = [true,false,false,false]
     @State var selectedDistance: Distance = .zero
-    @EnvironmentObject var jsonDataManager: JsonDataManager
+    @EnvironmentObject var clubDataManager: ClubDataManager
     
     var body: some View {
         NavigationView{
@@ -94,8 +94,8 @@ struct MapView: View {
                                         .bold()
                                 )
                         }.onTapGesture {
-                            JsonDataManager().searchClub(location: "teeingGround", selectedDistance: selectedDistance)
-                            
+                            clubDataManager.searchClub(location: "teeingGround", selectedDistance: selectedDistance)
+                            print(clubDataManager.selectedClub)
                         }
                     }
                     Spacer()

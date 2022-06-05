@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TextImageView: View {
-    @EnvironmentObject var jsonDataManager: JsonDataManager
+    @EnvironmentObject var clubDataManager: ClubDataManager
     @Binding var isCheck: [Bool]
     @Binding var selectedEnvironment: [String]
     @Binding var sheetNum : Int
