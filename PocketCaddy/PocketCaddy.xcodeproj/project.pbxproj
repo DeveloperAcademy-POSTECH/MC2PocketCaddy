@@ -18,12 +18,16 @@
 		0A2706722845EAD400168C40 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706712845EAD400168C40 /* ClubModel.swift */; };
 		0A2706762845EDA000168C40 /* Club.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2706752845EDA000168C40 /* Club.json */; };
 		0AC19CFC28489CB600727BE6 /* JsonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFB28489CB600727BE6 /* JsonDataManager.swift */; };
+		0AC19CFE284BCF9000727BE6 /* DistanceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFD284BCF9000727BE6 /* DistanceButtonView.swift */; };
 		89544A3A28473E3100423D0A /* SampleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A3928473E3100423D0A /* SampleReader.swift */; };
 		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
 		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
 		89544A4528474ED100423D0A /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 89544A4028473EF700423D0A /* SampleData.json */; };
 		BAAF76332845F5BB0027504A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF76322845F5BB0027504A /* MapView.swift */; };
 		EE4BB1AF284A61770087DD48 /* DescriptionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4BB1AE284A61770087DD48 /* DescriptionExtension.swift */; };
+		BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */; };
+		BACE9C3E284B3FB900A04E2D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3D284B3FB900A04E2D /* ImageView.swift */; };
+		BACE9C40284B496B00A04E2D /* TextImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3F284B496B00A04E2D /* TextImageView.swift */; };
 		EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58B4862845FCD500744D64 /* DescriptionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,12 +63,16 @@
 		0A2706712845EAD400168C40 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModel.swift; sourceTree = "<group>"; };
 		0A2706752845EDA000168C40 /* Club.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Club.json; sourceTree = "<group>"; };
 		0AC19CFB28489CB600727BE6 /* JsonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataManager.swift; sourceTree = "<group>"; };
+		0AC19CFD284BCF9000727BE6 /* DistanceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceButtonView.swift; sourceTree = "<group>"; };
 		89544A3928473E3100423D0A /* SampleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleReader.swift; sourceTree = "<group>"; };
 		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		89544A432847436300423D0A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		BAAF76322845F5BB0027504A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		EE4BB1AE284A61770087DD48 /* DescriptionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionExtension.swift; sourceTree = "<group>"; };
+		BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		BACE9C3D284B3FB900A04E2D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		BACE9C3F284B496B00A04E2D /* TextImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageView.swift; sourceTree = "<group>"; };
 		EE58B4862845FCD500744D64 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +124,7 @@
 		0A2706452845E96800168C40 /* PocketCaddy */ = {
 			isa = PBXGroup;
 			children = (
+				BACE9C3A284B3E1B00A04E2D /* Util */,
 				0AC19CFA28489AF200727BE6 /* JsonData */,
 				89544A3828473E1F00423D0A /* Tutorial */,
 				0A2706742845EC2600168C40 /* Scene */,
@@ -174,8 +183,8 @@
 		0A2706742845EC2600168C40 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				BACE9C41284B4EB700A04E2D /* Map */,
 				0A2706482845E96800168C40 /* ContentView.swift */,
-				BAAF76322845F5BB0027504A /* MapView.swift */,
 				EE58B4862845FCD500744D64 /* DescriptionView.swift */,
 			);
 			path = Scene;
@@ -198,6 +207,25 @@
 				89544A432847436300423D0A /* SampleView.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		BACE9C3A284B3E1B00A04E2D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		BACE9C41284B4EB700A04E2D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BAAF76322845F5BB0027504A /* MapView.swift */,
+				BACE9C3D284B3FB900A04E2D /* ImageView.swift */,
+				BACE9C3F284B496B00A04E2D /* TextImageView.swift */,
+				0AC19CFD284BCF9000727BE6 /* DistanceButtonView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,16 +360,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACE9C3E284B3FB900A04E2D /* ImageView.swift in Sources */,
 				89544A442847436300423D0A /* SampleView.swift in Sources */,
 				0A2706722845EAD400168C40 /* ClubModel.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				0A2706492845E96800168C40 /* ContentView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
+				BACE9C40284B496B00A04E2D /* TextImageView.swift in Sources */,
 				89544A3A28473E3100423D0A /* SampleReader.swift in Sources */,
 				EE4BB1AF284A61770087DD48 /* DescriptionExtension.swift in Sources */,
 				0AC19CFC28489CB600727BE6 /* JsonDataManager.swift in Sources */,
+				0AC19CFE284BCF9000727BE6 /* DistanceButtonView.swift in Sources */,
 				EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */,
 				094B84792849DE22002B0528 /* SearchLogic.swift in Sources */,
+				BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */,
 				89544A4228473F0B00423D0A /* SampleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
