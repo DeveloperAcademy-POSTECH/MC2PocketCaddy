@@ -10,9 +10,8 @@ import SwiftUI
 struct ImageView: View {
     @EnvironmentObject var clubDataManager: ClubDataManager
     @Binding var isCheck: [Bool]
-    @Binding var selectedEnvironment: [String]
     @Binding var sheetNum : Int
-    @Binding var environment : [String]
+    var location : [Location]
     var index: Int
     var frameSize: [(x:CGFloat,y:CGFloat)] = [(x:80,y:80),(x:150,y:150),(x:150,y:100),(x:150,y:500)]
     
@@ -35,7 +34,7 @@ struct ImageView: View {
                 }
             }
         }){
-            Image(isCheck[index] ? selectedEnvironment[index] : environment[index])
+            Image(isCheck[index] ? "selected" + location[index].rawValue : location[index].rawValue)
                 .resizable()
                 .frame(width:frameSize[index].x , height: frameSize[index].y, alignment: .trailing)
                 .cornerRadius(15)

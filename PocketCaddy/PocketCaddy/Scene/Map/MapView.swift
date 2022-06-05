@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct MapView: View {
+    var location : [Location] = Location.allCases
     var offset: [(x:CGFloat,y:CGFloat)] = [(x:100,y:270),(x:160,y:0),(x:-20,y:-300),(x:-10,y:0)]
     var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:210),(x:120,y:-20),(x:60,y:-300),(x:40,y:-180)]
+    var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
-    @State var environment : [String] = ["teeingGround","bunker","green","rough"]
-    @State var textEnvironment : [String] = ["teeingGroundText","bunkerText","greenText","roughText"]
-    @State var selectedEnvironment : [String] = ["selectedTeeingGround","selectedBunker","selectedGreen","selectedRough"]
-    @State var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     @State var isCheck : [Bool] = [true,false,false,false]
     @State var selectedDistance: Distance = .zero
     @EnvironmentObject var clubDataManager: ClubDataManager
@@ -42,12 +40,12 @@ struct MapView: View {
                     .offset(x: 150, y: -400)
 
                 ForEach(0..<4) {i in
-                    ImageView(isCheck: $isCheck, selectedEnvironment: $selectedEnvironment, sheetNum: $sheetNum, environment: $environment,index: i)
+                    ImageView(isCheck: $isCheck, sheetNum: $sheetNum, location: location, index: i)
                         .offset(x: offset[i].x, y: offset[i].y)
                 }
 
                 ForEach(0..<4) {i in
-                    TextImageView(isCheck: $isCheck, selectedEnvironment: $selectedEnvironment, sheetNum: $sheetNum, environment: $environment,textEnvironment: $textEnvironment, index: i)
+                    TextImageView(isCheck: $isCheck, sheetNum: $sheetNum, location: location, index: i)
                         .offset(x: textImageOffset[i].x, y: textImageOffset[i].y)
                 }
                 
@@ -82,7 +80,14 @@ struct MapView: View {
                             DistanceButtonView(buttonDistance: .threeHundred, selectedDistance: $selectedDistance)
                         }
                         
-                        NavigationLink(destination: DescriptionView()){
+                        NavigationLink(destination:
+                            DescriptionView()
+                                .onAppear {
+                                    //MARK: 선택한 location 반영되게 수정해야함.
+                                    clubDataManager.searchClub(location: .fairwayAndRough, selectedDistance: selectedDistance)
+                                    print(clubDataManager.selectedClub)
+                                }
+                        ){
                             RoundedRectangle(cornerRadius: 10)
                                 .frame(width: 100, height: 50)
                                 .foregroundColor(.primaryGreen)
@@ -93,9 +98,6 @@ struct MapView: View {
                                         .foregroundColor(.white)
                                         .bold()
                                 )
-                        }.onTapGesture {
-                            clubDataManager.searchClub(location: "teeingGround", selectedDistance: selectedDistance)
-                            print(clubDataManager.selectedClub)
                         }
                     }
                     Spacer()
@@ -105,13 +107,6 @@ struct MapView: View {
   
     } // body
 } // View
-
-enum Location: String {
-    case green = "green"
-    case fairwayAndRough = "rough"
-    case bunker = "bunker"
-    case teeingGround = "teeingGround"
-}
 
 enum Distance: String {
     case zero = "0~50"

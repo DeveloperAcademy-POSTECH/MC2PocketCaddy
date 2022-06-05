@@ -8,19 +8,26 @@
 import Foundation
 
 struct ClubModel: Codable {
-    let category: String
-    let location: String
+    let category: ClubCategory
+    let location: Location
     let name: String // ID
     let subName: String
     let length: Double
-    let distance: Int
+    let distance: Int?
     let loft: Int
     let description: String
 }
 
-enum ClubCategory: Codable {
+enum ClubCategory: String, Codable {
     case wood
     case iron
     case wedge
     case putter
+}
+
+enum Location: String, Codable, CaseIterable {
+    case teeingGround = "teeing ground"
+    case bunker = "bunker"
+    case green = "green"
+    case fairwayAndRough = "fairway & rough"
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class ClubDataManager: ObservableObject {
     @Published var clubData: [ClubModel] = []
-    @Published var selectedClub: ClubModel = ClubModel(category: "wood", location: "teeing ground", name: "Wood 1", subName: "Driver", length: 43.5, distance: 220, loft: 12, description: "드라이버는 클럽의 헤드가 머리보다 앞에서 친다는 느낌으로 스윙하기")
+    @Published var selectedClub: ClubModel = ClubModel(category: .wood, location: .fairwayAndRough, name: "Wood 1", subName: "Driver", length: 43.5, distance: 220, loft: 12, description: "드라이버는 클럽의 헤드가 머리보다 앞에서 친다는 느낌으로 스윙하기")
 
     init() {
         self.getClubData()
@@ -33,7 +33,7 @@ class ClubDataManager: ObservableObject {
         self.clubData = clubs
     }
     
-    func searchClub(location: String, selectedDistance: Distance) {
+    func searchClub(location: Location, selectedDistance: Distance) {
         let dxMin: Int?
         let dxMax: Int?
         
@@ -58,15 +58,21 @@ class ClubDataManager: ObservableObject {
             dxMax = 500
         }
         
-        for index in 0 ..< clubData.count{
-            if location != "Fairway & Rough" && clubData[index].location == location {
-                selectedClub = clubData[index]
-            } else if location == "Fairway & Rough" && clubData[index].location == location {
+        for clubData in self.clubData {
+            
+            if location != Location.fairwayAndRough && clubData.location == location {
+                selectedClub = clubData
+                
+            } else if location == Location.fairwayAndRough && clubData.location == location {
+                
                 if let dxMinTemp = dxMin, let dxMaxTemp = dxMax {
-                    if dxMinTemp <= clubData[index].distance && clubData[index].distance < dxMaxTemp {
-                        selectedClub = clubData[index]
+                    guard let distance = clubData.distance else { break }
+                    
+                    if dxMinTemp <= distance && distance < dxMaxTemp {
+                        selectedClub = clubData
                     }
                 }
+                
             }
         }
     }

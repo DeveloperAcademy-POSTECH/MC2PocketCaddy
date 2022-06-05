@@ -10,10 +10,8 @@ import SwiftUI
 struct TextImageView: View {
     @EnvironmentObject var clubDataManager: ClubDataManager
     @Binding var isCheck: [Bool]
-    @Binding var selectedEnvironment: [String]
     @Binding var sheetNum : Int
-    @Binding var environment : [String]
-    @Binding var textEnvironment : [String]
+    var location : [Location]
     var index: Int
     var textFrameSize: [(x:CGFloat,y:CGFloat)] = [(x:150,y:80),(x:100,y:80),(x:100,y:70),(x:200,y:80)]
 
@@ -36,7 +34,7 @@ struct TextImageView: View {
                 }
             }
         }){
-            Image(textEnvironment[index])
+            Image(location[index].rawValue + "Text")
                 .resizable()
                 .frame(width:textFrameSize[index].x , height: textFrameSize[index].y, alignment: .trailing)
                 .cornerRadius(15)
