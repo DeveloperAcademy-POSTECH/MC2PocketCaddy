@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706462845E96800168C40 /* PocketCaddyApp.swift */; };
-		0A2706492845E96800168C40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706482845E96800168C40 /* ContentView.swift */; };
 		0A27064B2845E96900168C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A27064A2845E96900168C40 /* Assets.xcassets */; };
 		0A27064E2845E96900168C40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A27064D2845E96900168C40 /* Preview Assets.xcassets */; };
 		0A2706582845E96900168C40 /* PocketCaddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706572845E96900168C40 /* PocketCaddyTests.swift */; };
@@ -50,7 +49,6 @@
 /* Begin PBXFileReference section */
 		0A2706432845E96800168C40 /* PocketCaddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketCaddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2706462845E96800168C40 /* PocketCaddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCaddyApp.swift; sourceTree = "<group>"; };
-		0A2706482845E96800168C40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0A27064A2845E96900168C40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A27064D2845E96900168C40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A2706532845E96900168C40 /* PocketCaddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketCaddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,11 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				89544A3828473E1F00423D0A /* Tutorial */,
+				0A2706732845EC1D00168C40 /* LifeCycle */,
 				BACE9C3A284B3E1B00A04E2D /* Util */,
 				0A2706742845EC2600168C40 /* Scene */,
-				0A2706732845EC1D00168C40 /* LifeCycle */,
 				0A2706702845EAC100168C40 /* Model */,
-				0A27064A2845E96900168C40 /* Assets.xcassets */,
 				0A27064C2845E96900168C40 /* Preview Content */,
 			);
 			path = PocketCaddy;
@@ -179,7 +176,6 @@
 			children = (
 				BACE9C41284B4EB700A04E2D /* Map */,
 				0AC19D01284D146300727BE6 /* Description */,
-				0A2706482845E96800168C40 /* ContentView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -216,6 +212,7 @@
 		BACE9C3A284B3E1B00A04E2D /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				0A27064A2845E96900168C40 /* Assets.xcassets */,
 				BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */,
 				0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */,
 			);
@@ -370,7 +367,6 @@
 				89544A442847436300423D0A /* SampleView.swift in Sources */,
 				0A2706722845EAD400168C40 /* ClubModel.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
-				0A2706492845E96800168C40 /* ContentView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
 				BACE9C40284B496B00A04E2D /* TextImageView.swift in Sources */,
 				89544A3A28473E3100423D0A /* SampleReader.swift in Sources */,
