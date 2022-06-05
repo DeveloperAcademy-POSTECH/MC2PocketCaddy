@@ -121,16 +121,6 @@ struct InfoComponent: View {
     }
 }
 
-extension Double {
-    func truncateDoubleTail() -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        guard let resultVal = numberFormatter.string(for: NSNumber(value: self)) else {return ""}
-
-        return resultVal
-    }
-}
-
 struct DescriptionView_Previews: PreviewProvider {
     static var previews: some View {
         DescriptionView()

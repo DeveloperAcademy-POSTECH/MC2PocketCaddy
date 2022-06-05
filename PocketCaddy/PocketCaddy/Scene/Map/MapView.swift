@@ -18,7 +18,6 @@ struct MapView: View {
     @State var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     @State var isCheck : [Bool] = [true,false,false,false]
     @State var selectedDistance: Distance = .zero
-    //@State var isDistanceCheck : [Bool] = [true, false, false, false, false, false]
     @EnvironmentObject var jsonDataManager: JsonDataManager
     
     var body: some View {
