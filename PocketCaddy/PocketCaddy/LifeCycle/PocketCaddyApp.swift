@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct PocketCaddyApp: App {
-    @StateObject var jsonDataManager: JsonDataManager =  JsonDataManager()
+    @StateObject var jsonDataManager: ClubDataManager =  ClubDataManager()
     
     var body: some Scene {
         WindowGroup {
-            DescriptionView()
+            MapView()
                 .environmentObject(jsonDataManager)
             //            SampleView()
         }

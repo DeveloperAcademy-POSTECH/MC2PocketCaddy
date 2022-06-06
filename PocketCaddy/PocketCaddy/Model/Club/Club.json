@@ -186,7 +186,7 @@
         "name": "Putter",
         "subName": "Putter",
         "length": 34,
-        "distance": "",
+        "distance": null,
         "loft": 5,
         "description": "그립을 짧게 잡고 하체 및 겨드랑이, 팔 하박, 소지에 힘을 주어 퍼팅하기"
     }

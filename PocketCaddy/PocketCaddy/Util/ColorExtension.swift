@@ -1,11 +1,10 @@
 //
-//  DescriptionExtension.swift
+//  ColorExtention.swift
 //  PocketCaddy
 //
-//  Created by 유정인 on 2022/06/04.
+//  Created by Byeon jinha on 2022/06/04.
 //
 
-import Foundation
 import SwiftUI
 
 extension Color {

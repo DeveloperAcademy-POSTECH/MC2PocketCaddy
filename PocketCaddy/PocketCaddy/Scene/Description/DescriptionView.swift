@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DescriptionView: View {
-    @EnvironmentObject var jsonDataManager : JsonDataManager
+    @EnvironmentObject var clubDataManager : ClubDataManager
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct DescriptionView: View {
                 VStack {
                     HStack(alignment: .bottom, spacing: -90) {
                         VStack(alignment: .leading) {
-                            Text(jsonDataManager.selectedClub.name)
+                            Text(clubDataManager.selectedClub.name)
                                 .foregroundColor(.white)
                                 .font(.system(size: 40, weight: .bold))
                             
@@ -30,13 +30,12 @@ struct DescriptionView: View {
                                 .foregroundColor(.white)
                                 .frame(width: 90, height: 35)
                                 .overlay(
-                                    Text(jsonDataManager.selectedClub.subName)
+                                    Text(clubDataManager.selectedClub.subName)
                                         .foregroundColor(.secondaryGreen)
                                         .fontWeight(.bold)
                                 )
                         }
                         Image("DriverClubSample")
-                        
                     }
                     .offset(x: 0, y: -50)
                     
@@ -49,7 +48,7 @@ struct DescriptionView: View {
                             Spacer()
                             
                             HStack(spacing: 5) {
-                                Text("\(jsonDataManager.selectedClub.length.truncateDoubleTail())")
+                                Text("\(clubDataManager.selectedClub.length.truncateDoubleTail())")
                                     .font(.system(size: 20, weight: .bold))
                                     .foregroundColor(.white)
                                 
@@ -60,15 +59,12 @@ struct DescriptionView: View {
                         }
                         .padding(.vertical, 50)
                         
-                        InfoComponent(title: "Loft", otherValue: "\(jsonDataManager.selectedClub.loft)", unitValue: "°")
-                        InfoComponent(title: "Distance", otherValue: "\(jsonDataManager.selectedClub.distance)", unitValue: "m")
-
+                        InfoComponent(title: "Loft", otherValue: "\(clubDataManager.selectedClub.loft)", unitValue: "°")
+                        InfoComponent(title: "Distance", otherValue: clubDataManager.selectedClub.distance!.description, unitValue: "m")
                     }
                     .offset(x: 0, y: -30)
                 }
-                
             }
-            
             Spacer()
             
             // gray rectangle components
@@ -81,16 +77,14 @@ struct DescriptionView: View {
                     Text("💡Tip")
                         .font(.system(size: 22))
                     
-                    Text("\(jsonDataManager.selectedClub.description)")
+                    Text("\(clubDataManager.selectedClub.description)")
                         .font(.system(size: 16))
-                    
                 }
                 .padding(.horizontal, 50)
             }
                 
         }
         .padding(.vertical, 90)
-        
     }
 }
 
@@ -118,16 +112,6 @@ struct InfoComponent: View {
             
         }
         .padding(.vertical, 50)
-    }
-}
-
-extension Double {
-    func truncateDoubleTail() -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        guard let resultVal = numberFormatter.string(for: NSNumber(value: self)) else {return ""}
-
-        return resultVal
     }
 }
 
