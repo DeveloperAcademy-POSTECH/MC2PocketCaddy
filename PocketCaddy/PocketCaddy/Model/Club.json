@@ -3,7 +3,7 @@
     {
         "category": "wood",
         "location": "teeing ground",
-        "name": "Wood 1",
+        "name": "1-Wood",
         "subName": "Driver",
         "length": 43.5,
         "distance": 220,
@@ -13,7 +13,7 @@
     {
         "category": "wood",
         "location": "fairway & rough",
-        "name": "Wood 2",
+        "name": "2-Wood",
         "subName": "Brassie",
         "length": 42,
         "distance": 210,
@@ -23,7 +23,7 @@
     {
         "category": "wood",
         "location": "fairway & rough",
-        "name": "Wood 3",
+        "name": "3-Wood",
         "subName": "Spoon",
         "length": 41.5,
         "distance": 200,
@@ -33,7 +33,7 @@
     {
         "category": "wood",
         "location": "fairway & rough",
-        "name": "Wood 4",
+        "name": "4-Wood",
         "subName": "Buffy",
         "length": 41,
         "distance": 190,
@@ -43,7 +43,7 @@
     {
         "category": "wood",
         "location": "fairway & rough",
-        "name": "Wood 5",
+        "name": "5-Wood",
         "subName": "Cleek",
         "length": 40.5,
         "distance": 170,
@@ -53,7 +53,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 1",
+        "name": "1-Iron",
         "subName": "Driving Iron",
         "length": 39,
         "distance": 190,
@@ -63,7 +63,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 2",
+        "name": "2-Iron",
         "subName": "Mid Iron",
         "length": 38.5,
         "distance": 180,
@@ -73,7 +73,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 3",
+        "name": "3-Iron",
         "subName": "Mid Mashy",
         "length": 38,
         "distance": 170,
@@ -83,7 +83,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 4",
+        "name": "4-Iron",
         "subName": "Mashy Iron",
         "length": 37.5,
         "distance": 160,
@@ -93,7 +93,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 5",
+        "name": "5-Iron",
         "subName": "Mashy",
         "length": 37,
         "distance": 150,
@@ -103,7 +103,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 6",
+        "name": "6-Iron",
         "subName": "Spade Mashy",
         "length": 36.5,
         "distance": 140,
@@ -113,7 +113,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 7",
+        "name": "7-Iron",
         "subName": "Mashy Niblick",
         "length": 36,
         "distance": 130,
@@ -123,7 +123,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 8",
+        "name": "8-Iron",
         "subName": "Pitcher",
         "length": 35.5,
         "distance": 120,
@@ -133,7 +133,7 @@
     {
         "category": "iron",
         "location": "fairway & rough",
-        "name": "Iron 9",
+        "name": "9-Iron",
         "subName": "Niblick",
         "length": 35,
         "distance": 110,
