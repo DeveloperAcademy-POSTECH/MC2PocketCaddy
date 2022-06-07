@@ -30,6 +30,7 @@ struct MapView: View {
                     .opacity(sheetNum == 1 ? 0 : 0.1)
                     .ignoresSafeArea()
                     .onTapGesture {
+                        print("a")
                         sheetNum -= 1
                     }
                 
@@ -53,6 +54,7 @@ struct MapView: View {
                         .opacity(sheetNum == 3 ? 0.5 : 0)
                         .ignoresSafeArea()
                         .onTapGesture {
+                            print("d")
                             sheetNum -= 1
                         }
                 

@@ -23,10 +23,7 @@ struct ImageView: View {
                         sheetNum = 3
                         return
                     }
-                    if isCheck[i]{
-                        sheetNum = 2
-                        return
-                    }
+                    sheetNum = 2
                     isCheck[i] = true
                 }
                 else {
@@ -34,7 +31,7 @@ struct ImageView: View {
                 }
             }
         }){
-            Image(isCheck[index] ? "selected" + location[index].rawValue : location[index].rawValue)
+            Image(isCheck[index] && sheetNum == 2 ? "selected" + location[index].rawValue : location[index].rawValue)
                 .resizable()
                 .frame(width:frameSize[index].x , height: frameSize[index].y, alignment: .trailing)
                 .cornerRadius(15)
