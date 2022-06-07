@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MapView: View {
     var location : [Location] = Location.allCases
-    var offset: [(x:CGFloat,y:CGFloat)] = [(x:100,y:270),(x:160,y:0),(x:-20,y:-300),(x:-10,y:0)]
-    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:210),(x:120,y:-20),(x:60,y:-300),(x:40,y:-180)]
+    var offset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:320),(x:160,y:30),(x:-20,y:-270),(x:-10,y:30)]
+    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:270),(x:120,y:0),(x:60,y:-300),(x:40,y:-100)]
     var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
@@ -30,7 +30,6 @@ struct MapView: View {
                     .opacity(sheetNum == 1 ? 0 : 0.1)
                     .ignoresSafeArea()
                     .onTapGesture {
-                        print("a")
                         sheetNum -= 1
                     }
                 
@@ -38,7 +37,7 @@ struct MapView: View {
                     .font(.system(size: 25))
                     .bold()
                     .foregroundColor(.white)
-                    .offset(x: 150, y: -400)
+                    .offset(x: 150, y: -350)
 
                 ForEach(0..<4) {i in
                     ImageView(isCheck: $isCheck, sheetNum: $sheetNum, location: location, index: i)
@@ -54,12 +53,13 @@ struct MapView: View {
                         .opacity(sheetNum == 3 ? 0.5 : 0)
                         .ignoresSafeArea()
                         .onTapGesture {
-                            print("d")
                             sheetNum -= 1
                         }
                 
                 VStack() {
                     if sheetNum == 3 {
+                        Spacer()
+                        
                         Text("How far?")
                             .font(.system(size: 50))
                             .bold()
@@ -85,6 +85,7 @@ struct MapView: View {
                         NavigationLink(destination:
                             DescriptionView()
                                 .onAppear {
+                                    
                                     //MARK: 선택한 location 반영되게 수정해야함.
                                     clubDataManager.searchClub(location: .fairwayAndRough, selectedDistance: selectedDistance)
                                     print(clubDataManager.selectedClub)
@@ -104,8 +105,10 @@ struct MapView: View {
                     }
                     Spacer()
                 } // VStack
-            } // ZStack
-        } // NavigationView
+            }.navigationBarHidden(true)
+            // ZStack
+        }
+        // NavigationView
   
     } // body
 } // View

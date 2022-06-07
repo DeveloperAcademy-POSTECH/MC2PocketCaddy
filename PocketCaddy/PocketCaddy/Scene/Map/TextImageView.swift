@@ -23,10 +23,7 @@ struct TextImageView: View {
                         sheetNum = 3
                         return
                     }
-                    if isCheck[i] {
-                        sheetNum = 2
-                        return
-                    }
+                    sheetNum = 2
                     isCheck[i] = true
                 }
                 else {
@@ -41,5 +38,4 @@ struct TextImageView: View {
                 .opacity(isCheck[index] || (sheetNum != 2) ? 1 :  0.2)
         }
     }
-               
 }

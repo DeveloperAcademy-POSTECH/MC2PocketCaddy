@@ -10,8 +10,8 @@ import SwiftUI
 struct ImageView: View {
     @EnvironmentObject var clubDataManager: ClubDataManager
     @Binding var isCheck: [Bool]
-    @Binding var sheetNum : Int
-    var location : [Location]
+    @Binding var sheetNum: Int
+    var location: [Location]
     var index: Int
     var frameSize: [(x:CGFloat,y:CGFloat)] = [(x:80,y:80),(x:150,y:150),(x:150,y:100),(x:150,y:500)]
     
@@ -38,5 +38,4 @@ struct ImageView: View {
                 .opacity(isCheck[index] || (sheetNum != 2) ? 1 :  0.2)
         }
     }
-               
 }
