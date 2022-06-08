@@ -39,6 +39,10 @@ struct DescriptionView: View {
                     }
                     .offset(x: 0, y: -50)
                     
+                    Rectangle()
+                        .frame(width: 290, height: 0.5, alignment: .center)
+                        .foregroundColor(.primaryWhite)
+                    
                     HStack (spacing: 40) {
                         VStack {
                             Text("Length")

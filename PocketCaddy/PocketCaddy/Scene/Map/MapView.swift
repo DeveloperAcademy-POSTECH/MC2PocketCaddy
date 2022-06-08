@@ -10,7 +10,7 @@ import SwiftUI
 struct MapView: View {
     var location : [Location] = Location.allCases
     var offset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:320),(x:160,y:30),(x:-20,y:-270),(x:-10,y:30)]
-    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:270),(x:120,y:0),(x:60,y:-300),(x:40,y:-100)]
+    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:0,y:300),(x:120,y:0),(x:60,y:-300),(x:100,y:-100)]
     var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
@@ -27,17 +27,17 @@ struct MapView: View {
                     .ignoresSafeArea()
                 
                 Rectangle()
-                    .opacity(sheetNum == 1 ? 0 : 0.1)
+                    .opacity(sheetNum == 1 ? 0 : 0.5)
                     .ignoresSafeArea()
                     .onTapGesture {
                         sheetNum -= 1
                     }
                 
-                Text(sheetNum.description + "/3")
-                    .font(.system(size: 25))
-                    .bold()
-                    .foregroundColor(.white)
-                    .offset(x: 150, y: -350)
+//                Text(sheetNum.description + "/3")
+//                    .font(.system(size: 25))
+//                    .bold()
+//                    .foregroundColor(.white)
+//                    .offset(x: 150, y: -350)
 
                 ForEach(0..<4) {i in
                     ImageView(isCheck: $isCheck, sheetNum: $sheetNum, location: location, index: i)
@@ -50,7 +50,7 @@ struct MapView: View {
                 }
                 
                 Rectangle()
-                        .opacity(sheetNum == 3 ? 0.5 : 0)
+                        .opacity(sheetNum == 3 ? 0.7 : 0)
                         .ignoresSafeArea()
                         .onTapGesture {
                             sheetNum -= 1

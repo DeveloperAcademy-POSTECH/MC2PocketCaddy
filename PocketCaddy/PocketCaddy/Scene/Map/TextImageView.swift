@@ -13,7 +13,7 @@ struct TextImageView: View {
     @Binding var sheetNum : Int
     var location : [Location]
     var index: Int
-    var textFrameSize: [(x:CGFloat,y:CGFloat)] = [(x:150,y:80),(x:100,y:80),(x:100,y:70),(x:200,y:80)]
+    var textFrameSize: [(x:CGFloat,y:CGFloat)] = [(x:150,y:80),(x:100,y:80),(x:100,y:80),(x:200,y:80)]
 
     var body: some View {
         Button(action: {
@@ -33,6 +33,7 @@ struct TextImageView: View {
         }){
             Image(location[index].rawValue + "Text")
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width:textFrameSize[index].x , height: textFrameSize[index].y, alignment: .trailing)
                 .cornerRadius(15)
                 .opacity(isCheck[index] || (sheetNum != 2) ? 1 :  0.2)
