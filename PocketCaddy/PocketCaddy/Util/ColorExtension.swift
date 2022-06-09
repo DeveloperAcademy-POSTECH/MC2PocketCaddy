@@ -13,4 +13,8 @@ extension Color {
     static let primaryYellow = Color("PrimaryYellow")
     static let secondaryGreen = Color("SecondaryGreen")
     static let grayBackground = Color("GrayBackground")
+    static let thirdGreen = Color("ThirdGreen")
+    static let fontGray = Color("FontGray")
+    static let gradientColorLight = Color("GradientColorLight")
+    static let gradientColorDark = Color("GradientColorDark")
 }
