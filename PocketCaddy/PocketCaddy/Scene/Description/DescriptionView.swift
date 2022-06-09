@@ -11,16 +11,20 @@ struct DescriptionView: View {
     @EnvironmentObject var clubDataManager : ClubDataManager
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
+    let cutBackgroundHeight = UIScreen.main.bounds.height * 0.6
     let buttonWidth = UIScreen.main.bounds.height * 0.03
+    let specHeight = UIScreen.main.bounds.height * 0.3
+    let specWidth = UIScreen.main.bounds.width * 0.7
     
     var body: some View {
         ZStack {
             Color.greenBackground
             
+// MARK: CutBackground Image
             VStack {
                 Image.cutBackground
                     .resizable()
-                    .frame(width: screenWidth, height: screenHeight * 0.6, alignment: .center)
+                    .frame(width: screenWidth, height: cutBackgroundHeight, alignment: .center)
 
                 Spacer()
             }
@@ -42,7 +46,8 @@ struct DescriptionView: View {
                     
                     Spacer()
                         .frame(height: 30)
-                                    
+                    
+// MARK: Text UI
                     HStack {
                         Spacer()
                             .frame(width: 30)
@@ -64,6 +69,7 @@ struct DescriptionView: View {
 
                     Spacer()
                     
+// MARK: Image UI
                     HStack{
                         Image("RoundDriverButton")
                             .padding([.leading, .bottom], 40.0)
@@ -75,8 +81,9 @@ struct DescriptionView: View {
                             .padding(.trailing)
                             .frame(maxHeight:.infinity, alignment: .bottom)
                     }
-                }.frame(width: screenWidth, height: screenHeight * 0.6, alignment: .top)
+                }.frame(width: screenWidth, height: cutBackgroundHeight, alignment: .top)
                 
+// MARK: Specification UI
                 VStack(spacing: 20) {
                     HStack {
                         Image.category
@@ -85,7 +92,7 @@ struct DescriptionView: View {
                         
                         Text("Wood")
                             .foregroundColor(.white)
-                    }.frame(width: screenWidth * 0.7)
+                    }.frame(width: specWidth)
      
                     HStack {
                         Image.location
@@ -94,7 +101,7 @@ struct DescriptionView: View {
                         
                         Text("Teeing Ground")
                             .foregroundColor(.white)
-                    }.frame(width: screenWidth * 0.7)
+                    }.frame(width: specWidth)
 
                     HStack {
                         Image.distance
@@ -103,8 +110,8 @@ struct DescriptionView: View {
                         
                         Text("200m")
                             .foregroundColor(.white)
-                    }.frame(width: screenWidth * 0.7)
-                }.frame(width: screenWidth, height: screenHeight * 0.3)
+                    }.frame(width: specWidth)
+                }.frame(width: screenWidth, height: specHeight)
             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
     }
