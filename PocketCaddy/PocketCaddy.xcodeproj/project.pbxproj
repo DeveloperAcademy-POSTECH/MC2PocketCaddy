@@ -18,6 +18,8 @@
 		0AC19CFC28489CB600727BE6 /* ClubDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFB28489CB600727BE6 /* ClubDataManager.swift */; };
 		0AC19CFE284BCF9000727BE6 /* DistanceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFD284BCF9000727BE6 /* DistanceButtonView.swift */; };
 		0AC19D00284D12FE00727BE6 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */; };
+		7A18D1E428536A46005F6416 /* SampleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E328536A46005F6416 /* SampleSelectionView.swift */; };
+		7A18D1E628538102005F6416 /* SampleSelectionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */; };
 		89544A3A28473E3100423D0A /* SampleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A3928473E3100423D0A /* SampleReader.swift */; };
 		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
 		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
@@ -62,6 +64,8 @@
 		0AC19CFB28489CB600727BE6 /* ClubDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDataManager.swift; sourceTree = "<group>"; };
 		0AC19CFD284BCF9000727BE6 /* DistanceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceButtonView.swift; sourceTree = "<group>"; };
 		0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		7A18D1E328536A46005F6416 /* SampleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSelectionView.swift; sourceTree = "<group>"; };
+		7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSelectionComponents.swift; sourceTree = "<group>"; };
 		89544A3928473E3100423D0A /* SampleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleReader.swift; sourceTree = "<group>"; };
 		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
@@ -201,13 +205,31 @@
 			path = Club;
 			sourceTree = "<group>";
 		};
-		89544A3828473E1F00423D0A /* Tutorial */ = {
+		7A18D1E1285369EF005F6416 /* JSONReading */ = {
 			isa = PBXGroup;
 			children = (
 				89544A4028473EF700423D0A /* SampleData.json */,
 				89544A4128473F0B00423D0A /* SampleModel.swift */,
 				89544A3928473E3100423D0A /* SampleReader.swift */,
 				89544A432847436300423D0A /* SampleView.swift */,
+			);
+			path = JSONReading;
+			sourceTree = "<group>";
+		};
+		7A18D1E228536A01005F6416 /* SearchLogic */ = {
+			isa = PBXGroup;
+			children = (
+				7A18D1E328536A46005F6416 /* SampleSelectionView.swift */,
+				7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */,
+			);
+			path = SearchLogic;
+			sourceTree = "<group>";
+		};
+		89544A3828473E1F00423D0A /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				7A18D1E228536A01005F6416 /* SearchLogic */,
+				7A18D1E1285369EF005F6416 /* JSONReading */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -372,6 +394,8 @@
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
+				7A18D1E428536A46005F6416 /* SampleSelectionView.swift in Sources */,
+				7A18D1E628538102005F6416 /* SampleSelectionComponents.swift in Sources */,
 				BACE9C40284B496B00A04E2D /* TextImageView.swift in Sources */,
 				89544A3A28473E3100423D0A /* SampleReader.swift in Sources */,
 				0AC19CFC28489CB600727BE6 /* ClubDataManager.swift in Sources */,
@@ -545,6 +569,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,6 +599,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
