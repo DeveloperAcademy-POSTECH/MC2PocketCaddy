@@ -73,16 +73,19 @@ struct DescriptionView: View {
 // MARK: Image UI
                     HStack{
                         Image("RoundDriverButton")
-                            .padding([.leading, .bottom], 40.0)
+                            .padding(40.0)
                             .frame(maxHeight:.infinity, alignment: .bottom)
                         
                         Spacer()
                         
                         Image("TestClub")
-                            .padding(.trailing)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding([.top, .leading, .trailing])
                             .frame(maxHeight:.infinity, alignment: .bottom)
                     }
                 }.frame(width: screenWidth, height: cutBackgroundHeight, alignment: .top)
+                .clipped()
                 
 // MARK: Specification UI
                 VStack(spacing: 20) {
