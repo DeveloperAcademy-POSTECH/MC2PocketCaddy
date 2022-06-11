@@ -17,8 +17,8 @@ struct LaunchView: View {
                     Rectangle()
                         .foregroundColor(.red)
                         .ignoresSafeArea()
-                    GifImage("flag")
-                        .frame(width: 610, height: 1000)
+//                    GifImage("flag")
+//                        .frame(width: 610, height: 1000)
                 }
             }.navigationBarTitleDisplayMode(.inline)
         }
