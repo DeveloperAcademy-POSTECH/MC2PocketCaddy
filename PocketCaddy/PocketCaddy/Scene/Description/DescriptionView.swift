@@ -53,17 +53,19 @@ struct DescriptionView: View {
                         Spacer()
                             .frame(width: 30)
                         
-                        Text("1-Wood")
+                        Text(clubDataManager.selectedClub.name)
                             .bold()
                             .font(.system(size: 40))
                             .foregroundColor(.greenForeground)
+                        
+                        Image("CategoryDriver")
                     }.frame(maxWidth: .infinity, alignment: .leading)
                     
                     HStack {
                         Spacer()
                             .frame(width: 30)
                         
-                        Text("드라이버는 클럽의 헤드가 머리보다\n앞에서 친다는 느낌으로 스윙하기")
+                        Text(clubDataManager.selectedClub.description)
                             .font(.system(size: 16))
                             .foregroundColor(.greenForeground)
                     }.frame(maxWidth: .infinity, alignment: .leading)
@@ -72,7 +74,7 @@ struct DescriptionView: View {
                     
 // MARK: Image UI
                     HStack{
-                        Image("RoundDriverButton")
+                        Image.arButton
                             .padding(40.0)
                             .frame(maxHeight:.infinity, alignment: .bottom)
                         
@@ -94,7 +96,7 @@ struct DescriptionView: View {
                         
                         Spacer()
                         
-                        Text("Wood")
+                        Text(clubDataManager.selectedClub.category.rawValue)
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
      
@@ -103,16 +105,16 @@ struct DescriptionView: View {
                         
                         Spacer()
                         
-                        Text("Teeing Ground")
+                        Text(clubDataManager.selectedClub.location.rawValue)
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
 
                     HStack {
                         Image.distance
-                        
+
                         Spacer()
                         
-                        Text("200m")
+                        Text((clubDataManager.selectedClub.distance?.description ?? "0") + "m")
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
                 }.frame(width: screenWidth, height: specHeight)
@@ -123,6 +125,7 @@ struct DescriptionView: View {
 
 extension Image {
     static let cutBackground = Image("CutBackground")
+    static let arButton = Image("ARButton")
     static let category = Image("Category")
     static let location = Image("Location")
     static let distance = Image("Distance")

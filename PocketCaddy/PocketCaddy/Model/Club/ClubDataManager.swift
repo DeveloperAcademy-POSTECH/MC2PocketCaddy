@@ -9,7 +9,7 @@ import Foundation
 
 class ClubDataManager: ObservableObject {
     @Published var clubData: [ClubModel] = []
-    @Published var selectedClub: ClubModel = ClubModel(category: .wood, location: .fairwayAndRough, name: "Wood 1", subName: "Driver", length: 43.5, distance: 220, loft: 12, description: "드라이버는 클럽의 헤드가 머리보다 앞에서 친다는 느낌으로 스윙하기")
+    @Published var selectedClub: ClubModel = ClubModel(category: .wood, location: .fairwayAndRough, name: "1-Wood", subName: "Driver", length: 43.5, distance: 220, loft: 12, description: "드라이버는 클럽의 헤드가 머리보다 앞에서 친다는 느낌으로 스윙하기")
 
     init() {
         self.getClubData()
