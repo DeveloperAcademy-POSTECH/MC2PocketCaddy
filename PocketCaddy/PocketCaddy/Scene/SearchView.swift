@@ -19,76 +19,57 @@ struct SearchView: View {
     // MARK: - BODY
     
     var body: some View {
-        
-        NavigationView {
-            VStack {
-                
-                // MARK: - HEADER
-                
-                Group {
-                    HStack{
-                        Text("정보가 ")
-                        Text("궁금한 채")
-                        Text("는")
-                    }
-                    Text("무엇인가요?")
+        VStack {
+            // MARK: - HEADER
+            Group {
+                HStack{
+                    Text("정보가 ")
+                    Text("궁금한 채")
+                    Text("는")
                 }
-                
-                
-                HStack {
-                    TextField("Search", text: $search)
-                        .padding(.leading, 30)
-                        .onChange(of: search) { newValue in
-                            clubDataManager.findClubsByWord(word: newValue)
-                        }
-                    
-                } //: HSTACK
-                .frame(width: 327, height: 36, alignment: .center)
-                .background(Color.grayBackground)
-                .cornerRadius(12)
-                .padding(.horizontal)
-                .overlay(
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                        Spacer()
+                Text("무엇인가요?")
+            }
+            
+            HStack {
+                TextField("Search", text: $search)
+                    .padding(.leading, 30)
+                    .onChange(of: search) { newValue in
+                        clubDataManager.findClubsByWord(word: newValue)
                     }
-                        .padding(.leading, 24)
-                )
                 
-                // MARK: - CENTER, CARD GRID
-                
-                ScrollView {
-                    
-                    if clubDataManager.selectedClub.count > 0 {
-                        LazyVGrid(columns: columns) {
-                            ForEach(clubDataManager.selectedClub, id: \.?.name) { club in
-                                NavigationLink(destination: SelectionView()) {
-                                    ClubCardView(clubModel: (club)!)
-                                    
-                                }
+            } //: HSTACK
+            .frame(width: 327, height: 36, alignment: .center)
+            .background(Color.grayBackground)
+            .cornerRadius(12)
+            .padding(.horizontal)
+            .overlay(
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    Spacer()
+                }
+                    .padding(.leading, 24)
+            )
+            
+            // MARK: - CENTER, CARD GRID
+            ScrollView {
+                if clubDataManager.selectedClub.count > 0 {
+                    LazyVGrid(columns: columns) {
+                        ForEach(clubDataManager.selectedClub, id: \.?.name) { club in
+                            NavigationLink(destination: DescriptionView()) {
+                                ClubCardView(clubModel: (club)!)
+                                
                             }
                         }
-                        .padding()
-                    } else {
-                        Text("없음.")
                     }
-                    
-                } //: SCROLL
-                
-            } //: VSTACK
-            
-            .navigationBarHidden(true)
-            .onAppear{
-                clubDataManager.findClubsByWord(word: search)
-            }
-        } //: NAVIGATION
+                    .padding()
+                } else {
+                    Text("없음.")
+                }
+            } //: SCROLL
+        } //: VSTACK
+        .navigationBarHidden(true)
+        .onAppear{
+            clubDataManager.findClubsByWord(word: search)
+        }
     }
 }
-
-/*
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView(clubs: ClubInfo.allClubInfo)
-    }
-}
- */

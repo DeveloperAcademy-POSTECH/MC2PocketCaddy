@@ -20,7 +20,7 @@ struct LaunchView: View {
 //                    GifImage("flag")
 //                        .frame(width: 610, height: 1000)
                 }
-            }.navigationBarTitleDisplayMode(.inline)
+            }
         }
     }
 }

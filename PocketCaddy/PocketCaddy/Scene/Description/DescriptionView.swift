@@ -11,7 +11,7 @@ struct DescriptionView: View {
     @EnvironmentObject var clubDataManager : ClubDataManager
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    let cutBackgroundHeight = UIScreen.main.bounds.height * 0.6
+    let cutBackgroundHeight = UIScreen.main.bounds.height * 0.7
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let specHeight = UIScreen.main.bounds.height * 0.3
     let specWidth = UIScreen.main.bounds.width * 0.7
@@ -32,6 +32,9 @@ struct DescriptionView: View {
             VStack(alignment: .leading) {
 // MARK: Backward Button
                 VStack {
+                    Spacer()
+                        .frame(height: screenHeight * 0.05)
+                    
                     HStack {
                         Button {
 
@@ -46,7 +49,6 @@ struct DescriptionView: View {
                     }
                     
                     Spacer()
-                        .frame(height: 30)
                     
 // MARK: Text UI
                     HStack {
@@ -65,7 +67,7 @@ struct DescriptionView: View {
                         Spacer()
                             .frame(width: 30)
                         
-                        Text(clubDataManager.selectedClub.description)
+                        Text("clubDataManager.selectedClub.description")
                             .font(.system(size: 16))
                             .foregroundColor(.greenForeground)
                     }.frame(maxWidth: .infinity, alignment: .leading)
@@ -119,7 +121,7 @@ struct DescriptionView: View {
                     }.frame(width: specWidth)
                 }.frame(width: screenWidth, height: specHeight)
             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        }
+        }.navigationBarHidden(true)
     }
 }
 
