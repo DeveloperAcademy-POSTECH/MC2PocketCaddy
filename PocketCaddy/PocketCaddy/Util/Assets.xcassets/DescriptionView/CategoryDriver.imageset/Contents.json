@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "RoundDriverButton.png",
+      "filename" : "CategoryDriver.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "CategoryDriver2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
