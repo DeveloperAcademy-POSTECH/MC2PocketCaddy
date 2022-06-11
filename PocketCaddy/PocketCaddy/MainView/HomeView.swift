@@ -18,7 +18,11 @@ struct HomeView: View {
                         Text("으로")
                     }
                     Text("채를 확인하실건가요?")
-                }.font(.system(size: 35))
+                }
+                .font(
+                    .system(size: 35)
+                    .bold())
+                
                 Spacer()
                 NavigationLink(destination: LaunchView()){
                     Image("AllClubBtn").padding()
