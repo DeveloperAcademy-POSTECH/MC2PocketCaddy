@@ -22,10 +22,13 @@
 		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
 		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
 		89544A4528474ED100423D0A /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 89544A4028473EF700423D0A /* SampleData.json */; };
+		BA68092628531F8D0031B33D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68092528531F8D0031B33D /* GifImage.swift */; };
+		BA680928285320260031B33D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA680927285320260031B33D /* LaunchView.swift */; };
 		BAAF76332845F5BB0027504A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF76322845F5BB0027504A /* MapView.swift */; };
 		BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */; };
 		BACE9C3E284B3FB900A04E2D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3D284B3FB900A04E2D /* ImageView.swift */; };
 		BACE9C40284B496B00A04E2D /* TextImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3F284B496B00A04E2D /* TextImageView.swift */; };
+		BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFE8BB2854571A00B08B12 /* HomeView.swift */; };
 		EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE44B0042851E9A400A1A758 /* SelectionView.swift */; };
 		EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58B4862845FCD500744D64 /* DescriptionView.swift */; };
 /* End PBXBuildFile section */
@@ -66,10 +69,13 @@
 		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		89544A432847436300423D0A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		BA68092528531F8D0031B33D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		BA680927285320260031B33D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		BAAF76322845F5BB0027504A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		BACE9C3D284B3FB900A04E2D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		BACE9C3F284B496B00A04E2D /* TextImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageView.swift; sourceTree = "<group>"; };
+		BAFFE8BB2854571A00B08B12 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EE44B0042851E9A400A1A758 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		EE58B4862845FCD500744D64 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +128,7 @@
 		0A2706452845E96800168C40 /* PocketCaddy */ = {
 			isa = PBXGroup;
 			children = (
+				BA68092B285322420031B33D /* MainView */,
 				89544A3828473E1F00423D0A /* Tutorial */,
 				0A2706732845EC1D00168C40 /* LifeCycle */,
 				BACE9C3A284B3E1B00A04E2D /* Util */,
@@ -210,6 +217,16 @@
 				89544A432847436300423D0A /* SampleView.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		BA68092B285322420031B33D /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				BA680927285320260031B33D /* LaunchView.swift */,
+				BAFFE8BB2854571A00B08B12 /* HomeView.swift */,
+				BA68092528531F8D0031B33D /* GifImage.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		BACE9C3A284B3E1B00A04E2D /* Util */ = {
@@ -370,6 +387,7 @@
 				89544A442847436300423D0A /* SampleView.swift in Sources */,
 				0A2706722845EAD400168C40 /* ClubModel.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
+				BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */,
 				EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
 				BACE9C40284B496B00A04E2D /* TextImageView.swift in Sources */,
@@ -378,7 +396,9 @@
 				0AC19CFE284BCF9000727BE6 /* DistanceButtonView.swift in Sources */,
 				EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */,
 				BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */,
+				BA680928285320260031B33D /* LaunchView.swift in Sources */,
 				89544A4228473F0B00423D0A /* SampleModel.swift in Sources */,
+				BA68092628531F8D0031B33D /* GifImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -519,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
