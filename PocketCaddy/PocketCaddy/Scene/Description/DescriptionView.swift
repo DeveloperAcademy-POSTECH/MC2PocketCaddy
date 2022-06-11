@@ -53,7 +53,7 @@ struct DescriptionView: View {
                         Spacer()
                             .frame(width: 30)
                         
-                        Text(clubDataManager.selectedClub.name)
+                        Text(".selectedClub")
                             .bold()
                             .font(.system(size: 40))
                             .foregroundColor(.greenForeground)
@@ -96,7 +96,7 @@ struct DescriptionView: View {
                         
                         Spacer()
                         
-                        Text(clubDataManager.selectedClub.category.rawValue)
+                        Text(".category")
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
      
@@ -105,7 +105,7 @@ struct DescriptionView: View {
                         
                         Spacer()
                         
-                        Text(clubDataManager.selectedClub.location.rawValue)
+                        Text(".location")
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
 
@@ -114,7 +114,7 @@ struct DescriptionView: View {
 
                         Spacer()
                         
-                        Text((clubDataManager.selectedClub.distance?.description ?? "0") + "m")
+                        Text((".distance") + "m")
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
                 }.frame(width: screenWidth, height: specHeight)
