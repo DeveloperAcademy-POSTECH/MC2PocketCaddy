@@ -9,8 +9,30 @@ import Foundation
 
 class ClubDataManager: ObservableObject {
     @Published var clubData: [ClubModel] = []
-    @Published var selectedClub: ClubModel = ClubModel(category: .wood, location: .fairwayAndRough, name: "Wood 1", subName: "Driver", length: 43.5, distance: 220, loft: 12, description: "드라이버는 클럽의 헤드가 머리보다 앞에서 친다는 느낌으로 스윙하기")
-
+    @Published var selectedClub: [ClubModel?] = []
+    let searchEtc: [String: String] =
+    [
+        "1-Wood": "1번우드1번드라이버",
+        "2-Wood": "2번우드2번브라시",
+        "3-Wood": "3번우드3번스푼",
+        "4-Wood": "4번우드4번버피",
+        "5-Wood": "5번우드5번클리크",
+        "1-Iron": "1번아이언1번드라이빙아이언",
+        "2-Iron": "2번아이언2번미드아이언",
+        "3-Iron": "3번아이언3번미드매쉬",
+        "4-Iron": "4번아이언4번매쉬아이언",
+        "5-Iron": "5번아이언5번매쉬",
+        "6-Iron": "6번아이언6번스페이드매쉬",
+        "7-Iron": "7번아이언7번매쉬닉블릭",
+        "8-Iron": "8번아이언8번피쳐",
+        "9-Iron": "9번아이언9번닉블릭",
+        "Pitching Wedge": "피칭웨지",
+        "Approach Wedge": "어프로치웨지갭웨지",
+        "Sand Wedge": "샌드웨지",
+        "Lob Wedge": "로브웨지",
+        "Putter": "퍼터"
+    ]
+    
     init() {
         self.getClubData()
     }
@@ -61,7 +83,7 @@ class ClubDataManager: ObservableObject {
         for clubData in self.clubData {
             
             if location != Location.fairwayAndRough && clubData.location == location {
-                selectedClub = clubData
+                selectedClub.append(clubData)
                 
             } else if location == Location.fairwayAndRough && clubData.location == location {
                 
@@ -69,11 +91,40 @@ class ClubDataManager: ObservableObject {
                     guard let distance = clubData.distance else { break }
                     
                     if dxMinTemp <= distance && distance < dxMaxTemp {
-                        selectedClub = clubData
+                        selectedClub.append(clubData)
                     }
                 }
                 
             }
         }
-    }
+    } //: FUNC
+    
+    func findClubsByWord(word: String) {
+        var clubsTemp: [ClubModel] = []
+        var clubInfoStr: String = ""
+        
+        let wordTemp: String = word.components(separatedBy: [" "]).joined().lowercased()
+        
+        // 검색어 없음. 모든클럽 출력
+        if wordTemp == "" {
+            self.selectedClub = self.clubData
+            print(clubData)
+            return
+        }
+        
+        
+        for club in self.clubData {
+            guard let searchEtc = searchEtc[club.name] else { return }
+            
+            clubInfoStr = String(club.category.rawValue + club.subName + club.name + searchEtc).components(separatedBy: [" "]).joined().lowercased()
+            
+            if clubInfoStr.contains(wordTemp) {
+                clubsTemp.append(club)
+            }
+        }
+        
+        self.selectedClub = clubsTemp
+        
+    } //: FUNC
+
 }
