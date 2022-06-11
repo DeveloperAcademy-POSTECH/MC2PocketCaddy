@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DescriptionView: View {
     @EnvironmentObject var clubDataManager : ClubDataManager
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     let cutBackgroundHeight = UIScreen.main.bounds.height * 0.7
@@ -37,7 +38,7 @@ struct DescriptionView: View {
                     
                     HStack {
                         Button {
-
+                            self.presentationMode.wrappedValue.dismiss()
                         } label: {
                             Image(systemName: "arrow.backward")
                                 .resizable()

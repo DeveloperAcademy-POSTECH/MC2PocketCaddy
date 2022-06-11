@@ -133,11 +133,11 @@ struct SampleSelectionView: View {
     }// Body
 }// SampleSelectionView
 
-struct SampleSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectionView()
-    }
-}
+//struct SampleSelectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SelectionView()
+//    }
+//}
 
 // 뒤로 가기 버튼 - ✅ Need to be removed
 //.navigationBarItems(

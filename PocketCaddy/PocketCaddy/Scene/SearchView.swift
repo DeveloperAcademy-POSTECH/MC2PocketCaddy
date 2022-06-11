@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SearchView: View {
     // MARK: - PROPERTIES
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var clubDataManager: ClubDataManager
-    
+    let buttonWidth = UIScreen.main.bounds.height * 0.03
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     @State private var search: String = ""
     @State private var isAnimation: Bool = false
@@ -21,6 +21,19 @@ struct SearchView: View {
     var body: some View {
         VStack {
             // MARK: - HEADER
+            HStack {
+                Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "arrow.backward")
+                        .resizable()
+                        .foregroundColor(.greenForeground)
+                }.frame(width: buttonWidth, height: buttonWidth)
+                .padding([.top, .leading])
+                
+                Spacer()
+            }
+            
             Group {
                 HStack{
                     Text("정보가 ")

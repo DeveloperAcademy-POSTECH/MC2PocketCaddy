@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectionView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var distance: Double = 0
     @State var isEditing: Bool = true
     
@@ -20,7 +21,7 @@ struct SelectionView: View {
                     // 뒤로가기 버튼
                     HStack {
                         Button {
-                            
+                            self.presentationMode.wrappedValue.dismiss()
                         } label: {
                             Image(systemName: "arrow.left")
                                 .font(Font.system(size: UIScreen.main.bounds.width * 0.05, weight: .semibold))
@@ -158,9 +159,9 @@ struct LocationRectangle: View {
 
     }
 }
-
-struct SelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectionView()
-    }
-}
+//
+//struct SelectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SelectionView()
+//    }
+//}

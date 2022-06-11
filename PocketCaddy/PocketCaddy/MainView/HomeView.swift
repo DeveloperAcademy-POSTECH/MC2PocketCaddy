@@ -24,11 +24,13 @@ struct HomeView: View {
             Spacer()
             
             NavigationLink(destination: SelectionView()){
-                Image("AllClubBtn").padding()
+                Image("AllClubBtn")
+                    .padding()
             }
             
             NavigationLink(destination: SearchView()){
-                Image("LocationAndDistanceBtn").padding()
+                Image("LocationAndDistanceBtn")
+                    .padding()
             }
             //Image 사이즈 수정 필요함
             ZStack{

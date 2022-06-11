@@ -108,7 +108,6 @@ class ClubDataManager: ObservableObject {
         // 검색어 없음. 모든클럽 출력
         if wordTemp == "" {
             self.selectedClub = self.clubData
-            print(clubData)
             return
         }
         
