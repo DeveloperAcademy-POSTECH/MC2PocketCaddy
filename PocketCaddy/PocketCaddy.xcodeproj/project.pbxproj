@@ -24,6 +24,8 @@
 		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
 		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
 		89544A4528474ED100423D0A /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 89544A4028473EF700423D0A /* SampleData.json */; };
+		89B9E2B128544FEE001F10AF /* SampleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9E2B028544FEE001F10AF /* SampleDescriptionView.swift */; };
+		89B9E2B428545F1A001F10AF /* SampleClubDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9E2B328545F1A001F10AF /* SampleClubDataManager.swift */; };
 		BAAF76332845F5BB0027504A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF76322845F5BB0027504A /* MapView.swift */; };
 		BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */; };
 		BACE9C3E284B3FB900A04E2D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3D284B3FB900A04E2D /* ImageView.swift */; };
@@ -70,6 +72,8 @@
 		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		89544A432847436300423D0A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		89B9E2B028544FEE001F10AF /* SampleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDescriptionView.swift; sourceTree = "<group>"; };
+		89B9E2B328545F1A001F10AF /* SampleClubDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleClubDataManager.swift; sourceTree = "<group>"; };
 		BAAF76322845F5BB0027504A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		BACE9C3D284B3FB900A04E2D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -219,8 +223,10 @@
 		7A18D1E228536A01005F6416 /* SearchLogic */ = {
 			isa = PBXGroup;
 			children = (
+				89B9E2B228545F08001F10AF /* DataManager */,
 				7A18D1E328536A46005F6416 /* SampleSelectionView.swift */,
 				7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */,
+				89B9E2B028544FEE001F10AF /* SampleDescriptionView.swift */,
 			);
 			path = SearchLogic;
 			sourceTree = "<group>";
@@ -232,6 +238,14 @@
 				7A18D1E1285369EF005F6416 /* JSONReading */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		89B9E2B228545F08001F10AF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				89B9E2B328545F1A001F10AF /* SampleClubDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		BACE9C3A284B3E1B00A04E2D /* Util */ = {
@@ -391,6 +405,7 @@
 				BACE9C3E284B3FB900A04E2D /* ImageView.swift in Sources */,
 				89544A442847436300423D0A /* SampleView.swift in Sources */,
 				0A2706722845EAD400168C40 /* ClubModel.swift in Sources */,
+				89B9E2B128544FEE001F10AF /* SampleDescriptionView.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
@@ -401,6 +416,7 @@
 				0AC19CFC28489CB600727BE6 /* ClubDataManager.swift in Sources */,
 				0AC19CFE284BCF9000727BE6 /* DistanceButtonView.swift in Sources */,
 				EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */,
+				89B9E2B428545F1A001F10AF /* SampleClubDataManager.swift in Sources */,
 				BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */,
 				89544A4228473F0B00423D0A /* SampleModel.swift in Sources */,
 			);

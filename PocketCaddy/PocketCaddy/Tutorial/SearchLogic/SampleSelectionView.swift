@@ -2,9 +2,9 @@
 //  SelectionView.swift
 //  PocketCaddy
 //
-//  Created by Theodore on 2022/06/10.
+//  Created by 유정인 on 2022/06/09.
 //
-
+//  Last Refactoring, Theodore, 10 June 2022
 
 import SwiftUI
 
@@ -14,23 +14,25 @@ import SwiftUI
 struct SampleSelectionView: View {
     // State Variables
     @State var isEditing: Bool = true
-    @State var currentButtonStatus: String = ""
-    @State private var distance: Double = 0
+    @State var distance: Double = 0
+    @State var currentButtonStatus: Location? = nil
     
     // Variables
     let screenWidth: CGFloat = UIScreen.main.bounds.width
     let screenHeight: CGFloat = UIScreen.main.bounds.height
     let columns = [GridItem(.flexible()), GridItem(.flexible())] // Grid Shape Setting
+    let minDistance: Double = 0.0
+    let maxDistance: Double = 210.0
     
     // body View
     var body: some View {
         
         // Selection Button Setting
         let locationButtonArray: [SampleLocationRectangle] = [
-            SampleLocationRectangle(buttonStatus: $currentButtonStatus, buttonName: "Fairway & Rough", buttonImage: "FairwayRough"),
-            SampleLocationRectangle(buttonStatus: $currentButtonStatus, buttonName: "Teeing Ground", buttonImage: "TeeingGround"),
-            SampleLocationRectangle(buttonStatus: $currentButtonStatus, buttonName: "Bunker", buttonImage: "Bunker"),
-            SampleLocationRectangle(buttonStatus: $currentButtonStatus, buttonName: "Green", buttonImage: "Green")
+            SampleLocationRectangle(buttonStatus: $currentButtonStatus, buttonName: .fairwayAndRough, buttonImage: "FairwayRough"),
+            SampleLocationRectangle(buttonStatus: $currentButtonStatus, buttonName: .teeingGround, buttonImage: "TeeingGround"),
+            SampleLocationRectangle(buttonStatus: $currentButtonStatus, buttonName: .bunker, buttonImage: "Bunker"),
+            SampleLocationRectangle(buttonStatus: $currentButtonStatus, buttonName: .green, buttonImage: "Green")
         ]
         
         NavigationView {
@@ -77,7 +79,7 @@ struct SampleSelectionView: View {
                     }
                 }
                 
-                //🔥 Distance Section
+                // 🔥 Distance Section
                 HStack {
                     Text("Distance")
                         .font(Font.system(size: screenWidth * 0.07, weight: .bold))
@@ -85,33 +87,32 @@ struct SampleSelectionView: View {
                 }
                 .padding(.top, screenHeight * 0.03)
                 
-                // 남은 거리 텍스트
-                HStack(spacing: 0) {
-                    Text("“목표 거리는 ")
-                    Text("\(distance, specifier: "%.f")m")
-                        .foregroundColor(.primaryGreen)
-                    Text("입니다.“")
+                // 🔥 남은 거리 텍스트
+                // ✅ Text format
+                Text("“목표 거리는 \(Text("\(Int(distance))m").foregroundColor(.primaryGreen))입니다.“")
+                    .font(Font.system(size: screenWidth * 0.045, weight: .bold))
+                    .padding(.top, 5)
+                
+                // ✅ Slider format
+                Slider(
+                    value: $distance,
+                    in: minDistance...maxDistance,
+                    step: 5
+                ) {
+                    Text("Distance")
+                } minimumValueLabel: {
+                    Text("\(Int(minDistance))m")
+                } maximumValueLabel: {
+                    Text("\(Int(maxDistance))m")
                 }
-                .font(Font.system(size: UIScreen.main.bounds.width * 0.045, weight: .bold))
-                .padding(.top, 5)
+                .accentColor(.primaryGreen)
                 
-                Slider(value: $distance, in: 0...210, step: 5)
-                    .accentColor(.primaryGreen)
-                
-                HStack {
-                    Text("0m")
-                    Spacer()
-                    Text("210m~")
-                }
-                .font(Font.system(size: screenWidth * 0.042))
-                
-                // 선택 버튼
-                Button {
-                    // ⚡️ - Code needed
-                    print("💊 distance left: \(distance)")
-                    print("💊 current location: \(currentButtonStatus)")
-                } label: {
-                    // Need to be disabled when the current location info is undefined
+                // 🔥 선택 버튼
+                // ✅ Button to NavigationLink
+                NavigationLink(destination: SampleDescriptionView(
+                    locationInfo: currentButtonStatus != nil ? currentButtonStatus! : .fairwayAndRough,
+                    distance: Int(distance)
+                )) {
                     Text("선택 완료")
                         .foregroundColor(.white)
                         .font(Font.system(size: screenWidth * 0.045, weight: .bold))
@@ -121,27 +122,13 @@ struct SampleSelectionView: View {
                                 .cornerRadius(screenHeight)
                         )
                 }
+                // ✅ The link remains disabled unless a user select the location info
+                .disabled(currentButtonStatus == nil)
                 
             }// VStack (Inside of the Navigation View)
             .frame(maxWidth: screenWidth, maxHeight: screenHeight)
             // 전체 뷰에 대한 padding
             .padding([.bottom, .horizontal], 60)
-            
-            // 뒤로 가기 버튼
-            .navigationBarItems(
-                leading: HStack {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "arrow.left")
-                            .font(Font.system(size: UIScreen.main.bounds.width * 0.05, weight: .semibold))
-                            .foregroundColor(.thirdGreen)
-                    }
-                    Spacer()
-                }
-                    .padding()
-            )
-            
         } //Navigation View
     }// Body
 }// SampleSelectionView
@@ -151,3 +138,18 @@ struct SampleSelectionView_Previews: PreviewProvider {
         SelectionView()
     }
 }
+
+// 뒤로 가기 버튼 - ✅ Need to be removed
+//.navigationBarItems(
+//    leading: HStack {
+//        Button {
+//
+//        } label: {
+//            Image(systemName: "arrow.left")
+//                .font(Font.system(size: UIScreen.main.bounds.width * 0.05, weight: .semibold))
+//                .foregroundColor(.thirdGreen)
+//        }
+//        Spacer()
+//    }
+//        .padding()
+//)

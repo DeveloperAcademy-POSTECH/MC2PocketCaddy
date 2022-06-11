@@ -13,10 +13,8 @@ struct PocketCaddyApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            MapView()
-            SampleSelectionView()
+            MapView()
                 .environmentObject(jsonDataManager)
-            //            SampleView()
         }
     }
 }
