@@ -46,8 +46,7 @@ struct SearchView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                     Spacer()
-                }
-                    .padding(.leading, 24)
+                }.padding(.leading, 24)
             )
             
             // MARK: - CENTER, CARD GRID
@@ -57,7 +56,6 @@ struct SearchView: View {
                         ForEach(clubDataManager.selectedClub, id: \.?.name) { club in
                             NavigationLink(destination: DescriptionView()) {
                                 ClubCardView(clubModel: (club)!)
-                                
                             }
                         }
                     }

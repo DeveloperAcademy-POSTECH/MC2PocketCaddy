@@ -112,7 +112,6 @@ class ClubDataManager: ObservableObject {
             return
         }
         
-        
         for club in self.clubData {
             guard let searchEtc = searchEtc[club.name] else { return }
             
@@ -124,7 +123,6 @@ class ClubDataManager: ObservableObject {
         }
         
         self.selectedClub = clubsTemp
-        
     } //: FUNC
 
 }

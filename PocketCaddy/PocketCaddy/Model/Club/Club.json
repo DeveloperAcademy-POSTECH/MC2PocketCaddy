@@ -143,7 +143,7 @@
     {
         "category": "wedge",
         "location": "fairway & rough",
-        "name": "Pitching \nWedge",
+        "name": "Pitching Wedge",
         "subName": "P",
         "length": 35,
         "distance": 80,
@@ -153,7 +153,7 @@
     {
         "category": "wedge",
         "location": "fairway & rough",
-        "name": "Approach \nWedge",
+        "name": "Approach Wedge",
         "subName": "G",
         "length": 35,
         "distance": 80,
@@ -163,7 +163,7 @@
     {
         "category": "wedge",
         "location": "bunker",
-        "name": "Sand \nWedge",
+        "name": "Sand Wedge",
         "subName": "S",
         "length": 35,
         "distance": 60,
@@ -173,7 +173,7 @@
     {
         "category": "wedge",
         "location": "fairway & rough",
-        "name": "Lob \nWedge",
+        "name": "Lob Wedge",
         "subName": "L",
         "length": 34.5,
         "distance": 70,

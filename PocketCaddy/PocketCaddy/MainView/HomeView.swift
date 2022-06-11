@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack{
+            Spacer()
+            
             VStack(alignment: .leading){
                 HStack{
                     Text("어떤 방법")
@@ -21,7 +23,7 @@ struct HomeView: View {
             
             Spacer()
             
-            NavigationLink(destination: LaunchView()){
+            NavigationLink(destination: SelectionView()){
                 Image("AllClubBtn").padding()
             }
             
