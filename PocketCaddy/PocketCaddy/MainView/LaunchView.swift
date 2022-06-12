@@ -25,11 +25,12 @@ struct LaunchView: View {
                     SpriteView(scene: scene)
                         .frame(width:screenWidth, height:screenHeight)
                         .ignoresSafeArea()
+
                     Text("POCKET\nCADDY").font(.system(size: 40))
                         .foregroundColor(.white)
                         .bold()
                 }
-            }.navigationBarTitleDisplayMode(.inline)
+            }
         }
     }
 }

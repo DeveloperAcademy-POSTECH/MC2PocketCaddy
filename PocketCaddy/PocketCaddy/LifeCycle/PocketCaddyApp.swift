@@ -15,7 +15,6 @@ struct PocketCaddyApp: App {
         WindowGroup {
             LaunchView()
                 .environmentObject(jsonDataManager)
-            //            SampleView()
         }
     }
 }

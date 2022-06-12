@@ -85,10 +85,8 @@ struct MapView: View {
                         NavigationLink(destination:
                             DescriptionView()
                                 .onAppear {
-                                    
                                     //MARK: 선택한 location 반영되게 수정해야함.
                                     clubDataManager.searchClub(location: .fairwayAndRough, selectedDistance: selectedDistance)
-                                    print(clubDataManager.selectedClub)
                                 }
                         ){
                             RoundedRectangle(cornerRadius: 10)

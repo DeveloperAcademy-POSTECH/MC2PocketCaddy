@@ -15,13 +15,20 @@
 		0A2706642845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706632845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift */; };
 		0A2706722845EAD400168C40 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706712845EAD400168C40 /* ClubModel.swift */; };
 		0A2706762845EDA000168C40 /* Club.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2706752845EDA000168C40 /* Club.json */; };
+		0A948674285477DF00D42C8C /* ClubCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A948672285477DF00D42C8C /* ClubCardView.swift */; };
+		0A948675285477DF00D42C8C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A948673285477DF00D42C8C /* SearchView.swift */; };
 		0AC19CFC28489CB600727BE6 /* ClubDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFB28489CB600727BE6 /* ClubDataManager.swift */; };
 		0AC19CFE284BCF9000727BE6 /* DistanceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFD284BCF9000727BE6 /* DistanceButtonView.swift */; };
 		0AC19D00284D12FE00727BE6 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */; };
+		7A18D1E428536A46005F6416 /* SampleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E328536A46005F6416 /* SampleSelectionView.swift */; };
+		7A18D1E628538102005F6416 /* SampleSelectionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */; };
 		89544A3A28473E3100423D0A /* SampleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A3928473E3100423D0A /* SampleReader.swift */; };
 		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
 		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
 		89544A4528474ED100423D0A /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 89544A4028473EF700423D0A /* SampleData.json */; };
+		89B9E2B128544FEE001F10AF /* SampleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9E2B028544FEE001F10AF /* SampleDescriptionView.swift */; };
+		89B9E2B428545F1A001F10AF /* SampleClubDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9E2B328545F1A001F10AF /* SampleClubDataManager.swift */; };
+		BA68092628531F8D0031B33D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68092528531F8D0031B33D /* GifImage.swift */; };
 		BA680928285320260031B33D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA680927285320260031B33D /* LaunchView.swift */; };
 		BAAF76332845F5BB0027504A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF76322845F5BB0027504A /* MapView.swift */; };
 		BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */; };
@@ -63,13 +70,20 @@
 		0A2706632845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCaddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A2706712845EAD400168C40 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModel.swift; sourceTree = "<group>"; };
 		0A2706752845EDA000168C40 /* Club.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Club.json; sourceTree = "<group>"; };
+		0A948672285477DF00D42C8C /* ClubCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubCardView.swift; sourceTree = "<group>"; };
+		0A948673285477DF00D42C8C /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0AC19CFB28489CB600727BE6 /* ClubDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDataManager.swift; sourceTree = "<group>"; };
 		0AC19CFD284BCF9000727BE6 /* DistanceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceButtonView.swift; sourceTree = "<group>"; };
 		0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		7A18D1E328536A46005F6416 /* SampleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSelectionView.swift; sourceTree = "<group>"; };
+		7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSelectionComponents.swift; sourceTree = "<group>"; };
 		89544A3928473E3100423D0A /* SampleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleReader.swift; sourceTree = "<group>"; };
 		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		89544A432847436300423D0A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		89B9E2B028544FEE001F10AF /* SampleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDescriptionView.swift; sourceTree = "<group>"; };
+		89B9E2B328545F1A001F10AF /* SampleClubDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleClubDataManager.swift; sourceTree = "<group>"; };
+		BA68092528531F8D0031B33D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		BA680927285320260031B33D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		BAAF76322845F5BB0027504A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -185,6 +199,8 @@
 		0A2706742845EC2600168C40 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				0A948672285477DF00D42C8C /* ClubCardView.swift */,
+				0A948673285477DF00D42C8C /* SearchView.swift */,
 				BACE9C41284B4EB700A04E2D /* Map */,
 				0AC19D01284D146300727BE6 /* Description */,
 			);
@@ -210,7 +226,7 @@
 			path = Club;
 			sourceTree = "<group>";
 		};
-		89544A3828473E1F00423D0A /* Tutorial */ = {
+		7A18D1E1285369EF005F6416 /* JSONReading */ = {
 			isa = PBXGroup;
 			children = (
 				89544A4028473EF700423D0A /* SampleData.json */,
@@ -218,9 +234,37 @@
 				89544A3928473E3100423D0A /* SampleReader.swift */,
 				89544A432847436300423D0A /* SampleView.swift */,
 			);
+			path = JSONReading;
+			sourceTree = "<group>";
+		};
+		7A18D1E228536A01005F6416 /* SearchLogic */ = {
+			isa = PBXGroup;
+			children = (
+				89B9E2B228545F08001F10AF /* DataManager */,
+				7A18D1E328536A46005F6416 /* SampleSelectionView.swift */,
+				7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */,
+				89B9E2B028544FEE001F10AF /* SampleDescriptionView.swift */,
+			);
+			path = SearchLogic;
+			sourceTree = "<group>";
+		};
+		89544A3828473E1F00423D0A /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				7A18D1E228536A01005F6416 /* SearchLogic */,
+				7A18D1E1285369EF005F6416 /* JSONReading */,
+			);
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
+		89B9E2B228545F08001F10AF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				89B9E2B328545F1A001F10AF /* SampleClubDataManager.swift */,
+			);
+			path = DataManager;
+            sourceTree = "<group>";
+        };
 		BA68092B285322420031B33D /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,19 +431,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC19D00284D12FE00727BE6 /* DoubleExtension.swift in Sources */,
+				0A948675285477DF00D42C8C /* SearchView.swift in Sources */,
 				BACE9C3E284B3FB900A04E2D /* ImageView.swift in Sources */,
 				89544A442847436300423D0A /* SampleView.swift in Sources */,
 				0A2706722845EAD400168C40 /* ClubModel.swift in Sources */,
+				89B9E2B128544FEE001F10AF /* SampleDescriptionView.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				BAE0830A285479E400AAD128 /* LaunchScene.swift in Sources */,
 				BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */,
+				0A948674285477DF00D42C8C /* ClubCardView.swift in Sources */,
 				EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
+				7A18D1E428536A46005F6416 /* SampleSelectionView.swift in Sources */,
+				7A18D1E628538102005F6416 /* SampleSelectionComponents.swift in Sources */,
 				BACE9C40284B496B00A04E2D /* TextImageView.swift in Sources */,
 				89544A3A28473E3100423D0A /* SampleReader.swift in Sources */,
 				0AC19CFC28489CB600727BE6 /* ClubDataManager.swift in Sources */,
 				0AC19CFE284BCF9000727BE6 /* DistanceButtonView.swift in Sources */,
 				EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */,
+				89B9E2B428545F1A001F10AF /* SampleClubDataManager.swift in Sources */,
 				BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */,
 				BA680928285320260031B33D /* LaunchView.swift in Sources */,
 				89544A4228473F0B00423D0A /* SampleModel.swift in Sources */,
@@ -489,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -543,7 +593,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -569,6 +619,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,6 +649,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

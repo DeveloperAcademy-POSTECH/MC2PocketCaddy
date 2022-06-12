@@ -9,9 +9,10 @@ import SwiftUI
 
 struct DescriptionView: View {
     @EnvironmentObject var clubDataManager : ClubDataManager
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    let cutBackgroundHeight = UIScreen.main.bounds.height * 0.6
+    let cutBackgroundHeight = UIScreen.main.bounds.height * 0.7
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let specHeight = UIScreen.main.bounds.height * 0.3
     let specWidth = UIScreen.main.bounds.width * 0.7
@@ -32,9 +33,12 @@ struct DescriptionView: View {
             VStack(alignment: .leading) {
 // MARK: Backward Button
                 VStack {
+                    Spacer()
+                        .frame(height: screenHeight * 0.05)
+                    
                     HStack {
                         Button {
-
+                            self.presentationMode.wrappedValue.dismiss()
                         } label: {
                             Image(systemName: "arrow.backward")
                                 .resizable()
@@ -46,24 +50,25 @@ struct DescriptionView: View {
                     }
                     
                     Spacer()
-                        .frame(height: 30)
                     
 // MARK: Text UI
                     HStack {
                         Spacer()
                             .frame(width: 30)
                         
-                        Text("1-Wood")
+                        Text(".selectedClub")
                             .bold()
                             .font(.system(size: 40))
                             .foregroundColor(.greenForeground)
+                        
+                        Image("CategoryDriver")
                     }.frame(maxWidth: .infinity, alignment: .leading)
                     
                     HStack {
                         Spacer()
                             .frame(width: 30)
                         
-                        Text("드라이버는 클럽의 헤드가 머리보다\n앞에서 친다는 느낌으로 스윙하기")
+                        Text("clubDataManager.selectedClub.description")
                             .font(.system(size: 16))
                             .foregroundColor(.greenForeground)
                     }.frame(maxWidth: .infinity, alignment: .leading)
@@ -72,7 +77,7 @@ struct DescriptionView: View {
                     
 // MARK: Image UI
                     HStack{
-                        Image("RoundDriverButton")
+                        Image.arButton
                             .padding(40.0)
                             .frame(maxHeight:.infinity, alignment: .bottom)
                         
@@ -94,7 +99,7 @@ struct DescriptionView: View {
                         
                         Spacer()
                         
-                        Text("Wood")
+                        Text(".category")
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
      
@@ -103,26 +108,27 @@ struct DescriptionView: View {
                         
                         Spacer()
                         
-                        Text("Teeing Ground")
+                        Text(".location")
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
 
                     HStack {
                         Image.distance
-                        
+
                         Spacer()
                         
-                        Text("200m")
+                        Text((".distance") + "m")
                             .foregroundColor(.white)
                     }.frame(width: specWidth)
                 }.frame(width: screenWidth, height: specHeight)
             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        }
+        }.navigationBarHidden(true)
     }
 }
 
 extension Image {
     static let cutBackground = Image("CutBackground")
+    static let arButton = Image("ARButton")
     static let category = Image("Category")
     static let location = Image("Location")
     static let distance = Image("Distance")
