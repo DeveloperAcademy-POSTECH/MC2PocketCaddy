@@ -33,14 +33,12 @@ struct SearchView: View {
                 Spacer()
             }
             
-            Group {
-                HStack{
-                    Text("정보가 ")
-                    Text("궁금한 채")
-                    Text("는")
-                }
-                Text("무엇인가요?")
+            VStack(alignment: .leading) {
+                Text("\(Text("어떤 채의 정보").foregroundColor(.primaryGreen))가\n궁금하신가요?")
+                    .frame(width: 300, height: 100, alignment: .leading)
+                    .font(.system(size: Screen.width * 0.09, weight: .bold))
             }
+            .padding(.bottom, Screen.height * 0.03)
             
             HStack {
                 TextField("Search", text: $search)
