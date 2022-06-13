@@ -4,27 +4,28 @@
 //
 //  Created by Byeon jinha on 2022/06/10.
 //
-
+import Combine
+import Foundation
 import SpriteKit
 import SwiftUI
 
 class MyTimer: ObservableObject {
-   var value: Int = 0
-   
-   init() {
-                                             //간격        //반복되기때문에 true   //timer을 in 해준다.
+   @Published var value: Int = 0
+   @Published var goToHomeView = false
+   init() {//간격        //반복되기때문에 true   //timer을 in 해준다.
        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
            self.value += 1
-           
+           if self.value == 4 {
+               self.goToHomeView.toggle()
+           }
        }
    }
 }
 
 struct LaunchView: View {
-    var myTimer = MyTimer()
+    @ObservedObject var myTimer = MyTimer()
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    var value: Int = 0
 
     var scene: SKScene {
         let scene = LaunchScene()
@@ -35,7 +36,7 @@ struct LaunchView: View {
     
     var body: some View {
         NavigationView{
-            NavigationLink(destination: HomeView()){
+            NavigationLink(destination: HomeView(), isActive: $myTimer.goToHomeView){
                 ZStack{
                     SpriteView(scene: scene)
                         .frame(width:screenWidth, height:screenHeight)
@@ -44,7 +45,6 @@ struct LaunchView: View {
                     Text("POCKET\nCADDIE").font(.system(size: 40))
                         .foregroundColor(.white)
                         .bold()
-                    Text(String(myTimer.value))
                 }
             }
         }
