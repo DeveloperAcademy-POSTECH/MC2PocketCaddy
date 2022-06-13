@@ -56,13 +56,13 @@ class SampleClubDataManager: ObservableObject {
             // ✅ When a user selected Fairway and Rough with Specific Distance
             } else if location == Location.fairwayAndRough && clubData.location == location {
 
-                // ✅ Cases that the given distance is ends with 0
+                // ✅ Cases that the given distance ends with 0
                 if selectedDistance % 10 == 0 {
                     if selectedDistance == clubData.distance {
                         selectedClub = clubData
                         return selectedClub
                     }
-                // ✅ Cases that the given distance is ends with 5
+                // ✅ Cases that the given distance ends with 5
                 } else {
                     let newDistance = selectedDistance - 5
                     if newDistance == clubData.distance {

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct SelectionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State private var distance: Double = 0
-    @State var isEditing: Bool = true
+    @State var distance: Double = 0
     
     var body: some View {
         VStack {
@@ -24,7 +23,7 @@ struct SelectionView: View {
                             self.presentationMode.wrappedValue.dismiss()
                         } label: {
                             Image(systemName: "arrow.left")
-                                .font(Font.system(size: UIScreen.main.bounds.width * 0.05, weight: .semibold))
+                                .font(Font.system(size: Screen.width * 0.05, weight: .semibold))
                                 .foregroundColor(.primaryGreen)
                         }
                         Spacer()

@@ -40,6 +40,7 @@
 		BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFE8BB2854571A00B08B12 /* HomeView.swift */; };
 		EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE44B0042851E9A400A1A758 /* SelectionView.swift */; };
 		EE58B4872845FCD500744D64 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58B4862845FCD500744D64 /* DescriptionView.swift */; };
+		EEAE6DE528572A8D00A050C8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6DE428572A8D00A050C8 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		BAFFE8BB2854571A00B08B12 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EE44B0042851E9A400A1A758 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		EE58B4862845FCD500744D64 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		EEAE6DE428572A8D00A050C8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 				0A27064A2845E96900168C40 /* Assets.xcassets */,
 				BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */,
 				0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */,
+				EEAE6DE428572A8D00A050C8 /* ViewExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				BAC5AEB328570D0800D2EADC /* UIImage.swift in Sources */,
 				0A948674285477DF00D42C8C /* ClubCardView.swift in Sources */,
 				EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */,
+				EEAE6DE528572A8D00A050C8 /* ViewExtension.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,
 				7A18D1E428536A46005F6416 /* SampleSelectionView.swift in Sources */,
 				7A18D1E628538102005F6416 /* SampleSelectionComponents.swift in Sources */,
