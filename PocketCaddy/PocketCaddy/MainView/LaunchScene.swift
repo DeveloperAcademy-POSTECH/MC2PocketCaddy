@@ -1,26 +1,7 @@
-
 import SpriteKit
-import GameKit
-extension UIImage {
-    static func gradientImage(withBounds: CGRect, startPoint: CGPoint, endPoint: CGPoint , colors: [CGColor]) -> UIImage {
-        
-        // Configure the gradient layer based on input
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = withBounds
-        gradientLayer.colors = colors
-        gradientLayer.startPoint = startPoint
-        gradientLayer.endPoint = endPoint
-        // Render the image using the gradient layer
-        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
-        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return image!
-    }
-}
-class GameScene: SKScene, SKPhysicsContactDelegate {
-    
+
+final class LaunchScene: SKScene, SKPhysicsContactDelegate {
+
     var background = SKSpriteNode() // 백그라운드 노드
     var flag = SKSpriteNode()    // 새 노드
     // MARK: - Sprites Alignment
@@ -43,7 +24,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         flag.physicsBody?.affectedByGravity = false
         flag.physicsBody?.isDynamic = false
         addChild(flag)
-        guard let flyingBySKS = SKAction(named: "flying") else {return  }
+        guard let flyingBySKS = SKAction(named: "flying") else { return  }
         flag.run(flyingBySKS)
     }
     
