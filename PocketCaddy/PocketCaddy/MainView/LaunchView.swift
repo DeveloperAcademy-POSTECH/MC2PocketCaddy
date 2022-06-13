@@ -12,7 +12,7 @@ import SwiftUI
 class MyTimer: ObservableObject {
    @Published var value: Int = 0
    @Published var goToHomeView = false
-   init() {//간격        //반복되기때문에 true   //timer을 in 해준다.
+   init() {
        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
            self.value += 1
            if self.value == 4 {
@@ -41,7 +41,6 @@ struct LaunchView: View {
                     SpriteView(scene: scene)
                         .frame(width:screenWidth, height:screenHeight)
                         .ignoresSafeArea()
-
                     Text("POCKET\nCADDIE").font(.system(size: 40))
                         .foregroundColor(.white)
                         .bold()
