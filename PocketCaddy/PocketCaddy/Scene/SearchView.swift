@@ -27,7 +27,7 @@ struct SearchView: View {
                 } label: {
                     Image(systemName: "arrow.backward")
                         .resizable()
-                        .foregroundColor(.greenForeground)
+                        .foregroundColor(.primaryGreen)
                 }.frame(width: buttonWidth, height: buttonWidth)
                 .padding([.top, .leading])
                 
@@ -52,7 +52,7 @@ struct SearchView: View {
                 
             } //: HSTACK
             .frame(width: 327, height: 36, alignment: .center)
-            .background(Color.grayBackground)
+            .background(Color.backgroundWhite)
             .cornerRadius(12)
             .padding(.horizontal)
             .overlay(

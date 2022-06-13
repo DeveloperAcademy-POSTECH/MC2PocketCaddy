@@ -35,7 +35,7 @@ struct HomeView: View {
             //Image 사이즈 수정 필요함
             ZStack{
                 RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.grayBackground)
+                    .foregroundColor(.backgroundWhite)
                     .frame(width: 330 , height: 60)
                     .overlay(
                         HStack{

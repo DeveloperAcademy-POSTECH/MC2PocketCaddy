@@ -25,7 +25,7 @@ struct SelectionView: View {
                         } label: {
                             Image(systemName: "arrow.left")
                                 .font(Font.system(size: UIScreen.main.bounds.width * 0.05, weight: .semibold))
-                                .foregroundColor(.thirdGreen)
+                                .foregroundColor(.primaryGreen)
                         }
                         Spacer()
                     }
@@ -37,7 +37,7 @@ struct SelectionView: View {
                         HStack {
                             Text("현재")
                             Text("공")
-                                .foregroundColor(.thirdGreen)
+                                .foregroundColor(.primaryGreen)
                             Text("은")
                                 .offset(x: -8)
                         }
@@ -48,7 +48,7 @@ struct SelectionView: View {
                             .padding(.bottom, 1)
                         
                         Text("공이 위치한 구역과 목표 거리를 입력해주세요 :)")
-                            .foregroundColor(.fontGray)
+                            .foregroundColor(.gray)
                             .font(.system(size: UIScreen.main.bounds.width * 0.038))
                     }
                     .padding(.bottom, UIScreen.main.bounds.height * 0.03)
@@ -116,7 +116,7 @@ struct SelectionView: View {
                                 .font(Font.system(size: UIScreen.main.bounds.width * 0.045, weight: .bold))
                                 .frame(width: UIScreen.main.bounds.width * 0.3, height: UIScreen.main.bounds.height * 0.065)
                                 .background(
-                                    LinearGradient(gradient: Gradient(colors: [.gradientColorLight, .gradientColorDark]), startPoint: .leading, endPoint: .trailing)
+                                    LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
                                         .cornerRadius(UIScreen.main.bounds.height)
                             )
                         }

@@ -19,7 +19,6 @@ struct DescriptionView: View {
     
     var body: some View {
         ZStack {
-            Color.greenBackground
             
 // MARK: CutBackground Image
             VStack {
@@ -42,7 +41,7 @@ struct DescriptionView: View {
                         } label: {
                             Image(systemName: "arrow.backward")
                                 .resizable()
-                                .foregroundColor(.greenForeground)
+                                .foregroundColor(.primaryGreen)
                         }.frame(width: buttonWidth, height: buttonWidth)
                         .padding([.top, .leading])
                         
@@ -59,7 +58,7 @@ struct DescriptionView: View {
                         Text(".selectedClub")
                             .bold()
                             .font(.system(size: 40))
-                            .foregroundColor(.greenForeground)
+                            .foregroundColor(.primaryGreen)
                         
                         Image("CategoryDriver")
                     }.frame(maxWidth: .infinity, alignment: .leading)
@@ -70,7 +69,7 @@ struct DescriptionView: View {
                         
                         Text("clubDataManager.selectedClub.description")
                             .font(.system(size: 16))
-                            .foregroundColor(.greenForeground)
+                            .foregroundColor(.primaryGreen)
                     }.frame(maxWidth: .infinity, alignment: .leading)
 
                     Spacer()

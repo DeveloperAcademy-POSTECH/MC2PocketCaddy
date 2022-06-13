@@ -17,12 +17,12 @@ struct DistanceButtonView: View {
         }){
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 150, height: 100)
-                .foregroundColor(selectedDistance == buttonDistance ? .secondaryGreen : .primaryWhite)
+                .foregroundColor(selectedDistance == buttonDistance ? .primaryGreen : .white)
                 .padding(15)
                 .overlay(
                     Text(buttonDistance.rawValue + "m")
                         .font(.system(size: 20))
-                        .foregroundColor(selectedDistance == buttonDistance ? .primaryWhite : .primaryGreen)
+                        .foregroundColor(selectedDistance == buttonDistance ? .white : .primaryGreen)
                         .bold()
                 )
         }

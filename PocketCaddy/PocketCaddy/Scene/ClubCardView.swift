@@ -54,12 +54,12 @@ struct ClubCardView: View {
             } //: VSTACK
             .padding(.leading, 15)
             .frame(height: 69)
-            .background(LinearGradient(gradient: Gradient(colors: [Color.primaryGreen, Color.primaryYellow]), startPoint: .leading, endPoint: .trailing))
+            .background(LinearGradient(gradient: Gradient(colors: [Color.primaryGreen, Color.secondaryGreen]), startPoint: .leading, endPoint: .trailing))
             .offset(y: 65)
             
         } //: ZSTACK
         .frame(width: 168, height: 198)
-        .background(Color.grayBackground)
+        .background(Color.backgroundWhite)
         .cornerRadius(20)
         .shadow(color: .gray, radius: 2, x: 0, y: 0)
         .padding(.bottom, 5)

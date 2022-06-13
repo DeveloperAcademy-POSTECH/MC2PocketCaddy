@@ -42,12 +42,12 @@ struct SampleSelectionView: View {
                 // 🔥 VStack (Title "현재 공은 어느 위치에 있나요?)
                 // ✅ Set multiline text, and UIScreen info as variables
                 VStack(alignment: .leading) {
-                    Text("현재 \(Text("공").foregroundColor(.thirdGreen))은\n어느 위치에 있나요?")
+                    Text("현재 \(Text("공").foregroundColor(.primaryGreen))은\n어느 위치에 있나요?")
                         .frame(width: 300, height: 100, alignment: .leading)
                         .font(.system(size: screenWidth * 0.09, weight: .bold))
                     
                     Text("공이 위치한 구역과 목표 거리를 입력해주세요 :)")
-                        .foregroundColor(.fontGray)
+                        .foregroundColor(.gray)
                         .font(.system(size: screenWidth * 0.038))
                     
                 }
@@ -118,7 +118,7 @@ struct SampleSelectionView: View {
                         .font(Font.system(size: screenWidth * 0.045, weight: .bold))
                         .frame(width: screenWidth * 0.3, height: screenHeight * 0.065)
                         .background(
-                            LinearGradient(gradient: Gradient(colors: [.gradientColorLight, .gradientColorDark]), startPoint: .leading, endPoint: .trailing)
+                            LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
                                 .cornerRadius(screenHeight)
                         )
                 }

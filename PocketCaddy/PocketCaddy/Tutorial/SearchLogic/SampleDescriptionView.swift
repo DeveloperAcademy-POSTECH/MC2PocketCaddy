@@ -31,7 +31,7 @@ struct SampleDescriptionView: View {
         let searchResult = clubDataManager.searchClub(location: locationInfo, selectedDistance: distance)
         
         ZStack {
-            Color.greenBackground
+            Color.secondaryGreen
             
             // 🔥 CutBackground Image
             VStack {
@@ -55,7 +55,7 @@ struct SampleDescriptionView: View {
                         Text("\(searchResult != nil ? searchResult!.description : "추천할 게 없어요 ㅠㅠ")")
                             .font(.system(size: 16))
                     }
-                    .foregroundColor(.greenForeground)
+                    .foregroundColor(.primaryGreen)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 30)
                     

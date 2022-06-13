@@ -63,7 +63,7 @@ struct MapView: View {
                         Text("How far?")
                             .font(.system(size: 50))
                             .bold()
-                            .foregroundColor(.primaryWhite)
+                            .foregroundColor(.white)
                             .padding(20)
                             .offset(x: -70)
                         
