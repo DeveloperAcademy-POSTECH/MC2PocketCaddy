@@ -1,6 +1,6 @@
 import SpriteKit
 extension UIImage {
-    static func gradientImage(withBounds: CGRect, startPoint: CGPoint, endPoint: CGPoint , colors: [CGColor]) -> UIImage {
+    static func gradientImage(withBounds: CGRect, startPoint: CGPoint, endPoint: CGPoint , colors: [CGColor]) -> UIImage? {
         
         // Configure the gradient layer based on input
         let gradientLayer = CAGradientLayer()
@@ -14,6 +14,6 @@ extension UIImage {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image!
+        return image
     }
 }
