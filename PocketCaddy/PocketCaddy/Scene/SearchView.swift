@@ -14,7 +14,6 @@ struct SearchView: View {
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     @State private var search: String = ""
-    @State private var isAnimation: Bool = false
     
     // MARK: - BODY
     
@@ -59,7 +58,12 @@ struct SearchView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                     Spacer()
-                }.padding(.leading, 24)
+                    Image(systemName: "xmark.circle")
+                        .opacity(search.isEmpty ? 0 : 1)
+                        .onTapGesture {
+                            search = ""
+                        }
+                }.padding(.horizontal, 24)
             )
             
             // MARK: - CENTER, CARD GRID
