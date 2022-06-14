@@ -103,6 +103,7 @@ struct SelectionView: View {
                     )
             }
             .disabled(currentButtonStatus == nil)
+            .padding(.top, Screen.width * 0.04)
         }
           .frame(maxWidth: Screen.width, maxHeight: Screen.height)
           // 전체 뷰에 대한 padding
@@ -147,7 +148,7 @@ struct LocationRectangle: View {
         }
     }
 }
-//
+
 struct SelectionView_Previews: PreviewProvider {
     static var previews: some View {
         SelectionView()
