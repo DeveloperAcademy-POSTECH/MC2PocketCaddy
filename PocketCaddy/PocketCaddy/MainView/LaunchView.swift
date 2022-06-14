@@ -13,10 +13,10 @@ class MyTimer: ObservableObject {
    @Published var value: Int = 0
    @Published var goToHomeView = false
    init() {
-       Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+       Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {  timer in
            self.value += 1
-           if self.value == 4 {
-               self.goToHomeView.toggle()
+           if self.value == 9999 {
+               self.goToHomeView = true
            }
        }
    }

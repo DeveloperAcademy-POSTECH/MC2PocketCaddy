@@ -21,7 +21,6 @@ final class LaunchScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(gradientNode)
         createFlag()
         
-//         if let or guard let
     }
     func createFlag() {
         flag = SKSpriteNode(imageNamed: "flag-1")

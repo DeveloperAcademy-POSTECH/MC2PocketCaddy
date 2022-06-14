@@ -19,7 +19,7 @@ struct ClubModel: Codable {
 }
 
 enum ClubCategory: String, Codable {
-    case wood
+    case wood = "wood"
     case iron
     case wedge
     case putter

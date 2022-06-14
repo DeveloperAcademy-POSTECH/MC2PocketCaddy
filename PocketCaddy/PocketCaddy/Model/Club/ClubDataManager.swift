@@ -9,7 +9,18 @@ import Foundation
 
 class ClubDataManager: ObservableObject {
     @Published var clubData: [ClubModel] = []
-    @Published var selectedClub: [ClubModel?] = []
+    @Published var selectedClub: [ClubModel?] = [ ClubModel(
+        category: .wood,
+        location: .fairwayAndRough,
+        name: "Wood 1",
+        subName: "Driver",
+        length: 43.5,
+        distance: 220,
+        loft: 12,
+        description: "드라이버는 클럽의 헤드가 머리보다 앞에서 친다는 느낌으로 스윙하기"
+    )]
+
+
     let searchEtc: [String: String] =
     [
         "1-Wood": "1번우드1번드라이버",
@@ -35,6 +46,22 @@ class ClubDataManager: ObservableObject {
     
     init() {
         self.getClubData()
+    }
+
+    @Published var models = [
+        Model(id: 0, name: "Driver1", modelName: "Golf Drive.dae", details: "Driver shot"),
+        Model(id: 0, name: "Driver2", modelName: "Golf Putt.dae", details: "putt shot"),
+        Model(id: 0, name: "Chip shot", modelName: "Golf Chip.dae", details: "Chip shot")
+    ]
+    @Published var index = 0
+    @Published var isOpen: Bool = false
+    
+    struct Model : Identifiable {
+        
+        var id : Int
+        var name : String
+        var modelName : String
+        var details : String
     }
 
     func getClubData() {

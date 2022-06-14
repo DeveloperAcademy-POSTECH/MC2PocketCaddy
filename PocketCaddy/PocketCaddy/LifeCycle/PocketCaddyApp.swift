@@ -14,6 +14,7 @@ struct PocketCaddyApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchView()
+//            SceneKitView()
                 .environmentObject(jsonDataManager)
 //            SampleSelectionView()
         }
