@@ -68,13 +68,15 @@ struct SelectionView: View {
             HStack {
                 Text("Distance")
                     .font(Font.system(size: Screen.width * 0.07, weight: .bold))
+                    .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
                 Spacer()
             }
             .padding(.top, Screen.height * 0.03)
             
-            Text("“목표 거리는 \(Text("\(Int(distance))m").foregroundColor(.primaryGreen))입니다.“")
+            Text("“목표 거리는 \(Text("\(Int(distance))m").foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen))입니다.“")
                 .font(Font.system(size: Screen.width * 0.045, weight: .bold))
                 .padding(.top, 5)
+                .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
             
             Slider(
                 value: $distance,
@@ -87,7 +89,9 @@ struct SelectionView: View {
             } maximumValueLabel: {
                 Text("\(Int(maxDistance))m")
             }
-            .accentColor(.primaryGreen)
+            .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
+            .accentColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen)
+            .disabled(currentButtonStatus != .fairwayAndRough)
             
             NavigationLink(destination: SampleDescriptionView(
                 locationInfo: currentButtonStatus != nil ? currentButtonStatus! : .fairwayAndRough,
@@ -97,12 +101,17 @@ struct SelectionView: View {
                     .foregroundColor(.white)
                     .font(Font.system(size: Screen.width * 0.045, weight: .bold))
                     .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
-                    .background(
-                        LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
-                            .cornerRadius(Screen.height)
-                    )
+                    .background {
+                        if currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && distance != 0) {
+                            LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
+                                .cornerRadius(Screen.height)
+                        } else {
+                            RoundedRectangle(cornerRadius: Screen.height)
+                                .foregroundColor(Color.backgroundWhite)
+                        }
+                    }
             }
-            .disabled(currentButtonStatus == nil)
+            .disabled(!(currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && distance != 0)))
             .padding(.top, Screen.width * 0.04)
         }
           .frame(maxWidth: Screen.width, maxHeight: Screen.height)
