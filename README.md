@@ -5,12 +5,6 @@
 
 ## :pushpin: Features
 
-
-## :people_hugging: Authors
-
-- [@Sanghyun Kim](https://github.com/iDrogba) | [@Minyoung Kim](https://github.com/pig1606) | [@Jungin Yoo](https://github.com/yoo86) | [@Jinha Byeon](https://github.com/Byeonjinha) | [@Jaehoon Lee](https://github.com/jaehoon9186) | [@Hyeon-sang Lee](https://github.com/phainestha1)
-
-
 ## :framed_picture: Demo
 
 
@@ -26,3 +20,6 @@
 
 
 ## :lock_with_ink_pen: License
+
+## :people_hugging: Authors
+- [@Drogba/Sanghyun Kim](https://github.com/iDrogba) | [@Nia/Minyoung Kim](https://github.com/pig1606) | [@Thina/Jungin Yoo](https://github.com/yoo86) | [@Badger/Jinha Byeon](https://github.com/Byeonjinha) | [@Jerry/Jaehoon Lee](https://github.com/jaehoon9186) | [@Theo/Hyeon-sang Lee](https://github.com/phainestha1)

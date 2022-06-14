@@ -13,7 +13,6 @@ import SwiftUI
 // ⚡️ - Code needed
 struct SampleSelectionView: View {
     // State Variables
-    @State var isEditing: Bool = true
     @State var distance: Double = 0
     @State var currentButtonStatus: Location? = nil
     
@@ -69,7 +68,7 @@ struct SampleSelectionView: View {
                             .foregroundColor(.black)
                     }
                 }
-                
+
                 // 🔥 Location 선택 버튼
                 // ✅ HStack to LazyVGrid - Users have to press only one button without multiple selections
                 LazyVGrid(columns: columns) {

@@ -14,7 +14,6 @@ struct SearchView: View {
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     @State private var search: String = ""
-    @State private var isAnimation: Bool = false
     
     // MARK: - BODY
     
@@ -28,38 +27,44 @@ struct SearchView: View {
                     Image(systemName: "arrow.backward")
                         .resizable()
                         .foregroundColor(.primaryGreen)
-                }.frame(width: buttonWidth, height: buttonWidth)
+                }.frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
                 .padding([.top, .leading])
                 
                 Spacer()
             }
             
-            Group {
-                HStack{
-                    Text("정보가 ")
-                    Text("궁금한 채")
-                    Text("는")
-                }
-                Text("무엇인가요?")
+            HStack {
+                Text("\(Text("어떤 채의 정보").foregroundColor(.primaryGreen))가\n궁금하신가요?")
+                    .font(.system(size: Screen.width * 0.09, weight: .bold))
+                Spacer()
             }
+            .frame(idealWidth: Screen.width, minHeight: 70, idealHeight: Screen.height * 0.118)
+            .padding([.leading, .bottom], Screen.height * 0.02)
             
             HStack {
                 TextField("Search", text: $search)
-                    .padding(.leading, 30)
+                    .padding(.horizontal, 30)
                     .onChange(of: search) { newValue in
                         clubDataManager.findClubsByWord(word: newValue)
                     }
                 
             } //: HSTACK
-            .frame(width: 327, height: 36, alignment: .center)
+            .frame(width: Screen.width * 0.838, height: 36, alignment: .center)
             .background(Color.backgroundWhite)
             .cornerRadius(12)
             .padding(.horizontal)
             .overlay(
                 HStack {
                     Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
                     Spacer()
-                }.padding(.leading, 24)
+                    Image(systemName: "xmark.circle")
+                        .foregroundColor(.gray)
+                        .opacity(search.isEmpty ? 0 : 1)
+                        .onTapGesture {
+                            search = ""
+                        }
+                }.padding(.horizontal, 24)
             )
             
             // MARK: - CENTER, CARD GRID
@@ -74,7 +79,14 @@ struct SearchView: View {
                     }
                     .padding()
                 } else {
-                    Text("없음.")
+                    VStack {
+                        Text("찾으시는")
+                        Text("채의 정보가")
+                        Text("없습니다")
+                    }
+                    .font(.system(size: Screen.width * 0.09, weight: .bold))
+                    .offset(y: Screen.height * 0.15)
+                    
                 }
             } //: SCROLL
         } //: VSTACK

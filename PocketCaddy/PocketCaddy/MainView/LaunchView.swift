@@ -4,49 +4,46 @@
 //
 //  Created by Byeon jinha on 2022/06/10.
 //
-
 import SpriteKit
 import SwiftUI
 
-class MyTimer: ObservableObject {
-   var value: Int = 0
-   
-   init() {
-                                             //간격        //반복되기때문에 true   //timer을 in 해준다.
-       Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-           self.value += 1
-           
-       }
-   }
-}
-
 struct LaunchView: View {
-    var myTimer = MyTimer()
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
-    var value: Int = 0
+    @State var value: Int = 0
+    @State var goToHomeView = false
 
     var scene: SKScene {
         let scene = LaunchScene()
-        scene.size = CGSize(width: screenWidth, height: screenHeight)
+        scene.size = CGSize(width: Screen.width, height: Screen.height)
         scene.scaleMode = .fill
         return scene
     }
     
     var body: some View {
         NavigationView{
-            NavigationLink(destination: HomeView()){
+            NavigationLink(destination: HomeView(), isActive: $goToHomeView){
                 ZStack{
                     SpriteView(scene: scene)
-                        .frame(width:screenWidth, height:screenHeight)
+                        .frame(width:Screen.width , height:Screen.height)
                         .ignoresSafeArea()
-
                     Text("POCKET\nCADDIE").font(.system(size: 40))
                         .foregroundColor(.white)
                         .bold()
-                    Text(String(myTimer.value))
                 }
+            }.onAppear(){
+                timeCount()
             }
         }
     }
+    
+    func timeCount() {
+       Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {  timer in
+           self.value += 1
+           print(self.value)
+           if self.value == 4 {
+               self.goToHomeView = true
+               return
+           }
+           
+       }
+   }
 }

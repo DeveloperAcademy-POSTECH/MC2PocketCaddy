@@ -23,6 +23,7 @@ final class LaunchScene: SKScene, SKPhysicsContactDelegate {
         
 //         if let or guard let
     }
+    
     func createFlag() {
         flag = SKSpriteNode(imageNamed: "flag-1")
         flag.size = CGSize(width: self.size.width / 8, height:self.size.width / 8)//사이즈
@@ -30,8 +31,8 @@ final class LaunchScene: SKScene, SKPhysicsContactDelegate {
         flag.physicsBody?.affectedByGravity = false
         flag.physicsBody?.isDynamic = false
         addChild(flag)
-        guard let flyingBySKS = SKAction(named: "flying") else { return  }
-        flag.run(flyingBySKS)
+        guard let flags = SKAction(named: "flying") else { return }
+        flag.run(flags)
     }
     
 }
