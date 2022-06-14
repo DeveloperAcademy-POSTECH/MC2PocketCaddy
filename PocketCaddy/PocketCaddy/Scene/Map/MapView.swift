@@ -82,24 +82,6 @@ struct MapView: View {
                             DistanceButtonView(buttonDistance: .threeHundred, selectedDistance: $selectedDistance)
                         }
                         
-                        NavigationLink(destination:
-                            DescriptionView()
-                                .onAppear {
-                                    //MARK: 선택한 location 반영되게 수정해야함.
-                                    clubDataManager.searchClub(location: .fairwayAndRough, selectedDistance: selectedDistance)
-                                }
-                        ){
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 100, height: 50)
-                                .foregroundColor(.primaryGreen)
-                                .padding(15)
-                                .overlay(
-                                    Text("Choose")
-                                        .font(.system(size: 20))
-                                        .foregroundColor(.white)
-                                        .bold()
-                                )
-                        }
                     }
                     Spacer()
                 } // VStack
