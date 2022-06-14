@@ -8,14 +8,12 @@ import SpriteKit
 import SwiftUI
 
 struct LaunchView: View {
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
     @State var value: Int = 0
     @State var goToHomeView = false
 
     var scene: SKScene {
         let scene = LaunchScene()
-        scene.size = CGSize(width: screenWidth, height: screenHeight)
+        scene.size = CGSize(width: Screen.width, height: Screen.height)
         scene.scaleMode = .fill
         return scene
     }
@@ -25,7 +23,7 @@ struct LaunchView: View {
             NavigationLink(destination: HomeView(), isActive: $goToHomeView){
                 ZStack{
                     SpriteView(scene: scene)
-                        .frame(width:screenWidth, height:screenHeight)
+                        .frame(width:Screen.width , height:Screen.height)
                         .ignoresSafeArea()
                     Text("POCKET\nCADDIE").font(.system(size: 40))
                         .foregroundColor(.white)
