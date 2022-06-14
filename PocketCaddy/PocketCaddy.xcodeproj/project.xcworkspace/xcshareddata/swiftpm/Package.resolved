@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ipages",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/benjaminsage/iPages.git",
+      "state" : {
+        "revision" : "f57e3cba2cf4bd0a689236254cde361e54315720",
+        "version" : "0.0.13"
+      }
+    }
+  ],
+  "version" : 2
+}
