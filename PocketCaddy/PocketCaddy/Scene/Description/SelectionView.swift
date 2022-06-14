@@ -9,12 +9,12 @@ import SwiftUI
 
 struct SelectionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var distance: Double = 0
+    @State var value: Double = 0
     @State var currentButtonStatus: Location? = nil
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
-    let minDistance: Double = 0
-    let maxDistance: Double = 210
+    private let minDistance: Double = 0
+    private let maxDistance: Double = 210
     
     var body: some View {
         let locationButtonArray: [LocationRectangle] = [
@@ -85,13 +85,13 @@ struct SelectionView: View {
             }
             .padding(.top, Screen.height * 0.03)
             
-            Text("“목표 거리는 \(Text("\(Int(distance))m").foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen))입니다.“")
+            Text("“목표 거리는 \(Text("\(Int(value))m").foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen))입니다.“")
                 .font(Font.system(size: Screen.width * 0.045, weight: .bold))
                 .padding(.top, 5)
                 .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
             
             Slider(
-                value: $distance,
+                value: $value,
                 in: minDistance...maxDistance,
                 step: 5
             ) {
@@ -107,14 +107,14 @@ struct SelectionView: View {
             
             NavigationLink(destination: SampleDescriptionView(
                 locationInfo: currentButtonStatus != nil ? currentButtonStatus! : .fairwayAndRough,
-                distance: Int(distance)
+                distance: Int(value)
             )) {
                 Text("선택 완료")
                     .foregroundColor(.white)
                     .font(Font.system(size: Screen.width * 0.045, weight: .bold))
                     .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
                     .background {
-                        if currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && distance != 0) {
+                        if currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && value != 0) {
                             LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
                                 .cornerRadius(Screen.height)
                         } else {
@@ -123,7 +123,7 @@ struct SelectionView: View {
                         }
                     }
             }
-            .disabled(!(currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && distance != 0)))
+            .disabled(!(currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && value != 0)))
             .padding(.top, Screen.width * 0.04)
         }
           .frame(maxWidth: Screen.width, maxHeight: Screen.height)
