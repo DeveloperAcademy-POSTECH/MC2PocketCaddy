@@ -39,19 +39,11 @@ struct LaunchView: View {
     }
     
     func timeCount() {
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {  timer in
-            self.value += 1
-            print(self.value)
-            if self.value == 4 {
-                self.goToHomeView = true
-                return
-            }
-            
-        }
-    }
-}
-struct LaunchView_Previews: PreviewProvider {
-    static var previews: some View {
-        LaunchView()
-    }
+       Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {  timer in
+           self.value += 1
+           if self.value == 4 {
+               self.goToHomeView = true
+               return
+           }
+   }
 }

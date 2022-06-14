@@ -72,7 +72,7 @@ struct SearchView: View {
                 if clubDataManager.selectedClub.count > 0 {
                     LazyVGrid(columns: columns) {
                         ForEach(clubDataManager.selectedClub, id: \.?.name) { club in
-                            NavigationLink(destination: DescriptionView()) {
+                            NavigationLink(destination: DescriptionPageView()) {
                                 ClubCardView(clubModel: (club)!)
                             }
                         }
