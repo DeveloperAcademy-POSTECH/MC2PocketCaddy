@@ -30,8 +30,8 @@ final class LaunchScene: SKScene, SKPhysicsContactDelegate {
         flag.physicsBody?.affectedByGravity = false
         flag.physicsBody?.isDynamic = false
         addChild(flag)
-        guard let flyingBySKS = SKAction(named: "flying") else { return  }
-        flag.run(flyingBySKS)
+        guard let flags = SKAction(named: "flying") else { return  }
+        flag.run(flags)
     }
     
 }
