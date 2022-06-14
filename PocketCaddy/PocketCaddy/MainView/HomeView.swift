@@ -25,18 +25,19 @@ struct HomeView: View {
             
             NavigationLink(destination: SelectionView()){
                 Image("AllClubBtn")
+                    .resizable()
                     .padding()
             }
             
             NavigationLink(destination: SearchView()){
                 Image("LocationAndDistanceBtn")
+                    .resizable()
                     .padding()
             }
-            //Image 사이즈 수정 필요함
             ZStack{
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(.backgroundWhite)
-                    .frame(width: 330 , height: 60)
+                    .frame(height: UIScreen.main.bounds.height/12).padding()
                     .overlay(
                         HStack{
                             Image("Tip")
