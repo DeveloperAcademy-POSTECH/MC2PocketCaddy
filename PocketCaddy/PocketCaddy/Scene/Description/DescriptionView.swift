@@ -6,10 +6,24 @@
 //
 
 import SwiftUI
+import iPages
+
+struct DescriptionPageView: View {
+    @EnvironmentObject var clubDataManager : ClubDataManager
+    @State var currentPage: Int = 1
+    
+    var body: some View {
+        iPages(selection: $currentPage){
+            ForEach(clubDataManager.selectedClub.indices) { i in
+                DescriptionView(selectedClub: clubDataManager.selectedClub[i])
+            }
+        }
+    }
+}
 
 struct DescriptionView: View {
-    @EnvironmentObject var clubDataManager : ClubDataManager
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var selectedClub: ClubModel
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     let buttonWidth = UIScreen.main.bounds.height * 0.03
@@ -181,6 +195,6 @@ extension Image {
 
 struct DescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        DescriptionView()
+        DescriptionPageView()
     }
 }
