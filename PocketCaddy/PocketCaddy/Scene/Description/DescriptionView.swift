@@ -12,7 +12,6 @@ struct DescriptionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    let cutBackgroundHeight = UIScreen.main.bounds.height * 0.7
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let specHeight = UIScreen.main.bounds.height * 0.3
     let specWidth = UIScreen.main.bounds.width * 0.7
@@ -49,6 +48,10 @@ struct DescriptionView: View {
                     
                     Spacer()
                 }
+                
+                Spacer()
+                    .frame(height: screenHeight * 0.02)
+                
                 HStack(alignment: .center) {
                     Image("TestClub")
                         .resizable()
@@ -56,8 +59,10 @@ struct DescriptionView: View {
                 }
                 .frame(width: screenWidth ,height: screenHeight * 0.35)
                 .overlay {
-                    Image.arButton
-                        .offset(x: screenWidth * (-0.3), y: screenHeight * 0.1)
+//                    Image.arButton
+//                        .resizable()
+//                        .frame(width: screenWidth * 0.2, height: screenWidth * 0.2)
+//                        .offset(x: screenWidth * (-0.3), y: screenHeight * 0.1)
                 }
                     
                 ZStack{
@@ -69,6 +74,8 @@ struct DescriptionView: View {
                         }
                     
                     VStack(spacing: 10) {
+                        Spacer()
+                        
                         HStack{
                             Text("1-Wood")
                                 .foregroundColor(.primaryGreen)
@@ -90,6 +97,7 @@ struct DescriptionView: View {
                                 .foregroundColor(.primaryGreen)
                         }.frame(width: specWidth, alignment: .leading)
                         
+                        Spacer()
                         
                         HStack {
                             Spacer()
@@ -100,7 +108,9 @@ struct DescriptionView: View {
                                 .frame(width: screenWidth * 0.2, height: 1)
                             
                             Spacer()
-                        }.padding(.vertical, 10)
+                        }
+                        
+                        Spacer()
                         
                         HStack {
                             Image(systemName: "bookmark.fill")
@@ -149,8 +159,10 @@ struct DescriptionView: View {
                                 .foregroundColor(.gray)
                                 .font(.system(size: 16, weight: .bold))
                         }.frame(width: specWidth)
-                    }.frame(width: .infinity, height: .infinity)
-                    .foregroundColor(.backgroundWhite)
+                        
+                        Spacer()
+                    }.foregroundColor(.backgroundWhite)
+                    .padding()
                 }.frame(width: screenWidth * 0.9, height: screenHeight * 0.4, alignment: .center)
                 
                 Spacer()
