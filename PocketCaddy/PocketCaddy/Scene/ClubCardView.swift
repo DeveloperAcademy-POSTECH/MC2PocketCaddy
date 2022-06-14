@@ -19,8 +19,8 @@ struct ClubCardView: View {
             Image(clubModel.name)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 110)
-                .offset(y: -22)
+                .frame(width: Screen.width * 0.282)
+                .offset(y: Screen.height * -0.026)
   
             
             VStack(alignment: .leading) {
@@ -30,35 +30,29 @@ struct ClubCardView: View {
                 
                 Text(clubModel.name)
                     .foregroundColor(.white)
-                    .font(.system(size: 18))
+                    .font(.system(size: Screen.width * 0.046))
                     .fontWeight(.bold)
                 
                 if let distance = clubModel.distance {
                     Text("\(clubModel.subName) (\(distance)m)")
                         .foregroundColor(.white)
-                        .font(.system(size: 14))
+                        .font(.system(size: Screen.width * 0.0358))
                 } else {
                     Text("\(clubModel.subName)")
                         .foregroundColor(.white)
-                        .font(.system(size: 14))
+                        .font(.system(size: Screen.width * 0.0358))
                 }
-                
-                /*
-                Text("\(clubModel.subName) (\(clubModel.distance)m)")
-                    .foregroundColor(.white)
-                    .font(.system(size: 14))
-                 */
                 
                 Spacer()
 
             } //: VSTACK
-            .padding(.leading, 15)
-            .frame(height: 69)
+            .padding(.leading, Screen.width * 0.0384)
+            .frame(height: Screen.height * 0.081)
             .background(LinearGradient(gradient: Gradient(colors: [Color.primaryGreen, Color.secondaryGreen]), startPoint: .leading, endPoint: .trailing))
-            .offset(y: 65)
+            .offset(y: Screen.height * 0.077)
             
         } //: ZSTACK
-        .frame(width: 168, height: 198)
+        .frame(width: Screen.width * 0.43, height: Screen.height * 0.235)
         .background(Color.backgroundWhite)
         .cornerRadius(20)
         .shadow(color: .gray, radius: 2, x: 0, y: 0)

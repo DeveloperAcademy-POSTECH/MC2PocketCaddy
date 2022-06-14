@@ -27,36 +27,39 @@ struct SearchView: View {
                     Image(systemName: "arrow.backward")
                         .resizable()
                         .foregroundColor(.primaryGreen)
-                }.frame(width: buttonWidth, height: buttonWidth)
+                }.frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
                 .padding([.top, .leading])
                 
                 Spacer()
             }
             
-            VStack(alignment: .leading) {
+            HStack {
                 Text("\(Text("어떤 채의 정보").foregroundColor(.primaryGreen))가\n궁금하신가요?")
-                    .frame(width: 300, height: 100, alignment: .leading)
                     .font(.system(size: Screen.width * 0.09, weight: .bold))
+                Spacer()
             }
-            .padding(.bottom, Screen.height * 0.03)
+            .frame(idealWidth: Screen.width, minHeight: 70, idealHeight: Screen.height * 0.118)
+            .padding([.leading, .bottom], Screen.height * 0.02)
             
             HStack {
                 TextField("Search", text: $search)
-                    .padding(.leading, 30)
+                    .padding(.horizontal, 30)
                     .onChange(of: search) { newValue in
                         clubDataManager.findClubsByWord(word: newValue)
                     }
                 
             } //: HSTACK
-            .frame(width: 327, height: 36, alignment: .center)
+            .frame(width: Screen.width * 0.838, height: 36, alignment: .center)
             .background(Color.backgroundWhite)
             .cornerRadius(12)
             .padding(.horizontal)
             .overlay(
                 HStack {
                     Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
                     Spacer()
                     Image(systemName: "xmark.circle")
+                        .foregroundColor(.gray)
                         .opacity(search.isEmpty ? 0 : 1)
                         .onTapGesture {
                             search = ""
@@ -76,7 +79,14 @@ struct SearchView: View {
                     }
                     .padding()
                 } else {
-                    Text("없음.")
+                    VStack {
+                        Text("찾으시는")
+                        Text("채의 정보가")
+                        Text("없습니다")
+                    }
+                    .font(.system(size: Screen.width * 0.09, weight: .bold))
+                    .offset(y: Screen.height * 0.15)
+                    
                 }
             } //: SCROLL
         } //: VSTACK
