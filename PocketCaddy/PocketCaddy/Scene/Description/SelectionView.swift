@@ -26,6 +26,18 @@ struct SelectionView: View {
         
         VStack {
             HStack {
+                Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "arrow.backward")
+                        .resizable()
+                        .foregroundColor(.primaryGreen)
+                }.frame(width: Screen.height * 0.03, height: Screen.height * 0.025)
+                
+                Spacer()
+            }
+            
+            HStack {
                 VStack(alignment: .leading) {
                     Text("현재 \(Text("공").foregroundColor(.primaryGreen))은\n어느 위치에 있나요?")
                         .font(.system(size: Screen.width * 0.09, weight: .bold))
@@ -117,7 +129,8 @@ struct SelectionView: View {
           .frame(maxWidth: Screen.width, maxHeight: Screen.height)
           // 전체 뷰에 대한 padding
           .padding(.horizontal, Screen.width * 0.06)
-          .padding(.bottom, Screen.width * 0.15)
+          .padding([.top, .bottom], Screen.width * 0.08)
+          .navigationBarHidden(true)
     }
 }
 
