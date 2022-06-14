@@ -10,7 +10,7 @@ import SwiftUI
 struct LaunchView: View {
     @State var value: Int = 0
     @State var goToHomeView = false
-
+    
     var scene: SKScene {
         let scene = LaunchScene()
         scene.size = CGSize(width: Screen.width, height: Screen.height)
@@ -22,12 +22,15 @@ struct LaunchView: View {
         NavigationView{
             NavigationLink(destination: HomeView(), isActive: $goToHomeView){
                 ZStack{
+                    
                     SpriteView(scene: scene)
                         .frame(width:Screen.width , height:Screen.height)
                         .ignoresSafeArea()
-                    Text("POCKET\nCADDIE").font(.system(size: 40))
+                    
+                    Text("POCKET\nCADDIE")
+                        .font(.system(size: 26, weight: .heavy))
                         .foregroundColor(.white)
-                        .bold()
+                    
                 }
             }.onAppear(){
                 timeCount()
@@ -42,7 +45,5 @@ struct LaunchView: View {
                self.goToHomeView = true
                return
            }
-           
-       }
    }
 }
