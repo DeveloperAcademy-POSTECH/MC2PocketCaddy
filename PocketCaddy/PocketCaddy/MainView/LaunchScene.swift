@@ -23,6 +23,7 @@ final class LaunchScene: SKScene, SKPhysicsContactDelegate {
         
 //         if let or guard let
     }
+    
     func createFlag() {
         flag = SKSpriteNode(imageNamed: "flag-1")
         flag.size = CGSize(width: self.size.width / 8, height:self.size.width / 8)//사이즈
