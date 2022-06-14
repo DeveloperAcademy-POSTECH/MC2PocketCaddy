@@ -117,9 +117,3 @@ struct SampleDescriptionView: View {
         }// ZStack
     }// SampleDescriptionView Body
 }// SampleDescriptionView
-
-struct SampleDescriptionView_Previews: PreviewProvider {
-    static var previews: some View {
-        DescriptionView()
-    }
-}

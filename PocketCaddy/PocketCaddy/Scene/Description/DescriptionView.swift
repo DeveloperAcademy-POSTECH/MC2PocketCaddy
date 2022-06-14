@@ -15,7 +15,7 @@ struct DescriptionPageView: View {
     var body: some View {
         iPages(selection: $currentPage){
             ForEach(clubDataManager.selectedClub.indices) { i in
-                DescriptionView(selectedClub: clubDataManager.selectedClub[i])
+                //DescriptionView(selectedClub: clubDataManager.selectedClub[i])
             }
         }
     }

@@ -38,7 +38,6 @@ struct LaunchView: View {
     func timeCount() {
        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {  timer in
            self.value += 1
-           print(self.value)
            if self.value == 4 {
                self.goToHomeView = true
                return
