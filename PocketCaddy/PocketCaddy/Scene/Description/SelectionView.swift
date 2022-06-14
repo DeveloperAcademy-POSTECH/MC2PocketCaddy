@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectionView: View {
+    @EnvironmentObject var clubDataManager: ClubDataManager
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var value: Double = 0
     @State var currentButtonStatus: Location? = nil
@@ -105,32 +106,67 @@ struct SelectionView: View {
             .accentColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen)
             .disabled(currentButtonStatus != .fairwayAndRough)
             
-            NavigationLink(destination: SampleDescriptionView(
-                locationInfo: currentButtonStatus != nil ? currentButtonStatus! : .fairwayAndRough,
-                distance: Int(value)
-            )) {
-                Text("선택 완료")
-                    .foregroundColor(.white)
-                    .font(Font.system(size: Screen.width * 0.045, weight: .bold))
-                    .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
-                    .background {
-                        if currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && value != 0) {
-                            LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
-                                .cornerRadius(Screen.height)
-                        } else {
+            Spacer()
+                .frame(height: Screen.width * 0.04)
+            
+            switch currentButtonStatus {
+            case .fairwayAndRough:
+                if value == 0 {
+                    Text("선택 완료")
+                        .foregroundColor(.white)
+                        .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                        .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
+                        .background{
                             RoundedRectangle(cornerRadius: Screen.height)
                                 .foregroundColor(Color.backgroundWhite)
                         }
+                } else {
+                    NavigationLink(destination: DescriptionPageView(searchClub: searchClub)){
+                        Text("선택 완료")
+                            .foregroundColor(.white)
+                            .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                            .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
+                            .background {
+                                LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
+                                    .cornerRadius(Screen.height)
+                            }
                     }
+                }
+            default:
+                if currentButtonStatus == nil {
+                    Text("선택 완료")
+                        .foregroundColor(.white)
+                        .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                        .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
+                        .background{
+                            RoundedRectangle(cornerRadius: Screen.height)
+                                .foregroundColor(Color.backgroundWhite)
+                        }
+                } else {
+                    NavigationLink(destination: DescriptionPageView(searchClub: searchClub)){
+                        Text("선택 완료")
+                            .foregroundColor(.white)
+                            .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                            .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
+                            .background {
+                                LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
+                                    .cornerRadius(Screen.height)
+                            }
+                    }
+                }
             }
-            .disabled(!(currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && value != 0)))
-            .padding(.top, Screen.width * 0.04)
         }
           .frame(maxWidth: Screen.width, maxHeight: Screen.height)
           // 전체 뷰에 대한 padding
           .padding(.horizontal, Screen.width * 0.06)
-          .padding([.top, .bottom], Screen.width * 0.08)
+          .padding(.vertical, Screen.width * 0.08)
           .navigationBarHidden(true)
+    }
+    
+    // MARK: 선택 완료 버튼 함수 처리
+    private func searchClub() {
+        guard let location = currentButtonStatus else { return }
+        self.clubDataManager.searchClub(location: location, selectedDistance: Int(value))
     }
 }
 

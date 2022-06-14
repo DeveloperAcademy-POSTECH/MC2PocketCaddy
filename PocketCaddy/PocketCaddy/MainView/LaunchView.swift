@@ -45,5 +45,6 @@ struct LaunchView: View {
                self.goToHomeView = true
                return
            }
+       }
    }
 }
