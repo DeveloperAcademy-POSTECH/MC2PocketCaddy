@@ -37,7 +37,7 @@ class ClubDataManager: ObservableObject {
         self.getClubData()
         self.updateSearchEtc()
     }
-
+    
     func getClubData() {
         guard let path = Bundle.main.path(forResource: "Club", ofType: "json") else {
             return
@@ -45,60 +45,16 @@ class ClubDataManager: ObservableObject {
         guard let clubJson = try? String(contentsOfFile: path) else {
             return
         }
-
+        
         let decoder = JSONDecoder()
         let data = clubJson.data(using: .utf8)
-
+        
         guard let data = data,
               let clubs = try? decoder.decode([ClubModel].self, from: data) else {
             return
         }
         self.clubData = clubs
     }
-    
-    func searchClub(location: Location, selectedDistance: Distance) {
-        let dxMin: Int?
-        let dxMax: Int?
-        
-        switch selectedDistance {
-        case .zero:
-            dxMin = 0
-            dxMax = 49
-        case .fifty:
-            dxMin = 50
-            dxMax = 99
-        case .hundred:
-            dxMin = 100
-            dxMax = 149
-        case .hundredFifty:
-            dxMin = 150
-            dxMax = 199
-        case .twoHundred:
-            dxMin = 200
-            dxMax = 299
-        case .threeHundred:
-            dxMin = 300
-            dxMax = 500
-        }
-        
-        for clubData in self.clubData {
-            
-            if location != Location.fairwayAndRough && clubData.location == location {
-                selectedClub.append(clubData)
-                
-            } else if location == Location.fairwayAndRough && clubData.location == location {
-                
-                if let dxMinTemp = dxMin, let dxMaxTemp = dxMax {
-                    guard let distance = clubData.distance else { break }
-                    
-                    if dxMinTemp <= distance && distance < dxMaxTemp {
-                        selectedClub.append(clubData)
-                    }
-                }
-                
-            }
-        }
-    } //: FUNC
     
     func updateSearchEtc() {
         
@@ -170,5 +126,39 @@ class ClubDataManager: ObservableObject {
         
         self.selectedClub = clubsTemp
     } //: FUNC
-
+    
+    
+    //✅ SelectionView로 부터 전달받은 location, distance 파라미터를 핸들링합니다.
+    //✅ 위치, 거리에 적합한 채 정보를 selectedClub 변수에 할당합니다.
+    func searchClub(location: Location, selectedDistance: Int) {
+        var temp: [Int: Int] = [:]
+        
+        self.selectedClub = []
+        
+        for index in 0..<self.clubData.count {
+            // 위치가 Teeing Ground, Green, Bunker인 경우
+            if location != Location.fairwayAndRough && self.clubData[index].location == location {
+                self.selectedClub.append(self.clubData[index])
+                
+                // Fairway and Rough 위치와 Distance 정보가 할당된 경우
+            } else if location == Location.fairwayAndRough && self.clubData[index].location == location {
+                print("페어웨이 러프임")
+                temp[index] = abs(self.clubData[index].distance! - selectedDistance)
+            }
+        }
+        
+        if location == .fairwayAndRough {
+            let temp2 = temp.sorted { $0.1 < $1.1 }
+       
+            
+            for (k, v) in temp2 {
+                self.selectedClub.append(self.clubData[k])
+                if self.selectedClub.count >= 3 {
+                    break
+                }
+            }
+        }
+        
+    }// searchClub
+    
 }
