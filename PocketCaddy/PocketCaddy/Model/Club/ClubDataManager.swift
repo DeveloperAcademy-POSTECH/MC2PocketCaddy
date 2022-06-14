@@ -10,7 +10,7 @@ import Foundation
 class ClubDataManager: ObservableObject {
     @Published var clubData: [ClubModel] = []
     @Published var selectedClub: [ClubModel?] = []
-    let searchEtc: [String: String] =
+    var searchEtc: [String: String] =
     [
         "1-Wood": "1번우드1번드라이버",
         "2-Wood": "2번우드2번브라시",
@@ -35,6 +35,7 @@ class ClubDataManager: ObservableObject {
     
     init() {
         self.getClubData()
+        self.updateSearchEtc()
     }
 
     func getClubData() {
@@ -99,11 +100,59 @@ class ClubDataManager: ObservableObject {
         }
     } //: FUNC
     
+    func updateSearchEtc() {
+        
+        for club in self.clubData {
+            searchEtc[club.name]?.append(String(club.category.rawValue + club.subName + club.name).components(separatedBy: [" "]).joined().lowercased())
+            
+            if let searchEtcStr = searchEtc[club.name] {
+                searchEtc[club.name] = separateKor(str: searchEtcStr)
+            }
+        }
+        
+    }
+    
+    // 초중종성 분리
+    func separateKor(str: String) -> String {
+        let cho: [String] = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ",
+                             "ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
+        let joong: [String] = ["ㅏ","ㅐ","ㅑ","ㅒ","ㅓ","ㅔ","ㅕ","ㅖ","ㅗ","ㅘ",
+                               "ㅙ","ㅚ","ㅛ","ㅜ","ㅝ","ㅞ","ㅟ","ㅠ","ㅡ","ㅢ","ㅣ"]
+        let jong: [String] = ["","ㄱ","ㄲ","ㄳ","ㄴ","ㄵ","ㄶ","ㄷ","ㄹ","ㄺ","ㄻ","ㄼ",
+                              "ㄽ","ㄾ","ㄿ","ㅀ","ㅁ","ㅂ","ㅄ","ㅅ","ㅆ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
+        
+        var separatedStr: String = ""
+        
+        for char in str {
+            let char = String(char)
+            var charUniNo = UnicodeScalar(char)!.value
+            
+            // 가 ~ 힣 사이
+            if charUniNo >= 44032 && charUniNo <= 55203 {
+                
+                // 초중종 separatedStr에 추가
+                
+                charUniNo = charUniNo - 44032
+                
+                separatedStr.append(cho[Int(charUniNo / (21 * 28))])
+                separatedStr.append(joong[Int((charUniNo % (21 * 28)) / 28)])
+                separatedStr.append(jong[Int((charUniNo % (21 * 28)) % 28)])
+                
+            } else {
+                // 한글아님 바로 separatedStr에 추가
+                separatedStr.append(char)
+            }
+        }
+        
+        return separatedStr
+    }
+    
     func findClubsByWord(word: String) {
         var clubsTemp: [ClubModel] = []
-        var clubInfoStr: String = ""
         
-        let wordTemp: String = word.components(separatedBy: [" "]).joined().lowercased()
+        var wordTemp: String = word.components(separatedBy: [" "]).joined().lowercased()
+        wordTemp = separateKor(str: wordTemp)
+
         
         // 검색어 없음. 모든클럽 출력
         if wordTemp == "" {
@@ -114,9 +163,7 @@ class ClubDataManager: ObservableObject {
         for club in self.clubData {
             guard let searchEtc = searchEtc[club.name] else { return }
             
-            clubInfoStr = String(club.category.rawValue + club.subName + club.name + searchEtc).components(separatedBy: [" "]).joined().lowercased()
-            
-            if clubInfoStr.contains(wordTemp) {
+            if searchEtc.contains(wordTemp) {
                 clubsTemp.append(club)
             }
         }
