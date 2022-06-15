@@ -1,6 +1,6 @@
 //
 //  HomeView.swift
-//  PocketCaddy
+//  PocketCaddie
 //
 //  Created by Byeon jinha on 2022/06/11.
 //
@@ -22,11 +22,11 @@ struct HomeView: View {
             
             Spacer()
             
-            NavigationLink(destination: SelectionView()) {
+            NavigationLink(destination: SearchView()) {
                 NavigationButton(image: "AllClubBtn")
             }
             
-            NavigationLink(destination: SearchView()) {
+            NavigationLink(destination: SelectionView()) {
                 NavigationButton(image: "LocationAndDistanceBtn")
             }
             
@@ -38,7 +38,7 @@ struct HomeView: View {
                 VStack (alignment: .leading) {
                     Image("Tip")
                     
-                    Text(HomeViewTip[Int.random(in: 0...HomeViewTip.count - 1)])
+                    Text(HomeViewTip[Int.random(in: 0..<HomeViewTip.count)])
                 }
                 .padding()
             }

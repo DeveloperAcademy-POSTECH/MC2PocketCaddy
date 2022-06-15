@@ -1,6 +1,6 @@
 //
 //  HomeViewTip.swift
-//  PocketCaddy
+//  PocketCaddie
 //
 //  Created by Noah's Ark on 2022/06/15.
 //
