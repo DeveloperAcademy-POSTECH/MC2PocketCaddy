@@ -18,14 +18,17 @@ struct CustomBackButton: View {
                 Image(systemName: "arrow.backward")
                     .resizable()
                     .foregroundColor(.primaryGreen)
-            }.frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
-            .padding([.top, .leading])
+            }
+            .frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
+            .padding(.leading, 25)
+            .padding(.vertical, 10)
             
             Spacer()
-        }
+        }// HStack
 
-    }
-}
+    }// body
+}// CustomBackButton
+
 struct CustomBackButton2: View {
     @EnvironmentObject var clubDataManager: ClubDataManager
     var presentationMode: Binding<PresentationMode>
