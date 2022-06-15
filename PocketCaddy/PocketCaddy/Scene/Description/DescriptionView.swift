@@ -105,7 +105,7 @@ struct DescriptionView: View {
                                     .frame(width: screenWidth * 0.2, height: 30)
                                     .foregroundColor(.primaryGreen)
                                     .overlay {
-                                        Text("Driver")
+                                        Text(selectedClub.subName)
                                             .foregroundColor(.white)
                                             .font(.system(size: 16, weight: .medium))
                                     }
