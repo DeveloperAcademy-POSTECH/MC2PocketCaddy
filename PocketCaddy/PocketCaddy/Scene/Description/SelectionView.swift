@@ -53,17 +53,19 @@ struct SelectionView: View {
                 Spacer()
                 // MapView()로 이동
                 Button(action: {
-                    clubDataManager.selectedAppearance = 2
-                    goToMapView = true}){
+                    clubDataManager.selectedAppearance = false
+                    goToMapView = true
+                }){
                     Image(systemName: "questionmark.circle")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20)
                         .foregroundColor(.black)
                 }
+                
                 NavigationLink(destination: MapView().navigationBarHidden(true), isActive: $goToMapView ) {
-          
                 }
+                
             }
             
             // Location Button Grid

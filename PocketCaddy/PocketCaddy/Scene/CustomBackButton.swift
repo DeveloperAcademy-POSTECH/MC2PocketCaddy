@@ -33,7 +33,7 @@ struct CustomBackButton2: View {
     var body: some View {
         HStack {
             Button {
-                clubDataManager.selectedAppearance = 1
+                clubDataManager.selectedAppearance = true
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Image(systemName: "arrow.backward")

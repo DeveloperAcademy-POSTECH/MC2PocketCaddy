@@ -13,21 +13,12 @@ struct MapView: View {
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
     @State var isCheck : [Bool] = [true,false,false,false]
-    @State var selectedDistance: Distance = .zero
     var location : [Location] = Location.allCases
     var offset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:300),(x:160,y:10),(x:-20,y:-290),(x:-10,y:10)]
     var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:0,y:280),(x:120,y:-20),(x:60,y:-320),(x:100,y:-120)]
     var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     
     var body: some View {
-        let distanceButtonArray: [DistanceButtonView] = [
-            DistanceButtonView(buttonDistance: .zero, selectedDistance: $selectedDistance),
-            DistanceButtonView(buttonDistance: .fifty, selectedDistance: $selectedDistance),
-            DistanceButtonView(buttonDistance: .hundred, selectedDistance: $selectedDistance),
-            DistanceButtonView(buttonDistance: .hundredFifty, selectedDistance: $selectedDistance),
-            DistanceButtonView(buttonDistance: .twoHundred, selectedDistance: $selectedDistance),
-            DistanceButtonView(buttonDistance: .threeHundred, selectedDistance: $selectedDistance)
-        ]
         
             ZStack {
                 Image("field")
@@ -136,16 +127,8 @@ struct MapView: View {
                 CustomBackButton2(presentationMode: presentationMode)
                     .offset(x: 0, y: -Screen.height*135/300)
             }// ZStack
-            .preferredColorScheme(clubDataManager.selectedAppearance == 1 ? .light : .dark)
+            .preferredColorScheme(clubDataManager.selectedAppearance ? .light : .dark)
             .navigationBarHidden(true)
     }// body
 }// View
 
-enum Distance: String {
-    case zero = "0~50"
-    case fifty = "50~100"
-    case hundred = "100~150"
-    case hundredFifty = "150~200"
-    case twoHundred = "200~300"
-    case threeHundred = "300~"
-}
