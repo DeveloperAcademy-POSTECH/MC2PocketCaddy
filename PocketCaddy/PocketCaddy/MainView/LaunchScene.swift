@@ -1,8 +1,15 @@
+//
+//  HomeView.swift
+//  PocketCaddy
+//
+//  Created by Byeon jinha, Minyoung Kim on 2022/06/10.
+//
+
 import SpriteKit
 
 final class LaunchScene: SKScene, SKPhysicsContactDelegate {
-    var background = SKSpriteNode() // 백그라운드 노드
-    var flag = SKSpriteNode() // 새 노드
+    var background: SKSpriteNode = SKSpriteNode() // 백그라운드 노드
+    var flag: SKSpriteNode = SKSpriteNode() // 새 노드
     
     // Sprites Alignment
     override func didMove(to view: SKView) {
@@ -12,9 +19,7 @@ final class LaunchScene: SKScene, SKPhysicsContactDelegate {
         let endPoint = CGPoint(x: 1, y: 1)
         
         guard let image = UIImage.gradientImage(withBounds: self.frame, startPoint: startPoint, endPoint: endPoint, colors: [color1, color2])
-        else {
-            return
-        }
+        else { return }
         
         let gradientTexture = SKTexture(image: image)
         let gradientNode = SKSpriteNode(texture: gradientTexture)
@@ -28,7 +33,8 @@ final class LaunchScene: SKScene, SKPhysicsContactDelegate {
     
     func createFlag() {
         flag = SKSpriteNode(imageNamed: "flag-1")
-        flag.size = CGSize(width: self.size.width / 5, height:self.size.width / 7)// 사이즈
+        
+        flag.size = CGSize(width: self.size.width / 5, height:self.size.width / 7) // 사이즈
         flag.position = CGPoint(x: self.size.width * 13 / 25, y: self.size.height * 13 / 25)
         flag.physicsBody?.affectedByGravity = false
         flag.physicsBody?.isDynamic = false
@@ -41,4 +47,4 @@ final class LaunchScene: SKScene, SKPhysicsContactDelegate {
         flag.run(flags)
     }
     
-}// LaunchScene
+} // LaunchScene
