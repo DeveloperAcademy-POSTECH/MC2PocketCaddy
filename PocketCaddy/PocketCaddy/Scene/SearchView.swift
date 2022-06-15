@@ -22,6 +22,7 @@ struct SearchView: View {
             // MARK: - HEADER
             CustomBackButton(presentationMode: presentationMode)
             
+            /*
             HStack {
                 Text("\(Text("어떤 채의 정보").foregroundColor(.primaryGreen))가\n궁금하신가요?")
                     .font(.system(size: Screen.width * 0.09, weight: .bold))
@@ -29,6 +30,8 @@ struct SearchView: View {
             }
             .frame(idealWidth: Screen.width, minHeight: 70, idealHeight: Screen.height * 0.118)
             .padding([.leading, .bottom], Screen.height * 0.02)
+             */
+            
             
             HStack {
                 TextField("Search", text: $search)
@@ -56,21 +59,29 @@ struct SearchView: View {
                 }.padding(.horizontal, 24)
             )
             
+            
             // MARK: - CENTER, CARD GRID
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 if clubDataManager.selectedClub.count > 0 {
                     LazyVGrid(columns: columns) {
                         ForEach(clubDataManager.selectedClub, id: \.?.name) { club in
-                            NavigationLink(destination: DescriptionPageView()) {
+                            NavigationLink(destination: DescriptionView(selectedClub: club)) {
                                 ClubCardView(clubModel: (club)!)
                             }
                         }
                     }
                     .padding()
                 } else {
-                    Text("찾으시는\n채의 정보가\n없습니다")
-                        .font(.system(size: Screen.width * 0.09, weight: .bold))
-                        .offset(y: Screen.height * 0.15)
+                    VStack {
+                        Image(systemName: "exclamationmark.circle")
+                            .font(.system(size: 50, weight: .ultraLight, design: .default))
+                            .padding(.bottom, 2)
+                        Text("검색 결과가 없습니다")
+                            .font(.system(size: 14, weight: .medium))
+                    }
+                    .foregroundColor(.gray)
+                    .padding(.top, Screen.height * 0.3)
+                    
                 }
             } //: SCROLL
         } //: VSTACK
