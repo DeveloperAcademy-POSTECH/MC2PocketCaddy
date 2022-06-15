@@ -12,6 +12,8 @@ struct SelectionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var value: Double = 0
     @State var currentButtonStatus: Location? = nil
+    @State var goToMapView: Bool = false
+    
     private let minDistance: Double = 60
     private let maxDistance: Double = 210
     
@@ -50,13 +52,20 @@ struct SelectionView: View {
                     .font(Font.system(size: Screen.width * 0.07, weight: .bold))
                 Spacer()
                 // MapView()로 이동
-                NavigationLink(destination: MapView().navigationBarHidden(true)) {
+                Button(action: {
+                    clubDataManager.selectedAppearance = false
+                    goToMapView = true
+                }){
                     Image(systemName: "questionmark.circle")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20)
                         .foregroundColor(.black)
                 }
+                
+                NavigationLink(destination: MapView().navigationBarHidden(true), isActive: $goToMapView ) {
+                }
+                
             }
             
             // Location Button Grid
@@ -188,11 +197,6 @@ struct LocationRectangle: View {
                 Text(buttonName.rawValue)
                     .font(Font.system(size: Screen.width * 0.042, weight: .bold))
                     .foregroundColor(buttonPressed ? Color.white : Color.black)
-            }
-        }
-        .onChange(of: buttonStatus) { newValue in
-            if newValue != buttonName {
-                self.buttonPressed = false
             }
         }
     }

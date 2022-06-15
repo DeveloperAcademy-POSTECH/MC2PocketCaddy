@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct DistanceButtonView: View {
-    var buttonDistance: Distance
-    @Binding var selectedDistance: Distance
-    
+
     var body: some View {
         Button(action:{
             selectedDistance = buttonDistance
