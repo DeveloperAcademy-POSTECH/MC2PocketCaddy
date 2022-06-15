@@ -12,7 +12,6 @@ struct SelectionView: View {
     @State var value: Double = 0
     @State var currentButtonStatus: Location? = nil
     
-    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     private let minDistance: Double = 0
     private let maxDistance: Double = 210
     
@@ -51,7 +50,7 @@ struct SelectionView: View {
                     .font(Font.system(size: Screen.width * 0.07, weight: .bold))
                 Spacer()
                 // MapView()로 이동
-                NavigationLink(destination: MapView()) {
+                NavigationLink(destination: MapView().navigationBarHidden(true)) {
                     Image(systemName: "questionmark.circle")
                         .resizable()
                         .scaledToFit()
@@ -61,7 +60,7 @@ struct SelectionView: View {
             }
             
             // Location Button Grid
-            LazyVGrid(columns: columns) {
+            LazyVGrid(columns: LazyVGridColumns) {
                 ForEach(0..<locationButtonArray.count, id: \.self) {index in
                     locationButtonArray[index]
                         .padding(index % 2 == 0 ? .trailing : .leading, Screen.width * 0.005)

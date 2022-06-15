@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MapView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var clubDataManager: ClubDataManager
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
@@ -19,8 +20,17 @@ struct MapView: View {
     var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     
     var body: some View {
-        NavigationView{
-            ZStack{
+        let distanceButtonArray: [DistanceButtonView] = [
+            DistanceButtonView(buttonDistance: .zero, selectedDistance: $selectedDistance),
+            DistanceButtonView(buttonDistance: .fifty, selectedDistance: $selectedDistance),
+            DistanceButtonView(buttonDistance: .hundred, selectedDistance: $selectedDistance),
+            DistanceButtonView(buttonDistance: .hundredFifty, selectedDistance: $selectedDistance),
+            DistanceButtonView(buttonDistance: .twoHundred, selectedDistance: $selectedDistance),
+            DistanceButtonView(buttonDistance: .threeHundred, selectedDistance: $selectedDistance)
+        ]
+        
+        NavigationView {
+            ZStack {
                 Image("field")
                     .resizable()
                     .aspectRatio(CGSize(width: 1, height: 1.9),contentMode: .fill)
@@ -32,25 +42,37 @@ struct MapView: View {
                     .onTapGesture {
                         sheetNum -= 1
                     }
-
+                
+                CustomBackButton(presentationMode: presentationMode)
+                
                 ForEach(0..<4) {i in
-                    ImageView(isCheck: $isCheck, sheetNum: $sheetNum, location: location, index: i)
-                        .offset(x: offset[i].x, y: offset[i].y)
+                    ImageView(
+                        isCheck: $isCheck,
+                        sheetNum: $sheetNum,
+                        location: location,
+                        index: i
+                    )
+                    .offset(x: offset[i].x, y: offset[i].y)
                 }
-
+                
                 ForEach(0..<4) {i in
-                    TextImageView(isCheck: $isCheck, sheetNum: $sheetNum, location: location, index: i)
-                        .offset(x: textImageOffset[i].x, y: textImageOffset[i].y)
+                    TextImageView(
+                        isCheck: $isCheck,
+                        sheetNum: $sheetNum,
+                        location: location,
+                        index: i
+                    )
+                    .offset(x: textImageOffset[i].x, y: textImageOffset[i].y)
                 }
                 
                 Rectangle()
-                        .opacity(sheetNum == 3 ? 0.7 : 0)
-                        .ignoresSafeArea()
-                        .onTapGesture {
-                            sheetNum -= 1
-                        }
+                    .opacity(sheetNum == 3 ? 0.7 : 0)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        sheetNum -= 1
+                    }
                 
-                VStack() {
+                VStack {
                     if sheetNum == 3 {
                         Spacer()
                         
@@ -61,31 +83,21 @@ struct MapView: View {
                             .padding(20)
                             .offset(x: -70)
                         
-                        HStack{
-                            DistanceButtonView(buttonDistance: .zero, selectedDistance: $selectedDistance)
-                            DistanceButtonView(buttonDistance: .fifty, selectedDistance: $selectedDistance)
+                        // Location Button Grid
+                        LazyVGrid(columns: LazyVGridColumns) {
+                            ForEach(0..<distanceButtonArray.count, id: \.self) {index in
+                                distanceButtonArray[index]
+                            }
                         }
-                        
-                        HStack{
-                            DistanceButtonView(buttonDistance: .hundred, selectedDistance: $selectedDistance)
-                            DistanceButtonView(buttonDistance: .hundredFifty, selectedDistance: $selectedDistance)
-                        }
-                        
-                        HStack{
-                            DistanceButtonView(buttonDistance: .twoHundred, selectedDistance: $selectedDistance)
-                            DistanceButtonView(buttonDistance: .threeHundred, selectedDistance: $selectedDistance)
-                        }
-                        
                     }
+                    
                     Spacer()
+                    
                 } // VStack
-            }.navigationBarHidden(true)
-            // ZStack
-        }
-        // NavigationView
-  
-    } // body
-} // View
+            }// ZStack
+        }// NavigationView
+    }// body
+}// View
 
 enum Distance: String {
     case zero = "0~50"
