@@ -19,15 +19,15 @@ struct ClubModel: Codable {
 }
 
 enum ClubCategory: String, Codable {
-    case wood
-    case iron
-    case wedge
-    case putter
+    case wood = "Wood"
+    case iron = "Iron"
+    case wedge = "Wedge"
+    case putter = "Putter"
 }
 
 enum Location: String, Codable, CaseIterable {
-    case teeingGround = "teeing ground"
-    case bunker = "bunker"
-    case green = "green"
-    case fairwayAndRough = "fairway & rough"
+    case teeingGround = "Teeing ground"
+    case bunker = "Bunker"
+    case green = "Green"
+    case fairwayAndRough = "Fairway & Rough"
 }

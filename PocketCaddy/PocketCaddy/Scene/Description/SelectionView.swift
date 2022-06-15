@@ -199,7 +199,7 @@ struct LocationRectangle: View {
                     .cornerRadius(8)
                     .opacity(buttonPressed ? 1 : 0.3)
                 Text(buttonName.rawValue)
-                    .font(Font.system(size: Screen.width * 0.042, weight: .bold))
+                    .font(Font.system(size: Screen.width * 0.042, weight: .semibold))
                     .foregroundColor(buttonPressed ? Color.white : Color.black)
             }
         }
