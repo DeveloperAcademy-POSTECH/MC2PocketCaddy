@@ -24,7 +24,6 @@ struct HomeView: View {
             
             NavigationLink(destination: SearchView().navigationBarHidden(true)){
                 NavigationButton(image: "AllClubBtn")
-
             }
             
             NavigationLink(destination: SelectionView().navigationBarHidden(true)){

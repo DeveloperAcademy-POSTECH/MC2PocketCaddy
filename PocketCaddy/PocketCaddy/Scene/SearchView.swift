@@ -21,18 +21,7 @@ struct SearchView: View {
 
             // MARK: - HEADER
             CustomBackButton(presentationMode: presentationMode)
-            
-            /*
-            HStack {
-                Text("\(Text("어떤 채의 정보").foregroundColor(.primaryGreen))가\n궁금하신가요?")
-                    .font(.system(size: Screen.width * 0.09, weight: .bold))
-                Spacer()
-            }
-            .frame(idealWidth: Screen.width, minHeight: 70, idealHeight: Screen.height * 0.118)
-            .padding([.leading, .bottom], Screen.height * 0.02)
-             */
-            
-            
+
             HStack {
                 TextField("Search", text: $search)
                     .padding(.horizontal, 30)
