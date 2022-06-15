@@ -150,7 +150,7 @@ class ClubDataManager: ObservableObject {
         if location == .fairwayAndRough {
             let temp2 = temp.sorted { $0.1 < $1.1 }
             
-            for (k, v) in temp2 {
+            for (k, _) in temp2 {
                 self.selectedClub.append(self.clubData[k])
                 if self.selectedClub.count >= 3 {
                     break
