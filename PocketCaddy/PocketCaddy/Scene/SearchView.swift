@@ -68,14 +68,9 @@ struct SearchView: View {
                     }
                     .padding()
                 } else {
-                    VStack {
-                        Text("찾으시는")
-                        Text("채의 정보가")
-                        Text("없습니다")
-                    }
-                    .font(.system(size: Screen.width * 0.09, weight: .bold))
-                    .offset(y: Screen.height * 0.15)
-                    
+                    Text("찾으시는\n채의 정보가\n없습니다")
+                        .font(.system(size: Screen.width * 0.09, weight: .bold))
+                        .offset(y: Screen.height * 0.15)
                 }
             } //: SCROLL
         } //: VSTACK

@@ -25,18 +25,9 @@ struct SelectionView: View {
         ]
         
         VStack {
-            HStack {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "arrow.backward")
-                        .resizable()
-                        .foregroundColor(.primaryGreen)
-                }.frame(width: Screen.height * 0.03, height: Screen.height * 0.025)
-                
-                Spacer()
-            }
+            CustomBackButton(presentationMode: presentationMode)
             
+            // Title
             HStack {
                 VStack(alignment: .leading) {
                     Text("현재 \(Text("공").foregroundColor(.primaryGreen))은\n어느 위치에 있나요?")
@@ -54,7 +45,7 @@ struct SelectionView: View {
                 Spacer()
             }
             
-            // Location, Distance
+            // Location Section
             HStack {
                 Text("Location")
                     .font(Font.system(size: Screen.width * 0.07, weight: .bold))
@@ -69,7 +60,7 @@ struct SelectionView: View {
                 }
             }
             
-            // Location 선택 버튼
+            // Location Button Grid
             LazyVGrid(columns: columns) {
                 ForEach(0..<locationButtonArray.count, id: \.self) {index in
                     locationButtonArray[index]
@@ -77,6 +68,7 @@ struct SelectionView: View {
                 }
             }
             
+            // Distance Section
             HStack {
                 Text("Distance")
                     .font(Font.system(size: Screen.width * 0.07, weight: .bold))
@@ -105,6 +97,7 @@ struct SelectionView: View {
             .accentColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen)
             .disabled(currentButtonStatus != .fairwayAndRough)
             
+            // NavigationLink to DescriptionView
             NavigationLink(destination: SampleDescriptionView(
                 locationInfo: currentButtonStatus != nil ? currentButtonStatus! : .fairwayAndRough,
                 distance: Int(value)

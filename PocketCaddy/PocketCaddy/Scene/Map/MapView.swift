@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct MapView: View {
-    var location : [Location] = Location.allCases
-    var offset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:320),(x:160,y:30),(x:-20,y:-270),(x:-10,y:30)]
-    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:0,y:300),(x:120,y:0),(x:60,y:-300),(x:100,y:-100)]
-    var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
+    @EnvironmentObject var clubDataManager: ClubDataManager
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
     @State var isCheck : [Bool] = [true,false,false,false]
     @State var selectedDistance: Distance = .zero
-    @EnvironmentObject var clubDataManager: ClubDataManager
+    var location : [Location] = Location.allCases
+    var offset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:320),(x:160,y:30),(x:-20,y:-270),(x:-10,y:30)]
+    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:0,y:300),(x:120,y:0),(x:60,y:-300),(x:100,y:-100)]
+    var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     
     var body: some View {
         NavigationView{
@@ -32,12 +32,6 @@ struct MapView: View {
                     .onTapGesture {
                         sheetNum -= 1
                     }
-                
-//                Text(sheetNum.description + "/3")
-//                    .font(.system(size: 25))
-//                    .bold()
-//                    .foregroundColor(.white)
-//                    .offset(x: 150, y: -350)
 
                 ForEach(0..<4) {i in
                     ImageView(isCheck: $isCheck, sheetNum: $sheetNum, location: location, index: i)
