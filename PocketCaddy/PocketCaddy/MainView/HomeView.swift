@@ -22,11 +22,12 @@ struct HomeView: View {
             
             Spacer()
             
-            NavigationLink(destination: SearchView()) {
+            NavigationLink(destination: SearchView().navigationBarHidden(true)){
                 NavigationButton(image: "AllClubBtn")
+
             }
             
-            NavigationLink(destination: SelectionView()) {
+            NavigationLink(destination: SelectionView().navigationBarHidden(true)){
                 NavigationButton(image: "LocationAndDistanceBtn")
             }
             

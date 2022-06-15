@@ -142,14 +142,12 @@ class ClubDataManager: ObservableObject {
                 
                 // Fairway and Rough 위치와 Distance 정보가 할당된 경우
             } else if location == Location.fairwayAndRough && self.clubData[index].location == location {
-                print("페어웨이 러프임")
                 temp[index] = abs(self.clubData[index].distance! - selectedDistance)
             }
         }
         
         if location == .fairwayAndRough {
             let temp2 = temp.sorted { $0.1 < $1.1 }
-       
             
             for (k, v) in temp2 {
                 self.selectedClub.append(self.clubData[k])
@@ -158,7 +156,6 @@ class ClubDataManager: ObservableObject {
                 }
             }
         }
-        
     }// searchClub
     
 }
