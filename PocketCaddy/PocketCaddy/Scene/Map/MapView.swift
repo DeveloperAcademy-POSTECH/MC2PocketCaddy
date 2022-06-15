@@ -15,8 +15,8 @@ struct MapView: View {
     @State var isCheck : [Bool] = [true,false,false,false]
     @State var selectedDistance: Distance = .zero
     var location : [Location] = Location.allCases
-    var offset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:320),(x:160,y:30),(x:-20,y:-270),(x:-10,y:30)]
-    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:0,y:300),(x:120,y:0),(x:60,y:-300),(x:100,y:-100)]
+    var offset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:300),(x:160,y:10),(x:-20,y:-290),(x:-10,y:10)]
+    var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:0,y:280),(x:120,y:-20),(x:60,y:-320),(x:100,y:-120)]
     var distance : [(Int,Int)] = [(50,99), (100,149), (150,199), (200,249), (250,299), (300,500)]
     
     var body: some View {
@@ -29,13 +29,12 @@ struct MapView: View {
             DistanceButtonView(buttonDistance: .threeHundred, selectedDistance: $selectedDistance)
         ]
         
-        NavigationView {
             ZStack {
                 Image("field")
                     .resizable()
                     .aspectRatio(CGSize(width: 1, height: 1.9),contentMode: .fill)
                     .ignoresSafeArea()
-                
+
                 Rectangle()
                     .foregroundColor(.black)
                     .opacity(sheetNum == 1 ? 0 : 0.5)
@@ -43,9 +42,7 @@ struct MapView: View {
                     .onTapGesture {
                         sheetNum -= 1
                     }
-                
-                CustomBackButton(presentationMode: presentationMode)
-                
+              
                 ForEach(0..<4) {i in
                     ImageView(
                         isCheck: $isCheck,
@@ -102,7 +99,7 @@ struct MapView: View {
                                 .bold()
                                 .foregroundColor(.white)
                                 .padding(20)
-                            Text(" 벙커 는 일반적으로 모래 로 채워진 그린 이나 페어웨이 근처의 함몰된 곳이며 밖으로 공을 걷어내는 것이 어렵다.\n (보통 '샌드 웨지'라는 클럽을 사용한다.) \n\n 연습이나 스트로크를 위한 백스윙 과정에서 공 뒤 모래를 건드리면 페널티를 받고 벙커 사용을 마친 후에는 모래를 고무래를 사용하여 사용 전의 상태로 돌려 놓아야한다.")
+                            Text(" 벙커 는 일반적으로 모래로 채워진 그린 이나 페어웨이 근처의 함몰된 곳이며 밖으로 공을 걷어내는 것이 어렵다.\n (보통 '샌드 웨지'라는 클럽을 사용한다.) \n\n 연습이나 스트로크를 위한 백스윙 과정에서 공 뒤 모래를 건드리면 페널티를 받고 벙커 사용을 마친 후에는 모래를 고무래를 사용하여 사용 전의 상태로 돌려 놓아야한다.")
                                 .padding()
                             Spacer()
                             Spacer()
@@ -136,10 +133,11 @@ struct MapView: View {
                     Spacer()
 
                 } // VStack
-                
+                CustomBackButton2(presentationMode: presentationMode)
+                    .offset(x: 0, y: -Screen.height*135/300)
             }// ZStack
             .preferredColorScheme(.dark)
-        }// NavigationView
+            .navigationBarHidden(true)
     }// body
 }// View
 

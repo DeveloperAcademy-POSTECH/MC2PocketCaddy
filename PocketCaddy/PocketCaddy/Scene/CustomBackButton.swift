@@ -26,3 +26,22 @@ struct CustomBackButton: View {
 
     }
 }
+struct CustomBackButton2: View {
+    var presentationMode: Binding<PresentationMode>
+    
+    var body: some View {
+        HStack {
+            Button {
+                self.presentationMode.wrappedValue.dismiss()
+            } label: {
+                Image(systemName: "arrow.backward")
+                    .resizable()
+                    .foregroundColor(.backgroundWhite)
+            }.frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
+            .padding([.top, .leading])
+            
+            Spacer()
+        }
+
+    }
+}
