@@ -27,11 +27,13 @@ struct CustomBackButton: View {
     }
 }
 struct CustomBackButton2: View {
+    @EnvironmentObject var clubDataManager: ClubDataManager
     var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         HStack {
             Button {
+                clubDataManager.selectedAppearance = 1
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Image(systemName: "arrow.backward")
@@ -39,7 +41,6 @@ struct CustomBackButton2: View {
                     .foregroundColor(.backgroundWhite)
             }.frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
             .padding([.top, .leading])
-            
             Spacer()
         }
 

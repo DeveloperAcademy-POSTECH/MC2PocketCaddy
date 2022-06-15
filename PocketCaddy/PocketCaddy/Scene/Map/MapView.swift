@@ -136,7 +136,7 @@ struct MapView: View {
                 CustomBackButton2(presentationMode: presentationMode)
                     .offset(x: 0, y: -Screen.height*135/300)
             }// ZStack
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(clubDataManager.selectedAppearance == 1 ? .light : .dark)
             .navigationBarHidden(true)
     }// body
 }// View

@@ -46,6 +46,7 @@ struct HomeView: View {
             Spacer()
             
         } // VStack
+//        .preferredColorScheme(.light)
         .navigationBarHidden(true)
     } // body
 } // HomeView
