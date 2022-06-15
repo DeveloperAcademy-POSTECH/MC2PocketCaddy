@@ -23,6 +23,7 @@
 		0AC19D00284D12FE00727BE6 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */; };
 		7A18D1E428536A46005F6416 /* SampleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E328536A46005F6416 /* SampleSelectionView.swift */; };
 		7A18D1E628538102005F6416 /* SampleSelectionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */; };
+		7AE520AC28596E3D0085E2D4 /* HomeViewTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */; };
 		89544A3A28473E3100423D0A /* SampleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A3928473E3100423D0A /* SampleReader.swift */; };
 		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
 		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
@@ -79,6 +80,7 @@
 		0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		7A18D1E328536A46005F6416 /* SampleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSelectionView.swift; sourceTree = "<group>"; };
 		7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSelectionComponents.swift; sourceTree = "<group>"; };
+		7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTip.swift; sourceTree = "<group>"; };
 		89544A3928473E3100423D0A /* SampleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleReader.swift; sourceTree = "<group>"; };
 		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC19D02284D149A00727BE6 /* Club */,
+				7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */,
 				BAC5AEB328570D0800D2EADC /* UIImage.swift in Sources */,
 				0A948674285477DF00D42C8C /* ClubCardView.swift in Sources */,
+				7AE520AC28596E3D0085E2D4 /* HomeViewTip.swift in Sources */,
 				EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */,
 				EEAE6DE528572A8D00A050C8 /* ViewExtension.swift in Sources */,
 				0A2706472845E96800168C40 /* PocketCaddyApp.swift in Sources */,

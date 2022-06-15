@@ -38,7 +38,7 @@ struct HomeView: View {
                 VStack (alignment: .leading) {
                     Image("Tip")
                     
-                    Text("asfdtyguhlioj;hlugkjfdjklfghjkljhgfdghjkljhgfdghjkldf")
+                    Text(HomeViewTip[Int.random(in: 0...HomeViewTip.count - 1)])
                 }
                 .padding()
             }
