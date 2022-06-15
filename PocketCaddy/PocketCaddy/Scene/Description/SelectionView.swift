@@ -14,7 +14,7 @@ struct SelectionView: View {
     @State var currentButtonStatus: Location? = nil
     @State var goToMapView: Bool = false
     
-    private let minDistance: Double = 0
+    private let minDistance: Double = 60
     private let maxDistance: Double = 210
     
     var body: some View {
@@ -74,6 +74,8 @@ struct SelectionView: View {
                     locationButtonArray[index]
                         .padding(index % 2 == 0 ? .trailing : .leading, Screen.width * 0.005)
                 }
+            }.onChange(of: currentButtonStatus) { _ in
+                self.searchClub()
             }
             
             // Distance Section
@@ -90,11 +92,7 @@ struct SelectionView: View {
                 .padding(.top, 5)
                 .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
             
-            Slider(
-                value: $value,
-                in: minDistance...maxDistance,
-                step: 5
-            ) {
+            Slider(value: $value, in: minDistance...maxDistance, step: 5) {
                 Text("Distance")
             } minimumValueLabel: {
                 Text("\(Int(minDistance))m")
@@ -104,34 +102,71 @@ struct SelectionView: View {
             .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
             .accentColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen)
             .disabled(currentButtonStatus != .fairwayAndRough)
+            .onChange(of: value) { _ in
+                self.searchClub()
+            }
             
-            // NavigationLink to DescriptionView
-            NavigationLink(destination: SampleDescriptionView(
-                locationInfo: currentButtonStatus != nil ? currentButtonStatus! : .fairwayAndRough,
-                distance: Int(value)
-            )) {
-                Text("선택 완료")
-                    .foregroundColor(.white)
-                    .font(Font.system(size: Screen.width * 0.045, weight: .bold))
-                    .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
-                    .background {
-                        if currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && value != 0) {
-                            LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
-                                .cornerRadius(Screen.height)
-                        } else {
+            Spacer()
+                .frame(height: Screen.width * 0.04)
+            
+            switch currentButtonStatus {
+            case .fairwayAndRough:
+                if value == 0 {
+                    Text("선택 완료")
+                        .foregroundColor(.white)
+                        .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                        .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
+                        .background{
                             RoundedRectangle(cornerRadius: Screen.height)
                                 .foregroundColor(Color.backgroundWhite)
                         }
+                } else {
+                    NavigationLink(destination: DescriptionPageView().navigationBarHidden(true)){
+                        Text("선택 완료")
+                            .foregroundColor(.white)
+                            .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                            .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
+                            .background {
+                                LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
+                                    .cornerRadius(Screen.height)
+                            }
                     }
+                }
+            default:
+                if currentButtonStatus == nil {
+                    Text("선택 완료")
+                        .foregroundColor(.white)
+                        .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                        .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
+                        .background{
+                            RoundedRectangle(cornerRadius: Screen.height)
+                                .foregroundColor(Color.backgroundWhite)
+                        }
+                } else {
+                    NavigationLink(destination: DescriptionPageView().navigationBarHidden(true)){
+                        Text("선택 완료")
+                            .foregroundColor(.white)
+                            .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                            .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
+                            .background {
+                                LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
+                                    .cornerRadius(Screen.height)
+                            }
+                    }
+                }
             }
-            .disabled(!(currentButtonStatus != .fairwayAndRough && currentButtonStatus != nil || (currentButtonStatus == .fairwayAndRough && value != 0)))
-            .padding(.top, Screen.width * 0.04)
         }
           .frame(maxWidth: Screen.width, maxHeight: Screen.height)
           // 전체 뷰에 대한 padding
           .padding(.horizontal, Screen.width * 0.06)
-          .padding([.top, .bottom], Screen.width * 0.08)
+          .padding(.vertical, Screen.width * 0.08)
           .navigationBarHidden(true)
+    }
+    
+    // MARK: 선택 완료 버튼 함수 처리
+    private func searchClub() {
+        guard let location = currentButtonStatus else { return }
+        self.clubDataManager.searchClub(location: location, selectedDistance: Int(value))
     }
 }
 
