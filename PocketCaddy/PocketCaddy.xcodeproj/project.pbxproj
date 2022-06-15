@@ -26,6 +26,7 @@
 		7AE520AC28596E3D0085E2D4 /* HomeViewTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */; };
 		7AE520AE285974900085E2D4 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE520AD285974900085E2D4 /* CustomBackButton.swift */; };
 		7AE520B0285979EC0085E2D4 /* LazyVGridSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE520AF285979EC0085E2D4 /* LazyVGridSetting.swift */; };
+		7AE520B2285A624D0085E2D4 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE520B1285A624D0085E2D4 /* VideoView.swift */; };
 		89544A3A28473E3100423D0A /* SampleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A3928473E3100423D0A /* SampleReader.swift */; };
 		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
 		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
@@ -85,6 +86,7 @@
 		7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTip.swift; sourceTree = "<group>"; };
 		7AE520AD285974900085E2D4 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		7AE520AF285979EC0085E2D4 /* LazyVGridSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVGridSetting.swift; sourceTree = "<group>"; };
+		7AE520B1285A624D0085E2D4 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		89544A3928473E3100423D0A /* SampleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleReader.swift; sourceTree = "<group>"; };
 		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				0A948672285477DF00D42C8C /* ClubCardView.swift */,
 				0A948673285477DF00D42C8C /* SearchView.swift */,
 				7AE520AD285974900085E2D4 /* CustomBackButton.swift */,
+				7AE520B1285A624D0085E2D4 /* VideoView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				89B9E2B128544FEE001F10AF /* SampleDescriptionView.swift in Sources */,
 				7AE520AE285974900085E2D4 /* CustomBackButton.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
+				7AE520B2285A624D0085E2D4 /* VideoView.swift in Sources */,
 				BAE0830A285479E400AAD128 /* LaunchScene.swift in Sources */,
 				BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */,
 				BAC5AEB328570D0800D2EADC /* UIImage.swift in Sources */,
