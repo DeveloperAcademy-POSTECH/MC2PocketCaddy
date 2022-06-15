@@ -199,6 +199,11 @@ struct LocationRectangle: View {
                     .foregroundColor(buttonPressed ? Color.white : Color.black)
             }
         }
+        .onChange(of: buttonStatus) { newValue in
+                   if newValue != buttonName {
+                       self.buttonPressed = false
+                   }
+               }
     }
 }
 
