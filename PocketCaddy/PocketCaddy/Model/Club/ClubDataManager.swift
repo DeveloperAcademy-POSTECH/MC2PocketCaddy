@@ -9,7 +9,7 @@ import Foundation
 
 class ClubDataManager: ObservableObject {
     @Published var clubData: [ClubModel] = []
-    @Published var selectedClub: [ClubModel?] = [nil, nil, nil]
+    @Published var selectedClub: [ClubModel?] = []
     var searchEtc: [String: String] =
     [
         "1-Wood": "1번우드1번드라이버",

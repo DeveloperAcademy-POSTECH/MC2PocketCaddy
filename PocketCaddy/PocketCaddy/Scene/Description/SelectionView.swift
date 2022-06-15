@@ -12,8 +12,7 @@ struct SelectionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var value: Double = 0
     @State var currentButtonStatus: Location? = nil
-    
-    private let minDistance: Double = 0
+    private let minDistance: Double = 60
     private let maxDistance: Double = 210
     
     var body: some View {
@@ -66,6 +65,8 @@ struct SelectionView: View {
                     locationButtonArray[index]
                         .padding(index % 2 == 0 ? .trailing : .leading, Screen.width * 0.005)
                 }
+            }.onChange(of: currentButtonStatus) { _ in
+                self.searchClub()
             }
             
             // Distance Section
@@ -82,11 +83,7 @@ struct SelectionView: View {
                 .padding(.top, 5)
                 .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
             
-            Slider(
-                value: $value,
-                in: minDistance...maxDistance,
-                step: 5
-            ) {
+            Slider(value: $value, in: minDistance...maxDistance, step: 5) {
                 Text("Distance")
             } minimumValueLabel: {
                 Text("\(Int(minDistance))m")
@@ -96,6 +93,9 @@ struct SelectionView: View {
             .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
             .accentColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen)
             .disabled(currentButtonStatus != .fairwayAndRough)
+            .onChange(of: value) { _ in
+                self.searchClub()
+            }
             
             Spacer()
                 .frame(height: Screen.width * 0.04)
@@ -112,7 +112,7 @@ struct SelectionView: View {
                                 .foregroundColor(Color.backgroundWhite)
                         }
                 } else {
-                    NavigationLink(destination: DescriptionPageView(searchClub: searchClub)){
+                    NavigationLink(destination: DescriptionPageView().navigationBarHidden(true)){
                         Text("선택 완료")
                             .foregroundColor(.white)
                             .font(Font.system(size: Screen.width * 0.045, weight: .bold))
@@ -134,7 +134,7 @@ struct SelectionView: View {
                                 .foregroundColor(Color.backgroundWhite)
                         }
                 } else {
-                    NavigationLink(destination: DescriptionPageView(searchClub: searchClub)){
+                    NavigationLink(destination: DescriptionPageView().navigationBarHidden(true)){
                         Text("선택 완료")
                             .foregroundColor(.white)
                             .font(Font.system(size: Screen.width * 0.045, weight: .bold))

@@ -6,32 +6,29 @@
 //
 
 import SwiftUI
-import iPages
 
 struct DescriptionPageView: View {
     @EnvironmentObject var clubDataManager : ClubDataManager
-    @State var currentPage: Int = 1
-    var searchClub: (()->())? = nil
+    @State var currentPage: Int = 0
     
     var body: some View {
-        iPages(selection: $currentPage){
-            ForEach(clubDataManager.selectedClub.indices) { index in
-                DescriptionView(selectedClub: clubDataManager.selectedClub[index])
-                    .navigationBarHidden(true)
-            }
-        }.navigationBarHidden(true)
-        .onAppear(){
-            DispatchQueue.main.async {
-                guard searchClub != nil else { return }
-                searchClub!()
-            }
+        ZStack{
+            Color.backgroundWhite
+                .ignoresSafeArea()
+            
+            TabView(){
+                ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
+                    DescriptionView(selectedClub: clubModel)
+                }
+            }.tabViewStyle(.page)
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
     }
 }
 
 struct DescriptionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var selectedClub: ClubModel?
+    @State var selectedClub: ClubModel?
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     let buttonWidth = UIScreen.main.bounds.height * 0.03
@@ -48,11 +45,11 @@ struct DescriptionView: View {
                     Spacer()
                         .frame(height: screenHeight * 0.1)
                     
-                    Text("Wood")
+                    Text(selectedClub.category.rawValue)
                         .foregroundColor(.primaryGreen.opacity(0.5))
-                        .font(.system(size: 170))
+                        .font(.system(size: 130))
                         .fontWeight(.heavy)
-                        .frame(width: 465, alignment: .center)
+                        .frame(width: Screen.width, alignment: .center)
                     
                     Spacer()
                 }
@@ -76,7 +73,7 @@ struct DescriptionView: View {
                         .frame(height: screenHeight * 0.02)
                     
                     HStack(alignment: .center) {
-                        Image("TestClub")
+                        Image(selectedClub.name)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
@@ -100,7 +97,7 @@ struct DescriptionView: View {
                             Spacer()
                             
                             HStack{
-                                Text("1-Wood")
+                                Text(selectedClub.name)
                                     .foregroundColor(.primaryGreen)
                                     .font(.system(size: 40, weight: .bold))
                                 
@@ -116,7 +113,7 @@ struct DescriptionView: View {
                             
                             
                             HStack {
-                                Text("드라이버는 클럽의 헤드가 머리보다  앞에서 친다는 느낌으로 스윙하기")
+                                Text(selectedClub.description)
                                     .foregroundColor(.primaryGreen)
                             }.frame(width: specWidth, alignment: .leading)
                             
@@ -146,7 +143,7 @@ struct DescriptionView: View {
 
                                 Spacer()
 
-                                Text(".category")
+                                Text(selectedClub.category.rawValue)
                                     .foregroundColor(.gray)
                                     .font(.system(size: 16, weight: .bold))
                             }.frame(width: specWidth)
@@ -162,7 +159,7 @@ struct DescriptionView: View {
 
                                 Spacer()
 
-                                Text(".location")
+                                Text(selectedClub.location.rawValue)
                                     .foregroundColor(.gray)
                                     .font(.system(size: 16, weight: .bold))
                             }.frame(width: specWidth)
@@ -178,7 +175,7 @@ struct DescriptionView: View {
                                 
                                 Spacer()
 
-                                Text((".distance") + "m")
+                                Text((selectedClub.distance?.description ?? "-") + " m")
                                     .foregroundColor(.gray)
                                     .font(.system(size: 16, weight: .bold))
                             }.frame(width: specWidth)
@@ -193,8 +190,8 @@ struct DescriptionView: View {
             }.navigationBarHidden(true)
         } else {
             EmptyView()
+                .navigationBarHidden(true)
         }
-        
     }
 }
 
