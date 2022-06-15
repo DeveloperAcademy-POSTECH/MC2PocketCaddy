@@ -37,6 +37,7 @@ struct MapView: View {
                     .ignoresSafeArea()
                 
                 Rectangle()
+                    .foregroundColor(.black)
                     .opacity(sheetNum == 1 ? 0 : 0.5)
                     .ignoresSafeArea()
                     .onTapGesture {
@@ -52,7 +53,10 @@ struct MapView: View {
                         location: location,
                         index: i
                     )
-                    .offset(x: offset[i].x, y: offset[i].y)
+                    .offset(
+                        x: offset[i].x,
+                        y: offset[i].y
+                    )
                 }
                 
                 ForEach(0..<4) {i in
@@ -62,10 +66,14 @@ struct MapView: View {
                         location: location,
                         index: i
                     )
-                    .offset(x: textImageOffset[i].x, y: textImageOffset[i].y)
+                    .offset(
+                        x: textImageOffset[i].x,
+                        y: textImageOffset[i].y
+                    )
                 }
                 
                 Rectangle()
+                    .foregroundColor(.black)
                     .opacity(sheetNum == 3 ? 0.7 : 0)
                     .ignoresSafeArea()
                     .onTapGesture {
@@ -94,7 +102,9 @@ struct MapView: View {
                     Spacer()
                     
                 } // VStack
+                
             }// ZStack
+            .preferredColorScheme(.dark)
         }// NavigationView
     }// body
 }// View
