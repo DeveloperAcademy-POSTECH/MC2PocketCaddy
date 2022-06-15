@@ -21,11 +21,11 @@ struct ClubCardView: View {
                 .scaledToFit()
                 .frame(width: Screen.width * 0.282)
                 .offset(y: Screen.height * -0.026)
-  
             
             VStack(alignment: .leading) {
                 Rectangle()
                     .frame(height: 0)
+                
                 Spacer()
                 
                 Text(clubModel.name)
@@ -45,13 +45,13 @@ struct ClubCardView: View {
                 
                 Spacer()
 
-            } //: VSTACK
+            } // VSTACK
             .padding(.leading, Screen.width * 0.0384)
             .frame(height: Screen.height * 0.081)
             .background(LinearGradient(gradient: Gradient(colors: [Color.primaryGreen, Color.secondaryGreen]), startPoint: .leading, endPoint: .trailing))
             .offset(y: Screen.height * 0.077)
             
-        } //: ZSTACK
+        } // ZSTACK
         .frame(width: Screen.width * 0.43, height: Screen.height * 0.235)
         .background(Color.backgroundWhite)
         .cornerRadius(20)

@@ -24,6 +24,7 @@
 		7A18D1E428536A46005F6416 /* SampleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E328536A46005F6416 /* SampleSelectionView.swift */; };
 		7A18D1E628538102005F6416 /* SampleSelectionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */; };
 		7AE520AC28596E3D0085E2D4 /* HomeViewTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */; };
+		7AE520AE285974900085E2D4 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE520AD285974900085E2D4 /* CustomBackButton.swift */; };
 		89544A3A28473E3100423D0A /* SampleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A3928473E3100423D0A /* SampleReader.swift */; };
 		89544A4228473F0B00423D0A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A4128473F0B00423D0A /* SampleModel.swift */; };
 		89544A442847436300423D0A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89544A432847436300423D0A /* SampleView.swift */; };
@@ -81,6 +82,7 @@
 		7A18D1E328536A46005F6416 /* SampleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSelectionView.swift; sourceTree = "<group>"; };
 		7A18D1E528538102005F6416 /* SampleSelectionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSelectionComponents.swift; sourceTree = "<group>"; };
 		7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTip.swift; sourceTree = "<group>"; };
+		7AE520AD285974900085E2D4 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		89544A3928473E3100423D0A /* SampleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleReader.swift; sourceTree = "<group>"; };
 		89544A4028473EF700423D0A /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		89544A4128473F0B00423D0A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
@@ -206,10 +208,11 @@
 		0A2706742845EC2600168C40 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				0AC19D01284D146300727BE6 /* Description */,
+				BACE9C41284B4EB700A04E2D /* Map */,
 				0A948672285477DF00D42C8C /* ClubCardView.swift */,
 				0A948673285477DF00D42C8C /* SearchView.swift */,
-				BACE9C41284B4EB700A04E2D /* Map */,
-				0AC19D01284D146300727BE6 /* Description */,
+				7AE520AD285974900085E2D4 /* CustomBackButton.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				89544A442847436300423D0A /* SampleView.swift in Sources */,
 				0A2706722845EAD400168C40 /* ClubModel.swift in Sources */,
 				89B9E2B128544FEE001F10AF /* SampleDescriptionView.swift in Sources */,
+				7AE520AE285974900085E2D4 /* CustomBackButton.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				BAE0830A285479E400AAD128 /* LaunchScene.swift in Sources */,
 				BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */,
