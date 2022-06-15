@@ -12,7 +12,6 @@ struct SelectionView: View {
     @State var value: Double = 0
     @State var currentButtonStatus: Location? = nil
     
-    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     private let minDistance: Double = 0
     private let maxDistance: Double = 210
     
@@ -25,18 +24,9 @@ struct SelectionView: View {
         ]
         
         VStack {
-            HStack {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "arrow.backward")
-                        .resizable()
-                        .foregroundColor(.primaryGreen)
-                }.frame(width: Screen.height * 0.03, height: Screen.height * 0.025)
-                
-                Spacer()
-            }
+            CustomBackButton(presentationMode: presentationMode)
             
+            // Title
             HStack {
                 VStack(alignment: .leading) {
                     Text("현재 \(Text("공").foregroundColor(.primaryGreen))은\n어느 위치에 있나요?")
@@ -54,13 +44,13 @@ struct SelectionView: View {
                 Spacer()
             }
             
-            // Location, Distance
+            // Location Section
             HStack {
                 Text("Location")
                     .font(Font.system(size: Screen.width * 0.07, weight: .bold))
                 Spacer()
                 // MapView()로 이동
-                NavigationLink(destination: MapView()) {
+                NavigationLink(destination: MapView().navigationBarHidden(true)) {
                     Image(systemName: "questionmark.circle")
                         .resizable()
                         .scaledToFit()
@@ -69,14 +59,15 @@ struct SelectionView: View {
                 }
             }
             
-            // Location 선택 버튼
-            LazyVGrid(columns: columns) {
+            // Location Button Grid
+            LazyVGrid(columns: LazyVGridColumns) {
                 ForEach(0..<locationButtonArray.count, id: \.self) {index in
                     locationButtonArray[index]
                         .padding(index % 2 == 0 ? .trailing : .leading, Screen.width * 0.005)
                 }
             }
             
+            // Distance Section
             HStack {
                 Text("Distance")
                     .font(Font.system(size: Screen.width * 0.07, weight: .bold))
@@ -105,6 +96,7 @@ struct SelectionView: View {
             .accentColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen)
             .disabled(currentButtonStatus != .fairwayAndRough)
             
+            // NavigationLink to DescriptionView
             NavigationLink(destination: SampleDescriptionView(
                 locationInfo: currentButtonStatus != nil ? currentButtonStatus! : .fairwayAndRough,
                 distance: Int(value)
