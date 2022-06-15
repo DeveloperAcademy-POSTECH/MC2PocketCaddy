@@ -11,27 +11,16 @@ struct SearchView: View {
     // MARK: - PROPERTIES
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var clubDataManager: ClubDataManager
+    @State private var search: String = ""
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
-    @State private var search: String = ""
     
     // MARK: - BODY
-    
     var body: some View {
         VStack {
+
             // MARK: - HEADER
-            HStack {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "arrow.backward")
-                        .resizable()
-                        .foregroundColor(.primaryGreen)
-                }.frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
-                .padding([.top, .leading])
-                
-                Spacer()
-            }
+            CustomBackButton(presentationMode: presentationMode)
             
             HStack {
                 Text("\(Text("어떤 채의 정보").foregroundColor(.primaryGreen))가\n궁금하신가요?")
@@ -79,14 +68,9 @@ struct SearchView: View {
                     }
                     .padding()
                 } else {
-                    VStack {
-                        Text("찾으시는")
-                        Text("채의 정보가")
-                        Text("없습니다")
-                    }
-                    .font(.system(size: Screen.width * 0.09, weight: .bold))
-                    .offset(y: Screen.height * 0.15)
-                    
+                    Text("찾으시는\n채의 정보가\n없습니다")
+                        .font(.system(size: Screen.width * 0.09, weight: .bold))
+                        .offset(y: Screen.height * 0.15)
                 }
             } //: SCROLL
         } //: VSTACK
