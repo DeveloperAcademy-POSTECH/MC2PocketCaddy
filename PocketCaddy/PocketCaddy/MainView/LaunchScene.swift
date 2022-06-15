@@ -1,6 +1,6 @@
 //
-//  HomeView.swift
-//  PocketCaddy
+//  LaunchScene.swift
+//  PocketCaddie
 //
 //  Created by Byeon jinha, Minyoung Kim on 2022/06/10.
 //
