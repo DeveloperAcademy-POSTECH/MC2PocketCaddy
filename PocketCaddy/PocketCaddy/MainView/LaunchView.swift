@@ -57,3 +57,10 @@ struct LaunchView: View {
     }
     
 } // LaunchView
+
+extension UINavigationController {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = nil
+    }
+}
