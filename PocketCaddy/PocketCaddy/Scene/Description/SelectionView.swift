@@ -217,5 +217,3 @@ struct LocationRectangle: View {
 //        SelectionView()
 //    }
 //}
-
-
