@@ -1,45 +1,15 @@
 //
-//  DescriptionView.swift
+//  DescriptionSingleView.swift
 //  PocketCaddy
 //
-//  Created by 유정인, 이현상 on 2022/05/31.
+//  Created by Hyeon-sang Lee on 2022/06/16.
 //
 
 import SwiftUI
 
-struct DescriptionPageView: View {
-    @EnvironmentObject var clubDataManager : ClubDataManager
-    @State var currentPage: Int = 0
-    @Binding var goBack: Bool
-    
-    var body: some View {
-        ZStack{
-            Color.backgroundWhite
-                .ignoresSafeArea()
-            
-            TabView () {
-                ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
-                    VStack {
-                        CustomBackButtonGoBack()
-                            .transition(.opacity)
-                            .onTapGesture {
-                                withAnimation {
-                                    self.goBack.toggle()
-                                }
-                            }
-
-                        DescriptionView(selectedClub: clubModel)
-                    }
-                }
-            }.tabViewStyle(.page)
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-        }
-    }
-}
-
-struct DescriptionView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+struct DescriptionSingleView: View {
     @State var selectedClub: ClubModel?
+    @Binding var isViewActive: Bool
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -67,6 +37,15 @@ struct DescriptionView: View {
                 }
                 
                 VStack(alignment: .center, spacing: 0) {
+
+                    CustomBackButtonGoBack()
+                        .transition(.opacity)
+                        .onTapGesture {
+                            withAnimation {
+                                self.isViewActive.toggle()
+                            }
+                        }
+                    
                     Spacer()
                         .frame(height: screenHeight * 0.02)
                     
@@ -193,10 +172,8 @@ struct DescriptionView: View {
     }
 }
 
-extension Image {
-    static let cutBackground = Image("CutBackground")
-    static let arButton = Image("ARButton")
-    static let category = Image("Category")
-    static let location = Image("Location")
-    static let distance = Image("Distance")
-}
+//struct DescriptionSingleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DescriptionSingleView()
+//    }
+//}
