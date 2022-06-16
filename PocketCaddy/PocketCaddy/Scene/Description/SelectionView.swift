@@ -122,16 +122,8 @@ struct SelectionView: View {
                                     self.searchClub()
                                 }
 
-                                Spacer()
-                                    .frame(height: Screen.height * 0.05)
-                            }
-                            .transition(.opacity)
-                            
-                        default:
-                            Spacer()
-                                .frame(height: Screen.height * 0.1)
-
-                        }
+                        Spacer()
+                          .frame(height: Screen.height * 0.05)
 
                         switch currentButtonStatus {
                         case .fairwayAndRough:

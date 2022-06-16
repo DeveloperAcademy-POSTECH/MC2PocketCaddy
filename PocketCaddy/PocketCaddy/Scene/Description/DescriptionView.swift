@@ -55,7 +55,7 @@ struct DescriptionView: View {
                 
                 VStack {
                     Spacer()
-                        .frame(height: screenHeight * 0.1)
+                        .frame(height: screenHeight * 0.18)
                     
                     Text(selectedClub.category.rawValue)
                         .foregroundColor(.primaryGreen.opacity(0.5))
@@ -99,14 +99,15 @@ struct DescriptionView: View {
                                     .foregroundColor(.primaryGreen)
                                     .font(.system(size: 40, weight: .bold))
                                 
-                                Capsule()
-                                    .frame(width: screenWidth * 0.2, height: 30)
-                                    .foregroundColor(.primaryGreen)
-                                    .overlay {
-                                        Text(selectedClub.subName)
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 16, weight: .medium))
-                                    }
+                                Text(selectedClub.subName)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 16))
+                                    .padding(.vertical, Screen.width * 0.02)
+                                    .padding(.horizontal, Screen.width * 0.03)
+                                    .background(
+                                        Capsule()
+                                            .foregroundColor(.primaryGreen)
+                                    )
                             }.frame(width: specWidth, alignment: .leading)
                             
                             
