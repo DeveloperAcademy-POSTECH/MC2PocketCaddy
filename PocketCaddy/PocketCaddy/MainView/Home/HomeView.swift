@@ -13,23 +13,16 @@ struct HomeView: View {
     @Binding var isLocationAndDistanceActive: Bool
     
     var body: some View {
-        VStack{
-            VStack {
+        VStack {
+            VStack(alignment: .leading) {
                 Spacer()
                 
                 Text("\(Text("나와 맞는 골프채").foregroundColor(.primaryGreen))를\n찾아보세요")
                     .font(.system(size: Screen.width * 0.09, weight: .bold))
                     .fixedSize(horizontal: true, vertical: true)
+                    .padding([.top, .bottom], Screen.width * 0.12)
+                    .padding(.leading, Screen.width * 0.02)
                 
-                Spacer()
-                
-                Button(action: {
-                    withAnimation {
-                        self.isAllClubActive = true
-                    }
-                }) {
-                    NavigationButton(image: "AllClubBtn")
-                }
                 
                 Button(action: {
                     withAnimation {
@@ -39,16 +32,24 @@ struct HomeView: View {
                     NavigationButton(image: "LocationAndDistanceBtn")
                 }
                 
+                Button(action: {
+                    withAnimation {
+                        self.isAllClubActive = true
+                    }
+                }) {
+                    NavigationButton(image: "AllClubBtn")
+                }
+                
                 Spacer()
                 
                 // 🔥
                 ZStack{
                     SpeechBubble()
-                        .frame(width: Screen.width * 0.8, height: Screen.height * 0.15)
+                        .frame(width: Screen.width * 0.83, height: Screen.height * 0.115)
                         .foregroundColor(.backgroundWhite)
                         .padding()
                     
-                    VStack (alignment: .leading, spacing: 10) {
+                    VStack (alignment: .leading, spacing: 12) {
                         Spacer()
                         
                         HStack{
@@ -77,8 +78,7 @@ struct HomeView: View {
                 
                 // 🔥
                 
-            }
-            .padding()// VStack
+            }// VStack
             .navigationBarHidden(true)
             
             
