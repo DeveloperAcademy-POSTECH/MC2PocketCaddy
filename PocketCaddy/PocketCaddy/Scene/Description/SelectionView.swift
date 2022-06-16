@@ -81,36 +81,50 @@ struct SelectionView: View {
                 }
                 
                 // Distance Section
-                HStack {
-                    Text("Distance")
-                        .font(Font.system(size: Screen.width * 0.07, weight: .bold))
-                        .foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .black)
-                    Spacer()
+                switch currentButtonStatus {
+                case .fairwayAndRough:
+                    VStack {
+                        HStack {
+                            Text("Distance")
+                                .font(Font.system(size: Screen.width * 0.07, weight: .bold))
+                                .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
+                            Spacer()
+                        }
+                        .padding(.top, Screen.height * 0.03)
+                        
+                        Text("“목표 거리는 \(Text("\(Int(value))m").foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen))입니다.“")
+                            .font(Font.system(size: Screen.width * 0.045, weight: .bold))
+                            .padding(.top, 5)
+                            .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
+                        
+                        Slider(value: $value, in: minDistance...maxDistance, step: 5) {
+                            Text("Distance")
+                        } minimumValueLabel: {
+                            Text("\(Int(minDistance))m")
+                        } maximumValueLabel: {
+                            Text("\(Int(maxDistance))m")
+                        }
+                        .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
+                        .accentColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen)
+                        .disabled(currentButtonStatus != .fairwayAndRough)
+                        .onChange(of: value) { _ in
+                            self.searchClub()
+                        }
+
+                        Spacer()
+                            .frame(height: Screen.height * 0.05)
+                    }
+                    .transition(.opacity)
+                    
+                default:
+                  HStack {
+                      Text("Distance")
+                          .font(Font.system(size: Screen.width * 0.07, weight: .bold))
+                          .foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .black)
+                      Spacer()
+                          .frame(height: Screen.height * 0.1)
                 }
-                .padding(.top, Screen.height * 0.03)
-                
-                Text("“목표 거리는 \(Text("\(Int(value))m").foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .primaryGreen))입니다.“")
-                    .font(Font.system(size: Screen.width * 0.045, weight: .bold))
-                    .padding(.top, 5)
-                    .foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .black)
-                
-                Slider(value: $value, in: minDistance...maxDistance, step: 5) {
-                    Text("Distance")
-                } minimumValueLabel: {
-                    Text("\(Int(minDistance))m")
-                } maximumValueLabel: {
-                    Text("\(Int(maxDistance))m")
-                }
-                .foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .black)
-                .accentColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .primaryGreen)
-                .disabled(currentButtonStatus != .fairwayAndRough)
-                .onChange(of: value) { _ in
-                    self.searchClub()
-                }
-                
-                Spacer()
-                    .frame(height: Screen.width * 0.04)
-                
+
                 switch currentButtonStatus {
                 case .fairwayAndRough:
                     if value == 0 {
@@ -122,8 +136,9 @@ struct SelectionView: View {
                                 RoundedRectangle(cornerRadius: Screen.height)
                                     .foregroundColor(.primaryGray)
                             }
+                            .transition(.opacity)
                     } else {
-                        NavigationLink(destination: DescriptionPageView().navigationBarHidden(true)){
+                        NavigationLink(destination: DescriptionPageView().navigationBarHidden(true)) {
                             Text("선택 완료")
                                 .foregroundColor(.white)
                                 .font(Font.system(size: Screen.width * 0.045, weight: .bold))
@@ -132,6 +147,7 @@ struct SelectionView: View {
                                     LinearGradient(gradient: Gradient(colors: [.secondaryGreen, .primaryGreen]), startPoint: .leading, endPoint: .trailing)
                                         .cornerRadius(Screen.height)
                                 }
+                                .transition(.opacity)
                         }
                     }
                 default:
@@ -184,12 +200,14 @@ struct LocationRectangle: View {
     
     var body: some View {
         Button {
-            if self.buttonPressed {
-                self.buttonPressed = false
-                buttonStatus = nil
-            } else {
-                self.buttonPressed = true
-                buttonStatus = buttonName
+            withAnimation {
+                if self.buttonPressed {
+                    self.buttonPressed = false
+                    buttonStatus = nil
+                } else {
+                    self.buttonPressed = true
+                    buttonStatus = buttonName
+                }
             }
         } label: {
             ZStack {
