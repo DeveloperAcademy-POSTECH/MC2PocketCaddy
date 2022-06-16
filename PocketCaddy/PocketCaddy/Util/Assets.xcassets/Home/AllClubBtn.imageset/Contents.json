@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "AllClubBtn.png",
+      "filename" : "Group 5@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "AllClubBtn-2.png",
+      "filename" : "Group 5@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "AllClubBtn-1.png",
+      "filename" : "Group 5@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
