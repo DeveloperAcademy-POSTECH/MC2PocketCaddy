@@ -1,45 +1,15 @@
 //
-//  DescriptionView.swift
+//  DescriptionSingleView.swift
 //  PocketCaddy
 //
-//  Created by 유정인, 이현상 on 2022/05/31.
+//  Created by Hyeon-sang Lee on 2022/06/16.
 //
 
 import SwiftUI
 
-struct DescriptionPageView: View {
-    @EnvironmentObject var clubDataManager : ClubDataManager
-    @State var currentPage: Int = 0
-    @Binding var goBack: Bool
-    
-    var body: some View {
-        ZStack{
-            Color.backgroundWhite
-                .ignoresSafeArea()
-            
-            TabView () {
-                ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
-                    VStack {
-                        CustomBackButtonGoBack()
-                            .transition(.opacity)
-                            .onTapGesture {
-                                withAnimation {
-                                    self.goBack.toggle()
-                                }
-                            }
-
-                        DescriptionView(selectedClub: clubModel)
-                    }
-                }
-            }.tabViewStyle(.page)
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-        }
-    }
-}
-
-struct DescriptionView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+struct DescriptionSingleView: View {
     @State var selectedClub: ClubModel?
+    @Binding var isViewActive: Bool
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -55,7 +25,7 @@ struct DescriptionView: View {
                 
                 VStack {
                     Spacer()
-                        .frame(height: screenHeight * 0.18)
+                        .frame(height: screenHeight * 0.1)
                     
                     Text(selectedClub.category.rawValue)
                         .foregroundColor(.primaryGreen.opacity(0.5))
@@ -67,6 +37,15 @@ struct DescriptionView: View {
                 }
                 
                 VStack(alignment: .center, spacing: 0) {
+
+                    CustomBackButtonGoBack()
+                        .transition(.opacity)
+                        .onTapGesture {
+                            withAnimation {
+                                self.isViewActive.toggle()
+                            }
+                        }
+                    
                     Spacer()
                         .frame(height: screenHeight * 0.02)
                     
@@ -99,15 +78,14 @@ struct DescriptionView: View {
                                     .foregroundColor(.primaryGreen)
                                     .font(.system(size: 40, weight: .bold))
                                 
-                                Text(selectedClub.subName)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 16))
-                                    .padding(.vertical, Screen.width * 0.02)
-                                    .padding(.horizontal, Screen.width * 0.03)
-                                    .background(
-                                        Capsule()
-                                            .foregroundColor(.primaryGreen)
-                                    )
+                                Capsule()
+                                    .frame(width: screenWidth * 0.2, height: 30)
+                                    .foregroundColor(.primaryGreen)
+                                    .overlay {
+                                        Text(selectedClub.subName)
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 16, weight: .medium))
+                                    }
                             }.frame(width: specWidth, alignment: .leading)
                             
                             
@@ -194,10 +172,8 @@ struct DescriptionView: View {
     }
 }
 
-extension Image {
-    static let cutBackground = Image("CutBackground")
-    static let arButton = Image("ARButton")
-    static let category = Image("Category")
-    static let location = Image("Location")
-    static let distance = Image("Distance")
-}
+//struct DescriptionSingleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DescriptionSingleView()
+//    }
+//}
