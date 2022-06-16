@@ -116,11 +116,19 @@ struct DescriptionView: View {
                                 
                             }.frame(width: specWidth, alignment: .leading)
                             
-                            
-                            HStack {
-                                Text(selectedClub.description)
-                                    .foregroundColor(.primaryGreen)
+                            HStack{
+                                GeometryReader{g in
+                                    Text(selectedClub.description)
+                                        .foregroundColor(.primaryGreen)
+                                        .font(.system(size: g.size.height > g.size.width ? g.size.width * 0.25: g.size.height * 0.25))
+                                }
                             }.frame(width: specWidth, alignment: .leading)
+                            
+
+//                            HStack {
+//                                Text(selectedClub.description)
+//                                    .foregroundColor(.primaryGreen)
+//                            }.frame(width: specWidth, alignment: .leading)
                             
                             Spacer()
                             
