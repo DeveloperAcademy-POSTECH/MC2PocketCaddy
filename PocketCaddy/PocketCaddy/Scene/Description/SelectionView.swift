@@ -210,10 +210,3 @@ struct LocationRectangle: View {
         }
     }
 }
-
-
-//struct SelectionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SelectionView()
-//    }
-//}

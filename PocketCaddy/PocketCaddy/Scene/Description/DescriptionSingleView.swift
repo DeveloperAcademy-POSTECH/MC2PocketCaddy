@@ -29,15 +29,14 @@ struct DescriptionSingleView: View {
                     
                     Text(selectedClub.category.rawValue)
                         .foregroundColor(.primaryGreen.opacity(0.5))
-                        .font(.system(size: 130))
+                        .font(.system(size: 170))
                         .fontWeight(.heavy)
-                        .frame(width: Screen.width, alignment: .center)
+                        .frame(width: Screen.width * 2, alignment: .center)
                     
                     Spacer()
                 }
                 
                 VStack(alignment: .center, spacing: 0) {
-
                     CustomBackButtonGoBack()
                         .transition(.opacity)
                         .onTapGesture {
@@ -55,12 +54,12 @@ struct DescriptionSingleView: View {
                             .aspectRatio(contentMode: .fit)
                     }
                     .frame(width: screenWidth ,height: screenHeight * 0.35)
-                    .overlay {
+    //                .overlay {
     //                    Image.arButton
     //                        .resizable()
     //                        .frame(width: screenWidth * 0.2, height: screenWidth * 0.2)
     //                        .offset(x: screenWidth * (-0.3), y: screenHeight * 0.1)
-                    }
+    //                }
                         
                     ZStack{
                         RoundedRectangle(cornerRadius: 24)
@@ -77,28 +76,34 @@ struct DescriptionSingleView: View {
                                 Text(selectedClub.name)
                                     .foregroundColor(.primaryGreen)
                                     .font(.system(size: 40, weight: .bold))
-                                
-                                Capsule()
-                                    .frame(width: screenWidth * 0.2, height: 30)
-                                    .foregroundColor(.primaryGreen)
-                                    .overlay {
-                                        Text(selectedClub.subName)
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 16, weight: .medium))
-                                    }
+                              
+                                ZStack{
+                                    Text("  " + selectedClub.subName + "  ")
+                                        .font(.system(size: 16, weight: .medium))
+                                    
+                                    Capsule()
+                                        .foregroundColor(.primaryGreen)
+                                    
+                                    Text(selectedClub.subName)
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 16, weight: .medium))
+                                }.frame(height: 30)
+                                .fixedSize()
                             }.frame(width: specWidth, alignment: .leading)
-                            
-                            
-                            HStack {
-                                Text(selectedClub.description)
-                                    .foregroundColor(.primaryGreen)
+
+                            HStack{
+                                GeometryReader{ g in
+                                    Text(selectedClub.description)
+                                        .foregroundColor(.primaryGreen)
+                                        .font(.system(size: g.size.height > g.size.width ? g.size.width * 0.25 :  g.size.height * 0.25))
+                                }
                             }.frame(width: specWidth, alignment: .leading)
                             
                             Spacer()
                             
                             HStack {
                                 Spacer()
-                                    .frame(width: screenWidth * 0.1)
+                                    .frame(width: screenWidth * 0.05)
                                 
                                 Rectangle()
                                     .foregroundColor(.gray)
@@ -152,7 +157,7 @@ struct DescriptionSingleView: View {
                                 
                                 Spacer()
 
-                                Text((selectedClub.distance?.description ?? "-") + " m")
+                                Text((selectedClub.distance?.description ?? "_") + " m")
                                     .foregroundColor(.gray)
                                     .font(.system(size: 16, weight: .bold))
                             }.frame(width: specWidth)
@@ -171,9 +176,3 @@ struct DescriptionSingleView: View {
         }
     }
 }
-
-//struct DescriptionSingleView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DescriptionSingleView()
-//    }
-//}
