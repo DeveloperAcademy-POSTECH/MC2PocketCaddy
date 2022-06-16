@@ -156,10 +156,17 @@ struct DescriptionSingleView: View {
                                     .font(.system(size: 16, weight: .medium))
                                 
                                 Spacer()
-
-                                Text((selectedClub.distance?.description ?? "_") + " m")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 16, weight: .bold))
+                                
+                                switch selectedClub.distance?.description {
+                                case nil:
+                                    Text("홀까지 거리를 조정해요")
+                                        .foregroundColor(.gray)
+                                        .font(.system(size: 16, weight: .bold))
+                                default:
+                                    Text((selectedClub.distance?.description ?? "_") + " m")
+                                        .foregroundColor(.gray)
+                                        .font(.system(size: 16, weight: .bold))
+                                }
                             }.frame(width: specWidth)
                             
                             Spacer()

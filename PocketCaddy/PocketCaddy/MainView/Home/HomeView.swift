@@ -42,7 +42,6 @@ struct HomeView: View {
                 
                 Spacer()
                 
-                // 🔥
                 ZStack{
                     SpeechBubble()
                         .frame(width: Screen.width * 0.83, height: Screen.height * 0.115)
@@ -75,8 +74,6 @@ struct HomeView: View {
                 }
                 
                 Spacer()
-                
-                // 🔥
                 
             }// VStack
             .navigationBarHidden(true)
