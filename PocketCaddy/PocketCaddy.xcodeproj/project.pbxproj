@@ -17,7 +17,6 @@
 		0A2706762845EDA000168C40 /* Club.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2706752845EDA000168C40 /* Club.json */; };
 		0A948674285477DF00D42C8C /* ClubCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A948672285477DF00D42C8C /* ClubCardView.swift */; };
 		0A948675285477DF00D42C8C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A948673285477DF00D42C8C /* SearchView.swift */; };
-		0ABB1BC72858744E006A8110 /* iPages in Frameworks */ = {isa = PBXBuildFile; productRef = 0ABB1BC62858744E006A8110 /* iPages */; };
 		0AC19CFC28489CB600727BE6 /* ClubDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFB28489CB600727BE6 /* ClubDataManager.swift */; };
 		0AC19D00284D12FE00727BE6 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */; };
 		7A18D1E428536A46005F6416 /* SampleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D1E328536A46005F6416 /* SampleSelectionView.swift */; };
@@ -116,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ABB1BC72858744E006A8110 /* iPages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +344,6 @@
 			);
 			name = PocketCaddy;
 			packageProductDependencies = (
-				0ABB1BC62858744E006A8110 /* iPages */,
 			);
 			productName = PocketCaddy;
 			productReference = 0A2706432845E96800168C40 /* PocketCaddy.app */;
@@ -421,7 +418,6 @@
 			);
 			mainGroup = 0A27063A2845E96800168C40;
 			packageReferences = (
-				0ABB1BC52858744E006A8110 /* XCRemoteSwiftPackageReference "iPages" */,
 			);
 			productRefGroup = 0A2706442845E96800168C40 /* Products */;
 			projectDirPath = "";
@@ -827,25 +823,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		0ABB1BC52858744E006A8110 /* XCRemoteSwiftPackageReference "iPages" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/benjaminsage/iPages.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.9;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0ABB1BC62858744E006A8110 /* iPages */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0ABB1BC52858744E006A8110 /* XCRemoteSwiftPackageReference "iPages" */;
-			productName = iPages;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A27063B2845E96800168C40 /* Project object */;
 }
