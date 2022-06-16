@@ -31,7 +31,7 @@ struct TextImageView: View {
                 }
             }
         }){
-            Image(location[index].rawValue + "Text")
+            Image("Map" + location[index].rawValue + "Text")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width:textFrameSize[index].x , height: textFrameSize[index].y, alignment: .trailing)

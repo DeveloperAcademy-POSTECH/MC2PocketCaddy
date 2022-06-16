@@ -31,7 +31,7 @@ struct ImageView: View {
                 }
             }
         }){
-            Image(isCheck[index] && sheetNum == 2 ? "selected" + location[index].rawValue : location[index].rawValue)
+            Image(isCheck[index] && sheetNum == 2 ? "Mapselected" + location[index].rawValue : "Map"+location[index].rawValue)
                 .resizable()
                 .frame(width:frameSize[index].x , height: frameSize[index].y, alignment: .trailing)
                 .cornerRadius(15)
