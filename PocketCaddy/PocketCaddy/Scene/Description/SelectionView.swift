@@ -136,13 +136,13 @@ struct SelectionView: View {
                             if value == 0 {
                                 SelectionButtonDisabled()
                             } else {
-                                SelectionButtonActive(goBack: $goBack)
+                                SelectionButtonActive(goBack: $goBack, currentButtonStatus: $currentButtonStatus, value: $value)
                             }
                         default:
                             if currentButtonStatus == nil {
                                 SelectionButtonDisabled()
                             } else {
-                                SelectionButtonActive(goBack: $goBack)
+                                SelectionButtonActive(goBack: $goBack, currentButtonStatus: $currentButtonStatus, value: $value)
                             }
                             
                         }// Switch
