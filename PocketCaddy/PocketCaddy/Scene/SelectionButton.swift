@@ -23,11 +23,15 @@ struct SelectionButtonDisabled: View {
 
 struct SelectionButtonActive: View {
     @Binding var goBack: Bool
+    @Binding var currentButtonStatus: Location?
+    @Binding var value: Double
     
     var body: some View {
         Button(action: {
             withAnimation {
                 self.goBack = true
+                self.currentButtonStatus = nil
+                self.value = 0
             }
         }) {
             Text("선택 완료")
