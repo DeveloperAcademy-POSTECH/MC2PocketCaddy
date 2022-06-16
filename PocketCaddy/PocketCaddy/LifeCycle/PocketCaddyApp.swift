@@ -15,6 +15,7 @@ struct PocketCaddyApp: App {
         WindowGroup {
             LaunchView()
                 .environmentObject(jsonDataManager)
+                .preferredColorScheme(.light)
         }
     }
 }
