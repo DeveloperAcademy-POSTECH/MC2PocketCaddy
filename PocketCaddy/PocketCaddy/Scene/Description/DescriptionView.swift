@@ -180,7 +180,7 @@ struct DescriptionView: View {
                                 
                                 Spacer()
 
-                                Text((selectedClub.distance?.description ?? "-") + " m")
+                                Text((selectedClub.distance?.description ?? "_") + " m")
                                     .foregroundColor(.gray)
                                     .font(.system(size: 16, weight: .bold))
                             }.frame(width: specWidth)
