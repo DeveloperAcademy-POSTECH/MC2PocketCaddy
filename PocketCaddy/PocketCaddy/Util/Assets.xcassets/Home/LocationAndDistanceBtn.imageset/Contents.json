@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group.png",
+      "filename" : "LocationAndDistanceBtn@1x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group@2x.png",
+      "filename" : "LocationAndDistanceBtn@2x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Group@3x.png",
+      "filename" : "LocationAndDistanceBtn@3x-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
