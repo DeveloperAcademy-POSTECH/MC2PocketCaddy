@@ -84,15 +84,15 @@ struct SelectionView: View {
                 HStack {
                     Text("Distance")
                         .font(Font.system(size: Screen.width * 0.07, weight: .bold))
-                        .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
+                        .foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .black)
                     Spacer()
                 }
                 .padding(.top, Screen.height * 0.03)
                 
-                Text("“목표 거리는 \(Text("\(Int(value))m").foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen))입니다.“")
+                Text("“목표 거리는 \(Text("\(Int(value))m").foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .primaryGreen))입니다.“")
                     .font(Font.system(size: Screen.width * 0.045, weight: .bold))
                     .padding(.top, 5)
-                    .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
+                    .foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .black)
                 
                 Slider(value: $value, in: minDistance...maxDistance, step: 5) {
                     Text("Distance")
@@ -101,8 +101,8 @@ struct SelectionView: View {
                 } maximumValueLabel: {
                     Text("\(Int(maxDistance))m")
                 }
-                .foregroundColor(currentButtonStatus != .fairwayAndRough ? .secondary : .black)
-                .accentColor(currentButtonStatus != .fairwayAndRough ? .secondary : .primaryGreen)
+                .foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .black)
+                .accentColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .primaryGreen)
                 .disabled(currentButtonStatus != .fairwayAndRough)
                 .onChange(of: value) { _ in
                     self.searchClub()
@@ -120,7 +120,7 @@ struct SelectionView: View {
                             .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
                             .background{
                                 RoundedRectangle(cornerRadius: Screen.height)
-                                    .foregroundColor(Color.backgroundWhite)
+                                    .foregroundColor(.primaryGray)
                             }
                     } else {
                         NavigationLink(destination: DescriptionPageView().navigationBarHidden(true)){
