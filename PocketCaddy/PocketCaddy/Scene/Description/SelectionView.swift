@@ -47,12 +47,7 @@ struct SelectionView: View {
                                 Text("현재 \(Text("공").foregroundColor(.primaryGreen))은\n어느 위치에 있나요?")
                                     .font(.system(size: Screen.width * 0.09, weight: .bold))
                                     .fixedSize(horizontal: true, vertical: true)
-                                    .padding(.bottom, Screen.width * 0.005)
-                                
-                                Text("공이 위치한 구역과 목표 거리를 입력해주세요 :)")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: Screen.width * 0.038))
-                                    .fixedSize(horizontal: true, vertical: true)
+                                    .padding(.bottom, Screen.width * 0.005)                                
                             }
                             .padding(.bottom, Screen.height * 0.04)
                             
@@ -64,21 +59,6 @@ struct SelectionView: View {
                             Text("Location")
                                 .font(Font.system(size: Screen.width * 0.07, weight: .bold))
                             Spacer()
-                            // MapView()로 이동
-                            Button(action: {
-                                clubDataManager.selectedAppearance = false
-                                goToMapView = true
-                            }){
-                                Image(systemName: "questionmark.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20)
-                                    .foregroundColor(.black)
-                            }
-                            
-                            NavigationLink(destination: MapView().navigationBarHidden(true), isActive: $goToMapView ) {
-                            }
-                            
                         }
                         
                         // Location Button Grid
