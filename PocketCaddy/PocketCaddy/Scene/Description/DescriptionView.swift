@@ -10,15 +10,26 @@ import SwiftUI
 struct DescriptionPageView: View {
     @EnvironmentObject var clubDataManager : ClubDataManager
     @State var currentPage: Int = 0
+    @Binding var goBack: Bool
     
     var body: some View {
         ZStack{
             Color.backgroundWhite
                 .ignoresSafeArea()
             
-            TabView(){
+            TabView () {
                 ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
-                    DescriptionView(selectedClub: clubModel)
+                    VStack {
+                        CustomBackButtonGoBack()
+                            .transition(.opacity)
+                            .onTapGesture {
+                                withAnimation {
+                                    self.goBack.toggle()
+                                }
+                            }
+
+                        DescriptionView(selectedClub: clubModel)
+                    }
                 }
             }.tabViewStyle(.page)
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
@@ -29,6 +40,7 @@ struct DescriptionPageView: View {
 struct DescriptionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var selectedClub: ClubModel?
+    
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     let buttonWidth = UIScreen.main.bounds.height * 0.03
@@ -41,9 +53,9 @@ struct DescriptionView: View {
                 Color.backgroundWhite
                     .ignoresSafeArea()
                 
-                VStack{
+                VStack {
                     Spacer()
-                        .frame(height: screenHeight * 0.1)
+                        .frame(height: screenHeight * 0.18)
                     
                     Text(selectedClub.category.rawValue)
                         .foregroundColor(.primaryGreen.opacity(0.5))
@@ -55,20 +67,6 @@ struct DescriptionView: View {
                 }
                 
                 VStack(alignment: .center, spacing: 0) {
-                    HStack {
-                        Button {
-                            self.presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Image(systemName: "arrow.backward")
-                                .resizable()
-                                .foregroundColor(.primaryGreen)
-                        }
-                        .frame(width: buttonWidth, height: buttonWidth)
-                        .padding([.top, .leading])
-                        
-                        Spacer()
-                    }
-                    
                     Spacer()
                         .frame(height: screenHeight * 0.02)
                     
@@ -100,7 +98,7 @@ struct DescriptionView: View {
                                 Text(selectedClub.name)
                                     .foregroundColor(.primaryGreen)
                                     .font(.system(size: 40, weight: .bold))
-                                
+                              
                                 ZStack{
                                     Text("  " + selectedClub.subName + "  ")
                                         .font(.system(size: 16, weight: .medium))
@@ -113,7 +111,6 @@ struct DescriptionView: View {
                                         .font(.system(size: 16, weight: .medium))
                                 }.frame(height: 30)
                                 .fixedSize()
-                                
                             }.frame(width: specWidth, alignment: .leading)
                             
                             HStack{

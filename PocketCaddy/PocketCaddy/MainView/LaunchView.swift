@@ -24,7 +24,7 @@ struct LaunchView: View {
     var body: some View {
         NavigationView{
             NavigationLink(
-                destination: HomeView(),
+                destination: HomeSelection(),
                 isActive: $goToHomeView
             ) {
                 ZStack{
