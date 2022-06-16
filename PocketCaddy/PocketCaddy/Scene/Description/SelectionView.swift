@@ -121,10 +121,16 @@ struct SelectionView: View {
                                 .onChange(of: value) { _ in
                                     self.searchClub()
                                 }
-
-                        Spacer()
-                          .frame(height: Screen.height * 0.05)
-
+                                
+                                Spacer()
+                                    .frame(height: Screen.height * 0.05)
+                                
+                            }
+                        default:
+                            Spacer()
+                                .frame(height: Screen.height * 0.05)
+                        }
+                        
                         switch currentButtonStatus {
                         case .fairwayAndRough:
                             if value == 0 {
@@ -149,17 +155,17 @@ struct SelectionView: View {
                 }
                 // Selection VStack
             } else {
-                DescriptionPageView(goBack: $goBack)
-                    .transition(.opacity)
-                    .navigationBarHidden(true)
+               DescriptionPageView(goBack: $goBack)
+                   .transition(.opacity)
+                   .navigationBarHidden(true)
             }
-        
-        
+
+            
         }// Whole VStack
     }// body
     
     // MARK: 선택 완료 버튼 함수 처리
-    private func searchClub() {
+    func searchClub() {
         guard let location = currentButtonStatus else { return }
         self.clubDataManager.searchClub(location: location, selectedDistance: Int(value))
     }// searchClub
@@ -205,8 +211,11 @@ struct LocationRectangle: View {
     }
 }
 
+
 //struct SelectionView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        SelectionView()
 //    }
 //}
+
+
