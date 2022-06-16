@@ -27,10 +27,10 @@ class ClubDataManager: ObservableObject {
         "7-Iron": "7번아이언7번매쉬닉블릭",
         "8-Iron": "8번아이언8번피쳐",
         "9-Iron": "9번아이언9번닉블릭",
-        "Pitching Wedge": "피칭웨지",
-        "Approach Wedge": "어프로치웨지갭웨지",
-        "Sand Wedge": "샌드웨지",
-        "Lob Wedge": "로브웨지",
+        "PW": "피칭웨지",
+        "AW": "어프로치웨지갭웨지",
+        "SW": "샌드웨지",
+        "LW": "로브웨지",
         "Putter": "퍼터"
     ]
     

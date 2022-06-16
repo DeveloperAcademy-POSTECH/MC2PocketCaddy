@@ -117,9 +117,12 @@ struct SelectionView: View {
                     .transition(.opacity)
                     
                 default:
-                    Spacer()
-                        .frame(height: Screen.height * 0.1)
-
+                  HStack {
+                      Text("Distance")
+                          .font(Font.system(size: Screen.width * 0.07, weight: .bold))
+                          .foregroundColor(currentButtonStatus != .fairwayAndRough ? .primaryGray : .black)
+                      Spacer()
+                          .frame(height: Screen.height * 0.1)
                 }
 
                 switch currentButtonStatus {
@@ -131,7 +134,7 @@ struct SelectionView: View {
                             .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
                             .background{
                                 RoundedRectangle(cornerRadius: Screen.height)
-                                    .foregroundColor(Color.backgroundWhite)
+                                    .foregroundColor(.primaryGray)
                             }
                             .transition(.opacity)
                     } else {
