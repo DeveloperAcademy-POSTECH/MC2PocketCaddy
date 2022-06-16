@@ -11,38 +11,37 @@ struct HomeView: View {
     
     var body: some View {
         VStack{
-
-            HStack{
-                Text("\(Text("어떤 방법").foregroundColor(.secondaryGreen))으로\n채를 확인하실건가요?")
-                    .font(.system(size: 35).bold())
-                    .padding()
-                
-                Spacer()
-            }
-            
             Spacer()
-            
+            Text("\(Text("어떤 방법").foregroundColor(.primaryGreen))으로\n채를 확인하실건가요?")
+                .font(.system(size: Screen.width * 0.09, weight: .bold))
+                .fixedSize(horizontal: true, vertical: true)
+                .padding(.bottom, Screen.width * 0.005)
+
+            Spacer()
             NavigationLink(destination: SearchView().navigationBarHidden(true)){
                 NavigationButton(image: "AllClubBtn")
+                    .frame(width: Screen.width, height: Screen.height/4)
             }
-            
             NavigationLink(destination: SelectionView().navigationBarHidden(true)){
                 NavigationButton(image: "LocationAndDistanceBtn")
+                    .frame(width: Screen.width, height: Screen.height/4)
             }
-            
             ZStack{
-                RoundedRectangle(cornerRadius: 15)
+                SpeechBubble()
+                    .frame(width: Screen.width*0.9, height: Screen.height/6)
                     .foregroundColor(.backgroundWhite)
-                    .padding()
-                
+                    .overlay {
+                        SpeechBubble()
+                            .stroke(Color.backgroundWhite, lineWidth: 1)
+                    }
+                   
                 VStack (alignment: .leading) {
                     Image("Tip")
-                    
                     Text(HomeViewTip[Int.random(in: 0..<HomeViewTip.count)])
+                        .frame(width: Screen.width*0.7, height: Screen.height * 0.08)
                 }
-                .padding()
             }
-            
+            .padding(.horizontal, Screen.width * 0.2)
             Spacer()
             
         } // VStack
