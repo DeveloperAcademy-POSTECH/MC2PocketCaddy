@@ -12,23 +12,19 @@ struct HomeView: View {
     var body: some View {
         VStack{
             Spacer()
-            Text("\(Text("어떤 방법").foregroundColor(.primaryGreen))으로\n채를 확인하실건가요?")
+            Text("\(Text("나와 맞는 골프채").foregroundColor(.primaryGreen))를\n찾아보세요")
                 .font(.system(size: Screen.width * 0.09, weight: .bold))
                 .fixedSize(horizontal: true, vertical: true)
                 .padding(.bottom, Screen.width * 0.005)
-
-            Spacer()
             NavigationLink(destination: SearchView().navigationBarHidden(true)){
                 NavigationButton(image: "AllClubBtn")
-                    .frame(width: Screen.width, height: Screen.height/4)
-            }
+                    .frame(width: Screen.width * 0.85, height: Screen.height/5)            }
             NavigationLink(destination: SelectionView().navigationBarHidden(true)){
                 NavigationButton(image: "LocationAndDistanceBtn")
-                    .frame(width: Screen.width, height: Screen.height/4)
-            }
+            }.frame(width: Screen.width * 0.85, height: Screen.height/5)
             ZStack{
                 SpeechBubble()
-                    .frame(width: Screen.width*0.9, height: Screen.height/6)
+                    .frame(width: Screen.width*0.7, height: Screen.height/6)
                     .foregroundColor(.backgroundWhite)
                     .overlay {
                         SpeechBubble()
@@ -36,17 +32,20 @@ struct HomeView: View {
                     }
                    
                 VStack (alignment: .leading) {
-                    Image("Tip")
+                    Text("💡알고계셨나요?")
+                        .font(.system(size: 20, weight: .heavy))
                     Text(HomeViewTip[Int.random(in: 0..<HomeViewTip.count)])
-                        .frame(width: Screen.width*0.7, height: Screen.height * 0.08)
+                        .font(.system(size: 15))
+                        .frame(width: Screen.width*0.6, height: Screen.height * 0.1)
                 }
             }
             .padding(.horizontal, Screen.width * 0.2)
             Spacer()
             
-        } // VStack
-//        .preferredColorScheme(.light)
+        }
+        .padding()// VStack
         .navigationBarHidden(true)
+       
     } // body
 } // HomeView
 

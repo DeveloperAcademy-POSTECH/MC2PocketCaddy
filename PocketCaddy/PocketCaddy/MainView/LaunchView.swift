@@ -28,11 +28,6 @@ struct LaunchView: View {
                 isActive: $goToHomeView
             ) {
                 ZStack{
-                    
-                    Image("FairwayRough")
-                    Image("TeeingGround")
-                    Image("Bunker")
-                    Image("Green")
                     SpriteView(scene: scene)
                         .frame(width:Screen.width , height:Screen.height)
                         .ignoresSafeArea()
