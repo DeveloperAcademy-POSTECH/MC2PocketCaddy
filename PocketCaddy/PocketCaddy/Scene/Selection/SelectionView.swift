@@ -71,7 +71,7 @@ struct SelectionView: View {
                             Spacer()
                             
                             NavigationLink {
-                                MapView(selectedLocation: $currentButtonStatus)
+                                MapView()
                             } label: {
                                 Image("CircleQuestionmark")
                             }.frame(width: Screen.width * 0.06, height: Screen.width * 0.06)

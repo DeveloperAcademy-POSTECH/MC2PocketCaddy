@@ -13,7 +13,6 @@ struct MapView: View {
     @State private var celsius = 0.0
     @State var sheetNum : Int = 1
     @State var isCheck : [Bool] = [true,false,false,false]
-    @Binding var selectedLocation: Location?
     var location : [Location] = Location.allCases
     var offset: [(x:CGFloat,y:CGFloat)] = [(x:80,y:300),(x:160,y:10),(x:-20,y:-290),(x:-10,y:10)]
     var textImageOffset: [(x:CGFloat,y:CGFloat)] = [(x:0,y:280),(x:120,y:-20),(x:60,y:-320),(x:100,y:-120)]
@@ -114,7 +113,7 @@ struct MapView: View {
                         }
                         else if isCheck[3] {
                             Spacer()
-                            Text("Fairway\n&Rough")
+                            Text("Fairway\n& Rough")
                                 .font(.system(size: 50))
                                 .bold()
                                 .foregroundColor(.white)
