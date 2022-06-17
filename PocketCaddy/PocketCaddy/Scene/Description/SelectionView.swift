@@ -41,7 +41,7 @@ struct SelectionView: View {
                         .gesture(
                             LongPressGesture(minimumDuration: 1000000)
                                 .updating($longPressTap, body: { (currentState, state, transaction) in
-                                    state = currentState
+                                        state = currentState
                                 })
                         )
                         .simultaneousGesture(TapGesture()
@@ -50,6 +50,7 @@ struct SelectionView: View {
                                     self.isLocationAndDistanceActive.toggle()
                                 }
                             })
+                  
                     VStack {
                         // Title
                         HStack {
