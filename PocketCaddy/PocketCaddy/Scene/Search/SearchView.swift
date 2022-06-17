@@ -19,7 +19,7 @@ struct SearchView: View {
     @Binding var isAllClubActive: Bool
     
     @GestureState var longPressTap = false
-    
+
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
@@ -35,7 +35,6 @@ struct SearchView: View {
                             self.selectedClub = nil
                         }
                     }
-
             } else {
                 // MARK: - HEADER
                 CustomBackButtonGoBack()
@@ -50,7 +49,7 @@ struct SearchView: View {
                     .simultaneousGesture(TapGesture()
                         .onEnded { _ in
                             withAnimation {
-                                self.isAllClubActive.toggle()
+                                self.isAllClubActive = false
                             }
                         })
                 HStack {

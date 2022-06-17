@@ -11,9 +11,9 @@ struct DescriptionSingleView: View {
     @State var selectedClub: ClubModel?
     @State var isPressed = false
     @Binding var isViewActive: Bool
-    
+
     @GestureState var longPressTap = false
-    
+
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     let buttonWidth = UIScreen.main.bounds.height * 0.03
