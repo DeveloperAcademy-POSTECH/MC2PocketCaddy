@@ -40,6 +40,10 @@
 		BACE9C3C284B3E3900A04E2D /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */; };
 		BACE9C3E284B3FB900A04E2D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3D284B3FB900A04E2D /* ImageView.swift */; };
 		BACE9C40284B496B00A04E2D /* TextImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE9C3F284B496B00A04E2D /* TextImageView.swift */; };
+		BAD3D63F285C7302006D6F96 /* SceneKit3DModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD3D63A285C7302006D6F96 /* SceneKit3DModelView.swift */; };
+		BAD3D640285C7302006D6F96 /* Golf Putt.dae in Resources */ = {isa = PBXBuildFile; fileRef = BAD3D63C285C7302006D6F96 /* Golf Putt.dae */; };
+		BAD3D641285C7302006D6F96 /* Golf Drive.dae in Resources */ = {isa = PBXBuildFile; fileRef = BAD3D63D285C7302006D6F96 /* Golf Drive.dae */; };
+		BAD3D642285C7302006D6F96 /* Golf Chip.dae in Resources */ = {isa = PBXBuildFile; fileRef = BAD3D63E285C7302006D6F96 /* Golf Chip.dae */; };
 		BAE0830A285479E400AAD128 /* LaunchScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE08309285479E400AAD128 /* LaunchScene.swift */; };
 		BAE0830C2854A7F500AAD128 /* ActionList.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAE0830B2854A7F500AAD128 /* ActionList.sks */; };
 		BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFE8BB2854571A00B08B12 /* HomeView.swift */; };
@@ -102,6 +106,10 @@
 		BACE9C3B284B3E3900A04E2D /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		BACE9C3D284B3FB900A04E2D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		BACE9C3F284B496B00A04E2D /* TextImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageView.swift; sourceTree = "<group>"; };
+		BAD3D63A285C7302006D6F96 /* SceneKit3DModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKit3DModelView.swift; sourceTree = "<group>"; };
+		BAD3D63C285C7302006D6F96 /* Golf Putt.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = "Golf Putt.dae"; sourceTree = "<group>"; };
+		BAD3D63D285C7302006D6F96 /* Golf Drive.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = "Golf Drive.dae"; sourceTree = "<group>"; };
+		BAD3D63E285C7302006D6F96 /* Golf Chip.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = "Golf Chip.dae"; sourceTree = "<group>"; };
 		BAE08309285479E400AAD128 /* LaunchScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScene.swift; sourceTree = "<group>"; };
 		BAE0830B2854A7F500AAD128 /* ActionList.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ActionList.sks; sourceTree = "<group>"; };
 		BAFFE8BB2854571A00B08B12 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 		0A2706742845EC2600168C40 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				BAD3D639285C7302006D6F96 /* SceneKit3DModelView */,
 				0AC19D01284D146300727BE6 /* Description */,
 				BACE9C41284B4EB700A04E2D /* Map */,
 				0A948672285477DF00D42C8C /* ClubCardView.swift */,
@@ -327,6 +336,25 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		BAD3D639285C7302006D6F96 /* SceneKit3DModelView */ = {
+			isa = PBXGroup;
+			children = (
+				BAD3D63A285C7302006D6F96 /* SceneKit3DModelView.swift */,
+				BAD3D63B285C7302006D6F96 /* Object */,
+			);
+			path = SceneKit3DModelView;
+			sourceTree = "<group>";
+		};
+		BAD3D63B285C7302006D6F96 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				BAD3D63C285C7302006D6F96 /* Golf Putt.dae */,
+				BAD3D63D285C7302006D6F96 /* Golf Drive.dae */,
+				BAD3D63E285C7302006D6F96 /* Golf Chip.dae */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,7 +463,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD3D640285C7302006D6F96 /* Golf Putt.dae in Resources */,
+				BAD3D642285C7302006D6F96 /* Golf Chip.dae in Resources */,
 				89544A4528474ED100423D0A /* SampleData.json in Resources */,
+				BAD3D641285C7302006D6F96 /* Golf Drive.dae in Resources */,
 				0A2706762845EDA000168C40 /* Club.json in Resources */,
 				0A27064E2845E96900168C40 /* Preview Assets.xcassets in Resources */,
 				0A27064B2845E96900168C40 /* Assets.xcassets in Resources */,
@@ -477,6 +508,7 @@
 				BAE0830A285479E400AAD128 /* LaunchScene.swift in Sources */,
 				BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */,
 				BAC5AEB328570D0800D2EADC /* UIImage.swift in Sources */,
+				BAD3D63F285C7302006D6F96 /* SceneKit3DModelView.swift in Sources */,
 				0A948674285477DF00D42C8C /* ClubCardView.swift in Sources */,
 				7AE520AC28596E3D0085E2D4 /* HomeViewTip.swift in Sources */,
 				EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */,
