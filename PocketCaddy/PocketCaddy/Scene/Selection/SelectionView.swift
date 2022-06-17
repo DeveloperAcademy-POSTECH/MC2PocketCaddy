@@ -48,11 +48,6 @@ struct SelectionView: View {
                             .onEnded { _ in
                                 self.isLocationAndDistanceActive.toggle()
                             })
-//                        .onTapGesture {
-//                            withAnimation {
-//                                self.isLocationAndDistanceActive.toggle()
-//                            }
-//                        }
                     
                     VStack {
                         // Title
