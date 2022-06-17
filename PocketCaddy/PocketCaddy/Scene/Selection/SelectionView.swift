@@ -46,10 +46,9 @@ struct SelectionView: View {
                         )
                         .simultaneousGesture(TapGesture()
                             .onEnded { _ in
-                                withAnimation {
-                                    self.isLocationAndDistanceActive.toggle()
-                                }
+                                self.isLocationAndDistanceActive.toggle()
                             })
+                    
                     VStack {
                         // Title
                         HStack {
@@ -68,12 +67,19 @@ struct SelectionView: View {
                         HStack {
                             Text("Location")
                                 .font(Font.system(size: Screen.width * 0.07, weight: .bold))
+                            
                             Spacer()
+                            
+                            NavigationLink {
+                                MapView(selectedLocation: $currentButtonStatus)
+                            } label: {
+                                Image("CircleQuestionmark")
+                            }.frame(width: Screen.width * 0.06, height: Screen.width * 0.06)
                         }
                         
                         // Location Button Grid
                         LazyVGrid(columns: LazyVGridColumns) {
-                            ForEach(0..<locationButtonArray.count, id: \.self) {index in
+                            ForEach(0..<locationButtonArray.count, id: \.self) { index in
                                 locationButtonArray[index]
                                     .padding(index % 2 == 0 ? .trailing : .leading, Screen.width * 0.005)
                             }
