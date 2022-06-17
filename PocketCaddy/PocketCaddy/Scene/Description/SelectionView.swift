@@ -50,7 +50,7 @@ struct SelectionView: View {
                                     self.isLocationAndDistanceActive.toggle()
                                 }
                             })
-                    
+                  
                     VStack {
                         // Title
                         HStack {

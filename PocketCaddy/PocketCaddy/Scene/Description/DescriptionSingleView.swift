@@ -31,17 +31,38 @@ struct DescriptionSingleView: View {
                     Color.backgroundWhite
                         .ignoresSafeArea()
                     
-                    VStack {
-                        Spacer()
-                            .frame(height: screenHeight * 0.07)
-                        
-                        Text(selectedClub.category.rawValue)
-                            .foregroundColor(.primaryGreen.opacity(0.5))
-                            .font(.system(size: 170))
-                            .fontWeight(.heavy)
-                            .frame(width: Screen.width * 2, alignment: .center)
-                        
-                        Spacer()
+                    Text(selectedClub.category.rawValue)
+                        .foregroundColor(.primaryGreen.opacity(0.5))
+                        .font(.system(size: 170))
+                        .fontWeight(.heavy)
+                        .frame(width: Screen.width * 2, alignment: .center)
+                    
+                    Spacer()
+                }
+                
+                VStack(alignment: .center, spacing: 0) {
+                    CustomBackButtonGoBack()
+                        .transition(.opacity)
+                        .opacity(longPressTap ? 0.4 : 1.0)
+                        .gesture(
+                            LongPressGesture(minimumDuration: 1000000)
+                                .updating($longPressTap, body: { (currentState, state, transaction) in
+                                    state = currentState
+                                })
+                        )
+                        .simultaneousGesture(TapGesture()
+                            .onEnded { _ in
+                                withAnimation {
+                                    self.isViewActive.toggle()
+                                }
+                            })
+                    Spacer()
+                        .frame(height: screenHeight * 0.02)
+                    
+                    HStack(alignment: .center) {
+                        Image(selectedClub.name)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                     }
 
                     VStack(alignment: .center, spacing: 0) {
