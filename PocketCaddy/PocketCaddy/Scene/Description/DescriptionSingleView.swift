@@ -9,7 +9,10 @@ import SwiftUI
 
 struct DescriptionSingleView: View {
     @State var selectedClub: ClubModel?
+    @State var isPressed = false
     @Binding var isViewActive: Bool
+    
+    @GestureState var longPressTap = false
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -39,11 +42,23 @@ struct DescriptionSingleView: View {
                 VStack(alignment: .center, spacing: 0) {
                     CustomBackButtonGoBack()
                         .transition(.opacity)
-                        .onTapGesture {
-                            withAnimation {
+                        .opacity(longPressTap ? 0.4 : 1.0)
+                        .gesture(
+                            LongPressGesture(minimumDuration: 1000000)
+                                .updating($longPressTap, body: { (currentState, state, transaction) in
+                                    state = currentState
+                                })
+                        )
+                        .simultaneousGesture(TapGesture()
+                            .onEnded { _ in
                                 self.isViewActive.toggle()
-                            }
-                        }
+                            })
+//                        .onTapGesture {
+//                            withAnimation {
+//                                self.isViewActive.toggle()
+//                            }
+//                        }
+
                     
                     Spacer()
                         .frame(height: screenHeight * 0.02)

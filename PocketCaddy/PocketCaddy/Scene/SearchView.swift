@@ -14,8 +14,11 @@ struct SearchView: View {
     @State private var search: String = ""
     @State var isViewActive: Bool = false
     @State var selectedClub: ClubModel?
+    @State var isPressed = false
     
     @Binding var isAllClubActive: Bool
+    
+    @GestureState var longPressTap = false
     
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
@@ -37,11 +40,22 @@ struct SearchView: View {
                 // MARK: - HEADER
                 CustomBackButtonGoBack()
                     .transition(.opacity)
-                    .onTapGesture {
-                        withAnimation {
+                    .opacity(longPressTap ? 0.4 : 1.0)
+                    .gesture(
+                        LongPressGesture(minimumDuration: 1000000)
+                            .updating($longPressTap, body: { (currentState, state, transaction) in
+                                state = currentState
+                            })
+                    )
+                    .simultaneousGesture(TapGesture()
+                        .onEnded { _ in
                             self.isAllClubActive.toggle()
-                        }
-                    }
+                        })
+//                    .onTapGesture {
+//                        withAnimation {
+//                            self.isAllClubActive.toggle()
+//                        }
+//                    }
 
                 HStack {
                     TextField("Search", text: $search)
