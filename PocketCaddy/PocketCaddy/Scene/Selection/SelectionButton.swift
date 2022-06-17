@@ -15,7 +15,7 @@ struct SelectionButtonDisabled: View {
             .frame(width: Screen.width * 0.3, height: Screen.height * 0.06)
             .background{
                 RoundedRectangle(cornerRadius: Screen.height)
-                    .foregroundColor(Color.backgroundWhite)
+                    .foregroundColor(.primaryGray)
             }
             .transition(.opacity)
     }

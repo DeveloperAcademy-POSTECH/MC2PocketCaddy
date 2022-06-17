@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "CutBackground.png",
+      "filename" : "circleQuestionmark.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "circleQuestionmark2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
