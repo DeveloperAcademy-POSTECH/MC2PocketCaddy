@@ -41,18 +41,15 @@ struct SelectionView: View {
                         .gesture(
                             LongPressGesture(minimumDuration: 1000000)
                                 .updating($longPressTap, body: { (currentState, state, transaction) in
-                                    state = currentState
+                                        state = currentState
                                 })
                         )
                         .simultaneousGesture(TapGesture()
                             .onEnded { _ in
-                                self.isLocationAndDistanceActive.toggle()
+                                withAnimation {
+                                    self.isLocationAndDistanceActive.toggle()
+                                }
                             })
-//                        .onTapGesture {
-//                            withAnimation {
-//                                self.isLocationAndDistanceActive.toggle()
-//                            }
-//                        }
                     
                     VStack {
                         // Title
