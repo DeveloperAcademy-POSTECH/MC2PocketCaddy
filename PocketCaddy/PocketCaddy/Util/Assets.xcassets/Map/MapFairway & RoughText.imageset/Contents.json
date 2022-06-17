@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "MapFairway & RoughText2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Fairway & Rough@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
