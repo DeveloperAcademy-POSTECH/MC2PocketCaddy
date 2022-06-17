@@ -14,8 +14,11 @@ struct SelectionView: View {
     @State var currentButtonStatus: Location? = nil
     @State var goToMapView: Bool = false
     @State var goBack: Bool = false
+    @State var isPressed = false
     
     @Binding var isLocationAndDistanceActive: Bool
+    
+    @GestureState var longPressTap = false
     
     private let minDistance: Double = 60
     private let maxDistance: Double = 210
@@ -34,11 +37,22 @@ struct SelectionView: View {
                 VStack {
                     CustomBackButtonGoBack()
                         .transition(.opacity)
-                        .onTapGesture {
-                            withAnimation {
+                        .opacity(longPressTap ? 0.4 : 1.0)
+                        .gesture(
+                            LongPressGesture(minimumDuration: 1000000)
+                                .updating($longPressTap, body: { (currentState, state, transaction) in
+                                    state = currentState
+                                })
+                        )
+                        .simultaneousGesture(TapGesture()
+                            .onEnded { _ in
                                 self.isLocationAndDistanceActive.toggle()
-                            }
-                        }
+                            })
+//                        .onTapGesture {
+//                            withAnimation {
+//                                self.isLocationAndDistanceActive.toggle()
+//                            }
+//                        }
                     
                     VStack {
                         // Title

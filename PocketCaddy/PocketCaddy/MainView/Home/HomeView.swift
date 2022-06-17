@@ -44,7 +44,7 @@ struct HomeView: View {
                 
                 ZStack{
                     SpeechBubble()
-                        .frame(width: Screen.width * 0.83, height: Screen.height * 0.115)
+                        .frame(width: Screen.width * 0.83, height: Screen.height * 0.13)
                         .foregroundColor(.backgroundWhite)
                         .padding()
                     
@@ -60,7 +60,7 @@ struct HomeView: View {
                         
                         HStack{
                             Text(HomeViewTip[Int.random(in: 0..<HomeViewTip.count)])
-                                .font(.system(size: 12))
+                                .font(.system(size: 14))
                                 .foregroundColor(.gray)
                             
                             Spacer()

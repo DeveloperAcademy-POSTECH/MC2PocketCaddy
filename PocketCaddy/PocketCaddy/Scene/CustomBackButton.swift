@@ -39,7 +39,7 @@ struct CustomBackButtonGoBack: View {
                 .frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
                 .padding(.leading, 25)
                 .padding(.vertical, 10)
-            
+                            
             Spacer()
         }// HStack
         
@@ -48,6 +48,7 @@ struct CustomBackButtonGoBack: View {
 
 struct CustomBackButton2: View {
     @EnvironmentObject var clubDataManager: ClubDataManager
+    
     var presentationMode: Binding<PresentationMode>
     
     var body: some View {
