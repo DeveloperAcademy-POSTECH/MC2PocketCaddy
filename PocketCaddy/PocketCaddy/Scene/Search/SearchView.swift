@@ -53,6 +53,7 @@ struct SearchView: View {
                                 self.isAllClubActive.toggle()
                             }
                         })
+
                 HStack {
                     TextField("Search", text: $search)
                         .padding(.horizontal, 30)
@@ -94,6 +95,7 @@ struct SearchView: View {
                             }
                         }
                         .padding()
+
                     } else {
                         VStack {
                             Image(systemName: "exclamationmark.circle")

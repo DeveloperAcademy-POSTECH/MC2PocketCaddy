@@ -23,7 +23,8 @@ struct DescriptionPageView: View {
                     DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
 
                 }
-            }.tabViewStyle(.page)
+            }
+            .tabViewStyle(.page)
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
     }
