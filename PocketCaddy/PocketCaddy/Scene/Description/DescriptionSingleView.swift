@@ -51,15 +51,10 @@ struct DescriptionSingleView: View {
                         )
                         .simultaneousGesture(TapGesture()
                             .onEnded { _ in
-                                self.isViewActive.toggle()
+                                withAnimation {
+                                    self.isViewActive.toggle()
+                                }
                             })
-//                        .onTapGesture {
-//                            withAnimation {
-//                                self.isViewActive.toggle()
-//                            }
-//                        }
-
-                    
                     Spacer()
                         .frame(height: screenHeight * 0.02)
                     

@@ -46,14 +46,10 @@ struct SelectionView: View {
                         )
                         .simultaneousGesture(TapGesture()
                             .onEnded { _ in
-                                self.isLocationAndDistanceActive.toggle()
+                                withAnimation {
+                                    self.isLocationAndDistanceActive.toggle()
+                                }
                             })
-//                        .onTapGesture {
-//                            withAnimation {
-//                                self.isLocationAndDistanceActive.toggle()
-//                            }
-//                        }
-                    
                     VStack {
                         // Title
                         HStack {
