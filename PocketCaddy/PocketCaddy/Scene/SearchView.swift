@@ -49,7 +49,9 @@ struct SearchView: View {
                     )
                     .simultaneousGesture(TapGesture()
                         .onEnded { _ in
-                            self.isAllClubActive.toggle()
+                            withAnimation {
+                                self.isAllClubActive.toggle()
+                            }
                         })
 //                    .onTapGesture {
 //                        withAnimation {
