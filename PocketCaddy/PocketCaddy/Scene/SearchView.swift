@@ -53,12 +53,6 @@ struct SearchView: View {
                                 self.isAllClubActive.toggle()
                             }
                         })
-//                    .onTapGesture {
-//                        withAnimation {
-//                            self.isAllClubActive.toggle()
-//                        }
-//                    }
-
                 HStack {
                     TextField("Search", text: $search)
                         .padding(.horizontal, 30)

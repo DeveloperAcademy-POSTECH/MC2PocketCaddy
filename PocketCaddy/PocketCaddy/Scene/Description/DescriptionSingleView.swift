@@ -55,13 +55,6 @@ struct DescriptionSingleView: View {
                                     self.isViewActive.toggle()
                                 }
                             })
-//                        .onTapGesture {
-//                            withAnimation {
-//                                self.isViewActive.toggle()
-//                            }
-//                        }
-
-                    
                     Spacer()
                         .frame(height: screenHeight * 0.02)
                     
