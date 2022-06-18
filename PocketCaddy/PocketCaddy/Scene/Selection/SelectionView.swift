@@ -142,7 +142,7 @@ struct SelectionView: View {
                 }
                 // Selection VStack
             } else {
-               DescriptionPageView(goBack: $goBack)
+                DescriptionPageView(goBack: $goBack)
                    .transition(.opacity)
                    .navigationBarHidden(true)
             }

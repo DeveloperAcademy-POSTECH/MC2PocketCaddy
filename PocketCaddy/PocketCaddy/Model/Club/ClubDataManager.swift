@@ -11,6 +11,8 @@ class ClubDataManager: ObservableObject {
     @Published var clubData: [ClubModel] = []
     @Published var selectedClub: [ClubModel?] = []
     @Published var selectedAppearance = false
+    @Published var searchSelectedClub: ClubModel? = nil
+    
     var searchEtc: [String: String] =
     [
         "1-Wood": "1번우드1번드라이버",

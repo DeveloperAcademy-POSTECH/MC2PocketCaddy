@@ -21,6 +21,7 @@ struct SearchView: View {
     @EnvironmentObject var clubDataManager: ClubDataManager
     @State private var search: String = ""
     @State var isViewActive: Bool = false
+    @State var selectedClub: ClubModel? = nil
     @State var isPressed = false
     
     @Binding var isAllClubActive: Bool
@@ -39,29 +40,12 @@ struct SearchView: View {
     // MARK: - BODY
     var body: some View {
         ZStack {
-            if selectedClub != nil {
-                DescriptionPageView(goBack: $isViewActive, selectedClub: $selectedClub)
+            if clubDataManager.searchSelectedClub != nil {
+                DescriptionPageView(goBack: $isViewActive)
                     .transition(.opacity)
                     .navigationBarHidden(true)
-                    .onChange(of: isViewActive) { _ in
-                        withAnimation {
-                            self.selectedClub = nil
-                        }
-                    }
-//                    .onAppear{
-//                        clubDataManager.selectedClub = [clubModelTemp]
-//                    }
-                //                    DescriptionSingleView(selectedClub: selectedClub, isViewActive: $isViewActive)
-                //                        .transition(.opacity)
-                //                        .onChange(of: isViewActive) { _ in
-                //                            withAnimation {
-                //                                self.selectedClub = nil
-                //                            }
-                //                        }
-                
                 
             } else {
-                
                 // MARK: - CENTER, CARD GRID
                 ScrollViewReader { proxyReader in
                     
@@ -106,10 +90,12 @@ struct SearchView: View {
                             LazyVGrid(columns: columns) {
                                 ForEach(clubDataManager.selectedClub, id: \.?.name) { club in
                                     Button(action: {
+                                        DispatchQueue.main.async {
+                                            clubDataManager.searchSelectedClub = club
+                                        }
+
                                         hideKeyboard()
-                                        
-                                        selectedClub = club
-                                        
+                                                                                
                                         withAnimation {
                                             self.isViewActive = true
                                             self.selectedClub = club
