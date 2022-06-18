@@ -12,6 +12,8 @@ struct DescriptionPageView: View {
     @State var currentPage: Int = 0
     @Binding var goBack: Bool
     
+    @GestureState private var dragOffsetDescriptionPageView = CGSize.zero
+
     var body: some View {
         ZStack {
             Color.backgroundWhite
@@ -23,14 +25,23 @@ struct DescriptionPageView: View {
             TabView() {
                 ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
                     DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
-                    }
-                }
-            }
+
+                    } //Foreach
+
+                } // TabView
+            } // Vstack
             .tabViewStyle(.page)
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-        }
-    }
-}
+            .contentShape(Rectangle())
+            .gesture(DragGesture().updating($dragOffsetDescriptionPageView) { (value, state, transaction) in
+                if (value.startLocation.x < 30 && value.translation.width > 100) {
+                    // MARK: 아직 이벤트 처리 안넣었음
+                }
+            }) // gesture
+          
+        } // Zstack
+    } // body
+} // DescriptionPageView
 
 extension Image {
     static let cutBackground = Image("CutBackground")

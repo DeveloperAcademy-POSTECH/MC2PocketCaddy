@@ -12,7 +12,7 @@ struct DescriptionSingleView: View {
     @State var isPressed = false
     @State var isARViewActive: Bool = false
     @Binding var isViewActive: Bool
-    
+
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     let buttonWidth = UIScreen.main.bounds.height * 0.03

@@ -19,7 +19,7 @@ struct SearchView: View {
     @Binding var isAllClubActive: Bool
     
     @GestureState var longPressTap = false
-    
+
     let buttonWidth = UIScreen.main.bounds.height * 0.03
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
@@ -28,17 +28,31 @@ struct SearchView: View {
         VStack {
             // MARK: - CENTER, CARD GRID
             if selectedClub != nil {
-                ZStack {
-                    VStack {
-                        CustomBackButtonGoBack(isViewActive: $isAllClubActive)
-
-                        DescriptionSingleView(selectedClub: selectedClub, isViewActive: $isViewActive)
+                DescriptionSingleView(selectedClub: selectedClub, isViewActive: $isViewActive)
+                    .transition(.opacity)
+                    .onChange(of: isViewActive) { _ in
+                        withAnimation {
+                            self.selectedClub = nil
+                        }
                     }
-                }
             } else {
                 // MARK: - HEADER
-                CustomBackButtonGoBack(isViewActive: $isAllClubActive)
-                
+                CustomBackButtonGoBack()
+                    .transition(.opacity)
+                    .opacity(longPressTap ? 0.4 : 1.0)
+                    .gesture(
+                        LongPressGesture(minimumDuration: 1000000)
+                            .updating($longPressTap, body: { (currentState, state, transaction) in
+                                state = currentState
+                            })
+                    )
+                    .simultaneousGesture(TapGesture()
+                        .onEnded { _ in
+                            withAnimation {
+                                self.isAllClubActive = false
+                            }
+                        })
+
                 HStack {
                     TextField("Search", text: $search)
                         .padding(.horizontal, 30)

@@ -19,7 +19,7 @@ struct SelectionView: View {
     @Binding var isLocationAndDistanceActive: Bool
     
     @GestureState var longPressTap = false
-    
+
     private let minDistance: Double = 60
     private let maxDistance: Double = 210
     
@@ -35,8 +35,9 @@ struct SelectionView: View {
             if goBack == false {
                 // SelectionView
                 VStack {
+
                     CustomBackButtonGoBack(isViewActive: $isLocationAndDistanceActive)
-                    
+                  
                     VStack {
                         // Title
                         HStack {
@@ -62,6 +63,7 @@ struct SelectionView: View {
                                 MapView(selectedLocation: $currentButtonStatus)
                             } label: {
                                 Image("CircleQuestionmark")
+                                    .foregroundColor(.primaryGreen)
                             }.frame(width: Screen.width * 0.06, height: Screen.width * 0.06)
                         }
                         
@@ -144,9 +146,8 @@ struct SelectionView: View {
                    .transition(.opacity)
                    .navigationBarHidden(true)
             }
-
-            
         }// Whole VStack
+        
     }// body
     
     // MARK: 선택 완료 버튼 함수 처리
