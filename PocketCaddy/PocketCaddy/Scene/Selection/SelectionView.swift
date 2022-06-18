@@ -35,7 +35,6 @@ struct SelectionView: View {
             if goBack == false {
                 // SelectionView
                 VStack {
-
                     CustomBackButtonGoBack(isViewActive: $isLocationAndDistanceActive)
                   
                     VStack {

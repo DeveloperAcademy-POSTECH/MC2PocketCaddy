@@ -47,7 +47,9 @@ struct CustomBackButtonGoBack: View {
         }// HStack
         .opacity(longPressTap ? 0.4 : 1.0)
         .onTapGesture {
-            clubDataManager.searchSelectedClub = nil
+            withAnimation {
+                clubDataManager.searchSelectedClub = nil
+            }
         }
         .gesture(
             LongPressGesture(minimumDuration: 1000000)

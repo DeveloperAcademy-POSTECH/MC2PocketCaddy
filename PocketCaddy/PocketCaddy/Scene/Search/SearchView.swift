@@ -91,15 +91,15 @@ struct SearchView: View {
                                 ForEach(clubDataManager.selectedClub, id: \.?.name) { club in
                                     Button(action: {
                                         DispatchQueue.main.async {
-                                            clubDataManager.searchSelectedClub = club
+                                            withAnimation {
+                                                clubDataManager.searchSelectedClub = club
+                                            }
                                         }
-
                                         hideKeyboard()
-                                                                                
-                                        withAnimation {
-                                            self.isViewActive = true
-                                            self.selectedClub = club
-                                        }
+//                                        withAnimation {
+//                                            self.isViewActive = true
+//                                            self.selectedClub = club
+//                                        }
                                     }) {
                                         ClubCardView(clubModel: (club)!)
                                     }
