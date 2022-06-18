@@ -24,8 +24,7 @@ struct DescriptionSingleView: View {
     var body: some View {
         if let selectedClub = selectedClub {
             if isARViewActive == true {
-                Text("Hello")
-                    .transition(.opacity)
+                LaunchView()
             } else {
                 ZStack {
                     Color.backgroundWhite
@@ -36,35 +35,8 @@ struct DescriptionSingleView: View {
                         .font(.system(size: 170))
                         .fontWeight(.heavy)
                         .frame(width: Screen.width * 2, alignment: .center)
+                        .padding(.bottom, 450)
                     
-                    Spacer()
-                }
-                
-                VStack(alignment: .center, spacing: 0) {
-                    CustomBackButtonGoBack()
-                        .transition(.opacity)
-                        .opacity(longPressTap ? 0.4 : 1.0)
-                        .gesture(
-                            LongPressGesture(minimumDuration: 1000000)
-                                .updating($longPressTap, body: { (currentState, state, transaction) in
-                                    state = currentState
-                                })
-                        )
-                        .simultaneousGesture(TapGesture()
-                            .onEnded { _ in
-                                withAnimation {
-                                    self.isViewActive.toggle()
-                                }
-                            })
-                    Spacer()
-                        .frame(height: screenHeight * 0.02)
-                    
-                    HStack(alignment: .center) {
-                        Image(selectedClub.name)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
-
                     VStack(alignment: .center, spacing: 0) {
                         CustomBackButtonGoBack()
                             .transition(.opacity)
@@ -75,7 +47,7 @@ struct DescriptionSingleView: View {
                                         state = currentState
                                     })
                             )
-                            .simultaneousGesture (
+                            .simultaneousGesture(
                                 TapGesture()
                                     .onEnded { _ in
                                         self.isViewActive.toggle()
@@ -105,7 +77,7 @@ struct DescriptionSingleView: View {
                                                 .resizable()
                                                 .frame(width: screenWidth * 0.2, height: screenWidth * 0.2)
                                         }
-
+                                        
                                         Spacer()
                                     }
                                     .padding(.horizontal)
@@ -239,8 +211,8 @@ struct DescriptionSingleView: View {
                         Spacer()
                     }
                     .frame(width: screenWidth)
-                }
                     .navigationBarHidden(true)
+                }
             }
         } else {
             EmptyView()
@@ -248,3 +220,4 @@ struct DescriptionSingleView: View {
         }
     }
 }
+
