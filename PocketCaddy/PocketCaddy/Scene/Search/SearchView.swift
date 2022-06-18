@@ -78,7 +78,7 @@ struct SearchView: View {
                             }
                     }.padding(.horizontal, 24)
                 )
-
+                
                 ScrollView (showsIndicators: false) {
                     if clubDataManager.selectedClub.count > 0 {
                         LazyVGrid(columns: columns) {
@@ -94,7 +94,7 @@ struct SearchView: View {
                             }
                         }
                         .padding()
-
+                        
                     } else {
                         VStack {
                             Image(systemName: "exclamationmark.circle")
@@ -108,7 +108,6 @@ struct SearchView: View {
                     }
                 } //: SCROLL
             }
-
         } //: VSTACK
         .navigationBarHidden(true)
         .onAppear {

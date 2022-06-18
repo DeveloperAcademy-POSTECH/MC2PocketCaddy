@@ -13,8 +13,6 @@ struct DescriptionSingleView: View {
     @State var isARViewActive: Bool = false
     @Binding var isViewActive: Bool
 
-    @GestureState var longPressTap = false
-
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     let buttonWidth = UIScreen.main.bounds.height * 0.03
@@ -24,64 +22,17 @@ struct DescriptionSingleView: View {
     var body: some View {
         if let selectedClub = selectedClub {
             if isARViewActive == true {
-                MapView()
-                    .transition(.opacity)
+                LaunchView()
             } else {
                 ZStack {
-                    Color.backgroundWhite
-                        .ignoresSafeArea()
-                    
                     Text(selectedClub.category.rawValue)
                         .foregroundColor(.primaryGreen.opacity(0.5))
                         .font(.system(size: 170))
                         .fontWeight(.heavy)
                         .frame(width: Screen.width * 2, alignment: .center)
+                        .padding(.bottom, 450)
                     
-                    Spacer()
-                }
-                
-                VStack(alignment: .center, spacing: 0) {
-                    CustomBackButtonGoBack()
-                        .transition(.opacity)
-                        .opacity(longPressTap ? 0.4 : 1.0)
-                        .gesture(
-                            LongPressGesture(minimumDuration: 1000000)
-                                .updating($longPressTap, body: { (currentState, state, transaction) in
-                                    state = currentState
-                                })
-                        )
-                        .simultaneousGesture(TapGesture()
-                            .onEnded { _ in
-                                withAnimation {
-                                    self.isViewActive.toggle()
-                                }
-                            })
-                    Spacer()
-                        .frame(height: screenHeight * 0.02)
-                    
-                    HStack(alignment: .center) {
-                        Image(selectedClub.name)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
-
                     VStack(alignment: .center, spacing: 0) {
-                        CustomBackButtonGoBack()
-                            .transition(.opacity)
-                            .opacity(longPressTap ? 0.4 : 1.0)
-                            .gesture(
-                                LongPressGesture(minimumDuration: 1000000)
-                                    .updating($longPressTap, body: { (currentState, state, transaction) in
-                                        state = currentState
-                                    })
-                            )
-                            .simultaneousGesture (
-                                TapGesture()
-                                    .onEnded { _ in
-                                        self.isViewActive.toggle()
-                                    }
-                            )
-                        
                         Spacer()
                             .frame(height: screenHeight * 0.02)
                         
@@ -105,7 +56,7 @@ struct DescriptionSingleView: View {
                                                 .resizable()
                                                 .frame(width: screenWidth * 0.2, height: screenWidth * 0.2)
                                         }
-
+                                        
                                         Spacer()
                                     }
                                     .padding(.horizontal)
@@ -239,8 +190,8 @@ struct DescriptionSingleView: View {
                         Spacer()
                     }
                     .frame(width: screenWidth)
-                }
                     .navigationBarHidden(true)
+                }
             }
         } else {
             EmptyView()
@@ -248,3 +199,4 @@ struct DescriptionSingleView: View {
         }
     }
 }
+
