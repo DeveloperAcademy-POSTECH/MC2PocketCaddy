@@ -56,7 +56,7 @@ struct DescriptionSingleView: View {
                                                 .resizable()
                                                 .frame(width: screenWidth * 0.2, height: screenWidth * 0.2)
                                         }
-                                        
+
                                         Spacer()
                                     }
                                     .padding(.horizontal)
@@ -102,7 +102,7 @@ struct DescriptionSingleView: View {
                                     GeometryReader{ g in
                                         Text(selectedClub.description)
                                             .foregroundColor(.primaryGreen)
-                                            .font(.system(size: g.size.height > g.size.width ? g.size.width * 0.25 :  g.size.height * 0.25))
+                                            .font(.system(size: g.size.height > g.size.width ? g.size.width * 0.23 :  g.size.height * 0.23))
                                     }
                                 }
                                 .frame(width: specWidth, alignment: .leading)
@@ -169,7 +169,7 @@ struct DescriptionSingleView: View {
                                     
                                     switch selectedClub.distance?.description {
                                     case nil:
-                                        Text("홀까지 거리를 조정해요")
+                                        Text("홀까지 거리를 조정하세요")
                                             .foregroundColor(.gray)
                                             .font(.system(size: 16, weight: .bold))
                                     default:
