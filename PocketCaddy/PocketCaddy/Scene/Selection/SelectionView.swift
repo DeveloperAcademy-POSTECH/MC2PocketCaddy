@@ -35,21 +35,7 @@ struct SelectionView: View {
             if goBack == false {
                 // SelectionView
                 VStack {
-                    CustomBackButtonGoBack()
-                        .transition(.opacity)
-                        .opacity(longPressTap ? 0.4 : 1.0)
-                        .gesture(
-                            LongPressGesture(minimumDuration: 1000000)
-                                .updating($longPressTap, body: { (currentState, state, transaction) in
-                                    state = currentState
-                                })
-                        )
-                        .simultaneousGesture(TapGesture()
-                            .onEnded { _ in
-                                withAnimation {
-                                    self.isLocationAndDistanceActive.toggle()
-                                }
-                            })
+                    CustomBackButtonGoBack(isViewActive: $isLocationAndDistanceActive)
                     
                     VStack {
                         // Title

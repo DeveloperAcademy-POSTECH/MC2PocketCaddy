@@ -38,21 +38,7 @@ struct SearchView: View {
 
             } else {
                 // MARK: - HEADER
-                CustomBackButtonGoBack()
-                    .transition(.opacity)
-                    .opacity(longPressTap ? 0.4 : 1.0)
-                    .gesture(
-                        LongPressGesture(minimumDuration: 1000000)
-                            .updating($longPressTap, body: { (currentState, state, transaction) in
-                                state = currentState
-                            })
-                    )
-                    .simultaneousGesture(TapGesture()
-                        .onEnded { _ in
-                            withAnimation {
-                                self.isAllClubActive.toggle()
-                            }
-                        })
+                CustomBackButtonGoBack(isViewActive: $isAllClubActive)
 
                 HStack {
                     TextField("Search", text: $search)

@@ -16,11 +16,14 @@ struct DescriptionPageView: View {
         ZStack{
             Color.backgroundWhite
                 .ignoresSafeArea()
-            
-            TabView () {
-                ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
-                    
-                    DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
+
+            VStack {
+//                CustomBackButtonGoBack()
+
+            TabView () {                    
+                    ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
+                        DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
+                    }
                 }
             }
             .tabViewStyle(.page)
