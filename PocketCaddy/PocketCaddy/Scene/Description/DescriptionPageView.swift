@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct DescriptionPageView: View {
-    @EnvironmentObject var clubDataManager : ClubDataManager
+    //@EnvironmentObject var clubDataManager : ClubDataManager
     @State var currentPage: Int = 0
     @Binding var goBack: Bool
-    
+    @Binding var selectedClub: [ClubModel]
     @GestureState private var dragOffsetDescriptionPageView = CGSize.zero
 
     var body: some View {
@@ -23,7 +23,7 @@ struct DescriptionPageView: View {
                 CustomBackButtonGoBack(isViewActive: $goBack)
 
             TabView() {
-                ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
+                ForEach(self.selectedClub, id: \.?.name) { clubModel in
                     DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
 
                     } //Foreach
