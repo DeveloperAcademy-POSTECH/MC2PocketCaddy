@@ -18,7 +18,7 @@ struct DescriptionPageView: View {
                 .ignoresSafeArea()
 
             VStack {
-//                CustomBackButtonGoBack()
+                CustomBackButtonGoBack(isViewActive: $goBack)
 
             TabView () {                    
                     ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in

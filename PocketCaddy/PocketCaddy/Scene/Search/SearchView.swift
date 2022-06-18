@@ -28,6 +28,8 @@ struct SearchView: View {
         VStack {
             // MARK: - CENTER, CARD GRID
             if selectedClub != nil {
+                CustomBackButtonGoBack(isViewActive: $isAllClubActive)
+                
                 DescriptionSingleView(selectedClub: selectedClub, isViewActive: $isViewActive)
                     .transition(.opacity)
                     .onChange(of: isViewActive) { _ in

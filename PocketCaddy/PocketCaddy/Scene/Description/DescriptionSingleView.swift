@@ -36,8 +36,6 @@ struct DescriptionSingleView: View {
                         .padding(.bottom, 450)
                     
                     VStack(alignment: .center, spacing: 0) {
-                        CustomBackButtonGoBack(isViewActive: $isViewActive)
-                        
                         Spacer()
                             .frame(height: screenHeight * 0.02)
                         

@@ -115,6 +115,7 @@ struct SelectionView: View {
                                 .frame(height: Screen.height * 0.05)
                         }
                         
+                        // SelectionButton
                         switch currentButtonStatus {
                         case .fairwayAndRough:
                             if value == 0 {
