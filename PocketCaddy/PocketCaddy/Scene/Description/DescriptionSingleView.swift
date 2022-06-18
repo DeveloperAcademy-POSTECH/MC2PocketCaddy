@@ -25,9 +25,6 @@ struct DescriptionSingleView: View {
                 LaunchView()
             } else {
                 ZStack {
-                    Color.backgroundWhite
-                        .ignoresSafeArea()
-                    
                     Text(selectedClub.category.rawValue)
                         .foregroundColor(.primaryGreen.opacity(0.5))
                         .font(.system(size: 170))

@@ -28,20 +28,17 @@ struct SearchView: View {
         VStack {
             // MARK: - CENTER, CARD GRID
             if selectedClub != nil {
-                CustomBackButtonGoBack(isViewActive: $isAllClubActive)
-                
-                DescriptionSingleView(selectedClub: selectedClub, isViewActive: $isViewActive)
-                    .transition(.opacity)
-                    .onChange(of: isViewActive) { _ in
-                        withAnimation {
-                            self.selectedClub = nil
-                        }
-                    }
+                ZStack {
+                    VStack {
+                        CustomBackButtonGoBack(isViewActive: $isAllClubActive)
 
+                        DescriptionSingleView(selectedClub: selectedClub, isViewActive: $isViewActive)
+                    }
+                }
             } else {
                 // MARK: - HEADER
                 CustomBackButtonGoBack(isViewActive: $isAllClubActive)
-
+                
                 HStack {
                     TextField("Search", text: $search)
                         .padding(.horizontal, 30)
@@ -67,7 +64,7 @@ struct SearchView: View {
                             }
                     }.padding(.horizontal, 24)
                 )
-
+                
                 ScrollView (showsIndicators: false) {
                     if clubDataManager.selectedClub.count > 0 {
                         LazyVGrid(columns: columns) {
@@ -83,7 +80,7 @@ struct SearchView: View {
                             }
                         }
                         .padding()
-
+                        
                     } else {
                         VStack {
                             Image(systemName: "exclamationmark.circle")
@@ -97,7 +94,6 @@ struct SearchView: View {
                     }
                 } //: SCROLL
             }
-
         } //: VSTACK
         .navigationBarHidden(true)
         .onAppear {

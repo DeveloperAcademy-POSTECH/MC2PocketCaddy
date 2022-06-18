@@ -13,16 +13,16 @@ struct DescriptionPageView: View {
     @Binding var goBack: Bool
     
     var body: some View {
-        ZStack{
+        ZStack {
             Color.backgroundWhite
                 .ignoresSafeArea()
 
             VStack {
                 CustomBackButtonGoBack(isViewActive: $goBack)
 
-            TabView () {                    
-                    ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
-                        DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
+            TabView() {
+                ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
+                    DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
                     }
                 }
             }

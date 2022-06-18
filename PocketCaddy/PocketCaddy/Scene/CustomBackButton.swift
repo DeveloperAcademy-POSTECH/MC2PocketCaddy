@@ -41,7 +41,7 @@ struct CustomBackButtonGoBack: View {
                 .frame(width: Screen.height * 0.03 , height: Screen.height * 0.025)
                 .padding(.leading, 25)
                 .padding(.vertical, 10)
-                            
+            
             Spacer()
         }// HStack
         .opacity(longPressTap ? 0.4 : 1.0)
@@ -50,7 +50,7 @@ struct CustomBackButtonGoBack: View {
                 .updating($longPressTap, body: { (currentState, state, transaction) in
                     state = currentState
                 }
-            )
+                         )
         )
         .simultaneousGesture(
             TapGesture()
