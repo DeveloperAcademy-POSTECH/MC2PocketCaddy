@@ -15,8 +15,8 @@
 		0A2706642845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706632845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift */; };
 		0A2706722845EAD400168C40 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2706712845EAD400168C40 /* ClubModel.swift */; };
 		0A2706762845EDA000168C40 /* Club.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2706752845EDA000168C40 /* Club.json */; };
-		0A948674285477DF00D42C8C /* ClubCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A948672285477DF00D42C8C /* ClubCardView.swift */; };
 		0A948675285477DF00D42C8C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A948673285477DF00D42C8C /* SearchView.swift */; };
+		0A9C9356285DCAC100E61348 /* ClubCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C9355285DCAC100E61348 /* ClubCardView.swift */; };
 		0AC19CFC28489CB600727BE6 /* ClubDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFB28489CB600727BE6 /* ClubDataManager.swift */; };
 		0AC19D00284D12FE00727BE6 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */; };
 		7AE520AC28596E3D0085E2D4 /* HomeViewTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */; };
@@ -73,9 +73,9 @@
 		0A2706632845E96900168C40 /* PocketCaddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCaddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A2706712845EAD400168C40 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModel.swift; sourceTree = "<group>"; };
 		0A2706752845EDA000168C40 /* Club.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Club.json; sourceTree = "<group>"; };
-		0A948672285477DF00D42C8C /* ClubCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubCardView.swift; sourceTree = "<group>"; };
 		0A948673285477DF00D42C8C /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0A9C9352285CB46800E61348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0A9C9355285DCAC100E61348 /* ClubCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubCardView.swift; sourceTree = "<group>"; };
 		0AC19CFB28489CB600727BE6 /* ClubDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDataManager.swift; sourceTree = "<group>"; };
 		0AC19CFF284D12FE00727BE6 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		7AE520AB28596E3D0085E2D4 /* HomeViewTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTip.swift; sourceTree = "<group>"; };
@@ -229,6 +229,7 @@
 		0A30FA37285C59DE008F057C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				0A9C9355285DCAC100E61348 /* ClubCardView.swift */,
 				0A948673285477DF00D42C8C /* SearchView.swift */,
 			);
 			path = Search;
@@ -237,7 +238,6 @@
 		0AC19D01284D146300727BE6 /* Description */ = {
 			isa = PBXGroup;
 			children = (
-				0A948672285477DF00D42C8C /* ClubCardView.swift */,
 				EE58B4862845FCD500744D64 /* DescriptionPageView.swift */,
 				897634E4285AFA3C00FA229B /* DescriptionSingleView.swift */,
 			);
@@ -427,7 +427,6 @@
 			files = (
 				BAD3D640285C7302006D6F96 /* Golf Putt.dae in Resources */,
 				BAD3D642285C7302006D6F96 /* Golf Chip.dae in Resources */,
-				89544A4528474ED100423D0A /* SampleData.json in Resources */,
 				BAD3D641285C7302006D6F96 /* Golf Drive.dae in Resources */,
 				0A2706762845EDA000168C40 /* Club.json in Resources */,
 				0A27064E2845E96900168C40 /* Preview Assets.xcassets in Resources */,
@@ -463,13 +462,13 @@
 				0A2706722845EAD400168C40 /* ClubModel.swift in Sources */,
 				897634EC285B1C8300FA229B /* SpeechBubble.swift in Sources */,
 				7AE520AE285974900085E2D4 /* CustomBackButton.swift in Sources */,
+				0A9C9356285DCAC100E61348 /* ClubCardView.swift in Sources */,
 				BAAF76332845F5BB0027504A /* MapView.swift in Sources */,
 				897634E8285B013800FA229B /* HomeSelection.swift in Sources */,
 				BAE0830A285479E400AAD128 /* LaunchScene.swift in Sources */,
 				BAFFE8BC2854571B00B08B12 /* HomeView.swift in Sources */,
 				BAC5AEB328570D0800D2EADC /* UIImage.swift in Sources */,
 				BAD3D63F285C7302006D6F96 /* SceneKit3DModelView.swift in Sources */,
-				0A948674285477DF00D42C8C /* ClubCardView.swift in Sources */,
 				7AE520AC28596E3D0085E2D4 /* HomeViewTip.swift in Sources */,
 				EE44B0052851E9A400A1A758 /* SelectionView.swift in Sources */,
 				EEAE6DE528572A8D00A050C8 /* ViewExtension.swift in Sources */,

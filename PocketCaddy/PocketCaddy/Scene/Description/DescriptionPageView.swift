@@ -11,7 +11,6 @@ struct DescriptionPageView: View {
     @EnvironmentObject var clubDataManager : ClubDataManager
     @State var currentPage: Int = 0
     @Binding var goBack: Bool
-    
     @GestureState private var dragOffsetDescriptionPageView = CGSize.zero
 
     var body: some View {
@@ -23,10 +22,16 @@ struct DescriptionPageView: View {
                 CustomBackButtonGoBack(isViewActive: $goBack)
 
             TabView() {
-                ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
-                    DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
+                if clubDataManager.searchSelectedClub != nil {
+                    DescriptionSingleView(selectedClub: clubDataManager.searchSelectedClub, isViewActive: $goBack)
+                    
+                } else {
+                    ForEach(clubDataManager.selectedClub, id: \.?.name) { clubModel in
+                        DescriptionSingleView(selectedClub: clubModel, isViewActive: $goBack)
 
                     } //Foreach
+                }
+                
 
                 } // TabView
             } // Vstack

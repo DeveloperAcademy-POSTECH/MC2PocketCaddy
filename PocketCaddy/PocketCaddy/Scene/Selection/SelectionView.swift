@@ -35,7 +35,6 @@ struct SelectionView: View {
             if goBack == false {
                 // SelectionView
                 VStack {
-
                     CustomBackButtonGoBack(isViewActive: $isLocationAndDistanceActive)
                   
                     VStack {
@@ -142,7 +141,7 @@ struct SelectionView: View {
                 }
                 // Selection VStack
             } else {
-               DescriptionPageView(goBack: $goBack)
+                DescriptionPageView(goBack: $goBack)
                    .transition(.opacity)
                    .navigationBarHidden(true)
             }

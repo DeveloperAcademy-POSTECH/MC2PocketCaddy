@@ -30,6 +30,7 @@ struct CustomBackButton: View {
 }// CustomBackButton
 
 struct CustomBackButtonGoBack: View {
+    @EnvironmentObject var clubDataManager: ClubDataManager
     @Binding var isViewActive: Bool
     @GestureState var longPressTap = false
     
@@ -45,12 +46,16 @@ struct CustomBackButtonGoBack: View {
             Spacer()
         }// HStack
         .opacity(longPressTap ? 0.4 : 1.0)
+        .onTapGesture {
+            withAnimation {
+                clubDataManager.searchSelectedClub = nil
+            }
+        }
         .gesture(
             LongPressGesture(minimumDuration: 1000000)
                 .updating($longPressTap, body: { (currentState, state, transaction) in
                     state = currentState
-                }
-                         )
+                })
         )
         .simultaneousGesture(
             TapGesture()
