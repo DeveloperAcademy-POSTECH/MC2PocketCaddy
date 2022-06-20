@@ -9,7 +9,7 @@
 <br><br>
 
 <img src="https://img.shields.io/static/v1?label=ios&message=15.0+&color=lightgrey"> &nbsp; 
-<img src="https://img.shields.io/static/v1?label=version&message=v1.1&color=green"> &nbsp;
+<img src="https://img.shields.io/static/v1?label=version&message=v1.2&color=green"> &nbsp;
 <a href="https://apps.apple.com/kr/app/pocketcaddie/id1630139569"><img src="https://img.shields.io/badge/App Store-000000?style=flat&logo=Apple&logoColor=white"/></a>
 
 </div>
