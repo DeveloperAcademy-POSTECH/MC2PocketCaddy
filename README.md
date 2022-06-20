@@ -78,8 +78,10 @@
 </details>
 
 ## :sparkles: Skills & Tech Stack
+- Swift
 - SwiftUI
 - SpriteKit
+- Git
 - Github
 
 ## :books: Documentation
