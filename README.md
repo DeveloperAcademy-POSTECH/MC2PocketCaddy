@@ -1,7 +1,18 @@
 
 # :iphone: 포켓 캐디: Pocket Caddy
 
+<div align="center">
 
+<img width="100" src="https://user-images.githubusercontent.com/83233720/174509556-c3f13f7a-3ded-4ce2-a12e-ebc76e629d0a.png"> <br><br>
+*골프 클럽 종류가 너무 많아 어떤 클럽을 사용할지 고민이 많으셨죠?* <br>
+*포캣캐디를 통해 친구의 도움 없이 상황에 맞는 클럽을 직접 선택하세요*
+<br><br>
+
+<img src="https://img.shields.io/static/v1?label=ios&message=15.0+&color=lightgrey"> &nbsp; 
+<img src="https://img.shields.io/static/v1?label=version&message=v1.1&color=green"> &nbsp;
+<a href="https://apps.apple.com/kr/app/pocketcaddie/id1630139569"><img src="https://img.shields.io/badge/App Store-000000?style=flat&logo=Apple&logoColor=white"/></a>
+
+</div>
 
 ## :pushpin: Features
 <details>
@@ -68,6 +79,8 @@
 
 ## :sparkles: Skills & Tech Stack
 - SwiftUI
+- SpriteKit
+- Github
 
 ## :books: Documentation
 
@@ -75,6 +88,8 @@
 
 
 ## :lock_with_ink_pen: License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## :people_hugging: Authors
 - [@Drogba/Sanghyun Kim](https://github.com/iDrogba) | [@Nia/Minyoung Kim](https://github.com/pig1606) | [@Thina/Jungin Yoo](https://github.com/yoo86) | [@Badger/Jinha Byeon](https://github.com/Byeonjinha) | [@Jerry/Jaehoon Lee](https://github.com/jaehoon9186) | [@Theo/Hyeon-sang Lee](https://github.com/phainestha1)
