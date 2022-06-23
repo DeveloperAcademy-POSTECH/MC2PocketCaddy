@@ -20,34 +20,37 @@ struct SceneKit3DModelView : View {
         Model(id: 0, name: "Chip shot", modelName: "Golf Chip.dae", details: "Cip shot")
     ]
     @State var index = 0
+    
     var body: some View{
         VStack{
             SceneView(scene: SCNScene(named: models[index].modelName), options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 3)
+                .frame(width: Screen.width , height: Screen.height * 0.5)
+            
             ZStack{
                 HStack{
-                Text(models[index].name)
-                    .font(.system(size: 45, weight: .bold))
+                    Text(models[index].name)
+                        .font(.system(size: 45, weight: .bold))
                 }
             }
             .foregroundColor(.black)
             .padding(.horizontal)
             .padding(.vertical,30)
-            VStack(alignment: .leading, spacing: 15, content: {
+            
+            VStack(alignment: .center, spacing: 15, content: {
                 Text("About")
                     .font(.title2)
                     .fontWeight(.bold)
                 Text(models[index].details)
             })
             .padding(.horizontal)
-            Spacer(minLength: 0)
+            
+            Spacer()
         }
     }
 }
 
 
 struct Model : Identifiable {
-    
     var id : Int
     var name : String
     var modelName : String

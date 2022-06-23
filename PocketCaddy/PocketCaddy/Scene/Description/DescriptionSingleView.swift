@@ -22,7 +22,7 @@ struct DescriptionSingleView: View {
     var body: some View {
         if let selectedClub = selectedClub {
             if isARViewActive == true {
-                LaunchView()
+                SceneKit3DModelView()
             } else {
                 ZStack {
                     Text(selectedClub.category.rawValue)
